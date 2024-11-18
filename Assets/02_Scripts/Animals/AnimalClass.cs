@@ -13,7 +13,14 @@ public class AnimalClass : MonoBehaviour
     public Animator animal_anim;        // 동물의 애니메이션을 받는 변수
 
 
-    GameObject meat;                    // 생고기 오브젝트      // 프리팹 받아오면 public 으로 바꿀 예정
+    public GameObject meat;                    // 생고기 오브젝트      // 프리팹 받아오면 public 으로 바꿀 예정
+
+    public GameObject Player;
+
+    public float find_area;
+    public float attack_area;
+    public float attack_time;
+
 
 
     public void InitStat()              // 스탯 초기화
@@ -21,15 +28,30 @@ public class AnimalClass : MonoBehaviour
         animal_hp = 0;
         animal_atk = 0;
         corpse_hp = 0;
-        is_alive = false;
+        is_alive = true;
+
+        find_area = 10f;
+        attack_area = 4f;
+        attack_time = 3f;
 
         animal_rb = this.GetComponent<Rigidbody>();
-        animal_anim = this.GetComponentInChildren<Animator>();
+        animal_anim = this.GetComponent<Animator>();
+        Player = GameObject.Find("Player");
     }
 
     public void GetDamage(int damage)   // 데미지를 받는다.
     {
-        animal_hp -= damage;
+        if (is_alive)
+        {
+            animal_hp -= damage;
+            print($"{damage} 만큼 피해를 입었습니다. 남은 체력은 {animal_hp} 입니다.");
+
+        }
+        else
+        {
+            corpse_hp -= damage;
+            print($"{damage} 만큼 피해를 입었습니다. 남은 체력은 {corpse_hp} 입니다.");
+        }
     }
 
     public void Hit(int other_hp)       // 데미지를 가한다.
@@ -39,10 +61,14 @@ public class AnimalClass : MonoBehaviour
 
     public void Die()                   // 시체가 된다.     // 시체의 체력이 동물의 체력을 대체한다.
     {
-        animal_hp = corpse_hp;
+
+        is_alive = false;
+
+
+
     }
 
-    public void AnimalToMeat()          // 생고기로 변한다.      // 동물 오브젝트가 소멸하고 생고기 오브젝트가 대체한다.
+    public void ChangeToMeat()          // 생고기로 변한다.      // 동물 오브젝트가 소멸하고 생고기 오브젝트가 대체한다.
     {
         if (this.gameObject != null)    // 동물 오브젝트가 아직 존재할 경우
         {
@@ -56,41 +82,6 @@ public class AnimalClass : MonoBehaviour
 
 
 
-    public void Animal_Idle()
-    {
-        animal_rb.isKinematic = true;
-    }
 
-    public void Animal_Move()
-    {
-        this.transform.Translate(Vector3.forward * Time.deltaTime * 2.0f, Space.Self);
-    }
-
-    public void Animal_Watch()
-    {
-        GameObject player = GameObject.Find("Player");
-        this.transform.LookAt(player.transform);
-    }
-
-    public void Animal_Attack()
-    {
-        StartCoroutine(PrintAttack());
-    }
-
-    IEnumerator PrintAttack()
-    {
-        yield return new WaitForSeconds(1.0f);
-        print("동물이 공격합니다.");
-    }
-
-    public void Animal_Damage()
-    {
-
-    }
-
-    public void Animal_Die()
-    {
-        Die();
-    }
 
 }
