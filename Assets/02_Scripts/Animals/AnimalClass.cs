@@ -30,9 +30,9 @@ public class AnimalClass : MonoBehaviour
         corpse_hp = 0;
         is_alive = true;
 
-        find_area = 10f;
-        attack_area = 4f;
-        attack_time = 3f;
+        find_area = 3f;
+        attack_area = 2f;
+        attack_time = 5f;
 
         animal_rb = this.GetComponent<Rigidbody>();
         animal_anim = this.GetComponent<Animator>();
