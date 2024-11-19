@@ -2,13 +2,14 @@ using Unity.VisualScripting;
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.OpenXR.Input;
 
 public class CuttedBambooCtrl : InteractableObject
 {
     bool isBuildReady;
-    bool isGrabed;
+    int grabCount;
     bool isFixed;
     bool isTrigger;
     Rigidbody rb;
@@ -45,7 +46,7 @@ public class CuttedBambooCtrl : InteractableObject
             Debug.Log("잡았다");
             Debug.Log(var);
 
-            isGrabed = true;
+            grabCount++;
         });
 
         interactable.selectExited.AddListener((var) =>
@@ -56,7 +57,7 @@ public class CuttedBambooCtrl : InteractableObject
             {
                 Fix();
             }
-            isGrabed = false;
+            grabCount--;
         });
     }
 
@@ -71,16 +72,16 @@ public class CuttedBambooCtrl : InteractableObject
     void Fix()
     {
         Debug.Log("Fix");
-        rb.useGravity = false;
+        //rb.useGravity = false;
         rb.isKinematic = true;
         isFixed = true;
 
-        interactable.enabled = false;
+        interactable.interactionLayers = 1 << InteractionLayerMask.NameToLayer("Fixed");
     }
 
     void LeftTriggerEnter(InputAction.CallbackContext context)
     {
-        if(isGrabed)
+        if(grabCount > 0)
         {
             isTrigger = true;
         }
@@ -88,7 +89,7 @@ public class CuttedBambooCtrl : InteractableObject
 
     void RightTriggerEnter(InputAction.CallbackContext context)
     {
-        if (isGrabed)
+        if (grabCount > 0)
         {
             isTrigger = true;
         }
@@ -96,7 +97,7 @@ public class CuttedBambooCtrl : InteractableObject
 
     void LeftTriggerExit(InputAction.CallbackContext context)
     {
-        if (isGrabed)
+        if (grabCount > 0)
         {
             isTrigger = false;
         }
@@ -104,7 +105,7 @@ public class CuttedBambooCtrl : InteractableObject
 
     void RightTriggerExit(InputAction.CallbackContext context)
     {
-        if (isGrabed)
+        if (grabCount > 0)
         {
             isTrigger = false;
         }
@@ -117,6 +118,7 @@ public class CuttedBambooCtrl : InteractableObject
             //충돌시 속도가 일정 이상일 때만 작동
             if (rb.linearVelocity.magnitude > 0.7f && isTrigger)
             {
+                Debug.Log("박히기");
                 Fix();
             }
         }
