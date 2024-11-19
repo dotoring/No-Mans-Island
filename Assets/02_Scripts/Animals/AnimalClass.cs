@@ -1,6 +1,16 @@
 using System.Collections;
 using UnityEngine;
 
+public enum AnimalState
+{
+    Idle,
+    Move,
+    Watch,
+    Attack,
+    Damage,
+    Die
+}
+
 public class AnimalClass : MonoBehaviour
 {
     public int animal_hp;               // 동물의 체력
@@ -21,6 +31,8 @@ public class AnimalClass : MonoBehaviour
     public float attack_area;
     public float attack_time;
 
+    public AnimalState t_state = new AnimalState();
+
 
 
     public void InitStat()              // 스탯 초기화
@@ -37,6 +49,8 @@ public class AnimalClass : MonoBehaviour
         animal_rb = this.GetComponent<Rigidbody>();
         animal_anim = this.GetComponent<Animator>();
         Player = GameObject.Find("Player");
+        t_state = AnimalState.Idle;
+
     }
 
     public void GetDamage(int damage)   // 데미지를 받는다.

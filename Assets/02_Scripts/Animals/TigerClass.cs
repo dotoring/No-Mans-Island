@@ -3,24 +3,18 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public enum TigerState
-{
-    Idle,
-    Move,
-    Watch,
-    Attack,
-    Damage,
-    Die
-}
+
 public class TigerClass : AnimalClass
 {
 
-    TigerState t_state = new TigerState();
+
 
     //XRGrabInteractable xrgrab;
 
 
-    float rest_Time;
+    protected float rest_Time;
+    protected float damage_Time;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,7 +26,7 @@ public class TigerClass : AnimalClass
         corpse_hp = 30;
         is_alive = true;
 
-        t_state = TigerState.Idle;
+
 
         rest_Time = 0f;
         //xrgrab = GetComponent<XRGrabInteractable>();
@@ -57,27 +51,29 @@ public class TigerClass : AnimalClass
     private void TigerCheck()
     {
         rest_Time += Time.deltaTime;
+        damage_Time += Time.deltaTime;
+
         switch (t_state)
         {
-            case TigerState.Idle:
+            case AnimalState.Idle:
                 Animal_Idle();
                 break;
-            case TigerState.Move:
+            case AnimalState.Move:
                 Animal_Move();
                 break;
-            case TigerState.Watch:
+            case AnimalState.Watch:
                 Animal_Watch();
                 break;
-            case TigerState.Attack:
+            case AnimalState.Attack:
                 Animal_Attack();
 
                 break;
-            case TigerState.Damage:
+            case AnimalState.Damage:
                 Animal_Damage();
 
 
                 break;
-            case TigerState.Die:
+            case AnimalState.Die:
                 Animal_Die();
                 //xrgrab.enabled = true;
                 break;
@@ -91,19 +87,20 @@ public class TigerClass : AnimalClass
         {
             rest_Time = 0;
 
-            t_state = TigerState.Move;
+            t_state = AnimalState.Move;
             animal_anim.SetTrigger("Move");
         }
-        if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
+
+        if (Vector3.Distance(this.transform.position, Player.transform.position) < attack_area)
+        {
+            t_state = AnimalState.Attack;
+
+        }
+        else if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
         {
             rest_Time = 0;
 
-            t_state = TigerState.Watch;
-            animal_anim.SetTrigger("Move");
-        }
-        if (Vector3.Distance(this.transform.position, Player.transform.position) < attack_area)
-        {
-            t_state = TigerState.Attack;
+            t_state = AnimalState.Watch;
 
         }
     }
@@ -114,7 +111,7 @@ public class TigerClass : AnimalClass
         {
             rest_Time = 0;
 
-            t_state = TigerState.Idle;
+            t_state = AnimalState.Idle;
             animal_anim.SetTrigger("Idle");
             this.transform.forward = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
         }
@@ -122,7 +119,7 @@ public class TigerClass : AnimalClass
         {
             rest_Time = 0;
 
-            t_state = TigerState.Watch;
+            t_state = AnimalState.Watch;
 
         }
     }
@@ -135,12 +132,13 @@ public class TigerClass : AnimalClass
 
         if (Vector3.Distance(this.transform.position, Player.transform.position) < attack_area)
         {
-            t_state = TigerState.Attack;
+            t_state = AnimalState.Attack;
 
         }
         else
         {
             this.transform.Translate(Vector3.forward * 1.0f * Time.deltaTime, Space.Self);
+            animal_anim.SetTrigger("Move");
         }
     }
     public void Animal_Attack()
@@ -149,8 +147,8 @@ public class TigerClass : AnimalClass
         if (Vector3.Distance(this.transform.position, Player.transform.position) > attack_area)
         {
             rest_Time = 0;
-            t_state = TigerState.Watch;
-            animal_anim.SetTrigger("Move");
+            t_state = AnimalState.Watch;
+
 
         }
         else
@@ -164,9 +162,18 @@ public class TigerClass : AnimalClass
     }
     public void Animal_Damage()
     {
-        animal_anim.SetTrigger("Damage");
-        if (animal_hp <= 0) t_state = TigerState.Die;
-        else t_state = TigerState.Idle;
+        if (damage_Time >= 5f)
+        {
+            damage_Time = 0;
+            animal_anim.SetTrigger("Damage");
+        }
+
+        if (animal_hp <= 0) t_state = AnimalState.Die;
+        else
+        {
+            t_state = AnimalState.Idle;
+            animal_anim.SetTrigger("Idle");
+        }
 
 
     }
@@ -187,7 +194,7 @@ public class TigerClass : AnimalClass
         if (other.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
         {
             GetDamage(5);
-            t_state = TigerState.Damage;
+            t_state = AnimalState.Damage;
         }
     }
 }
