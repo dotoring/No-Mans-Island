@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4c970ac253c8afe40ad5c150cb94921e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - animal_rb: {instanceID: 0}
+  - animal_anim: {instanceID: 0}
+  - meat: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
