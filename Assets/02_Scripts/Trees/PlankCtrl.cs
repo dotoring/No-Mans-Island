@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class PlankCtrl : InteractableObject
@@ -8,8 +9,6 @@ public class PlankCtrl : InteractableObject
     bool isFixed;
     Rigidbody rb;
     XRGrabInteractable interactable;
-    [SerializeField] private InputActionProperty leftTriggerAction;
-    [SerializeField] private InputActionProperty rightTriggerAction;
 
     private void Start()
     {
@@ -35,12 +34,11 @@ public class PlankCtrl : InteractableObject
 
     void Fix()
     {
-        Debug.Log("Fix");
-        rb.useGravity = false;
+        //rb.useGravity = false;
         rb.isKinematic = true;
         isFixed = true;
 
-        interactable.enabled = false;
+        interactable.interactionLayers = 1 << InteractionLayerMask.NameToLayer("Fixed");
     }
 
     private void OnCollisionStay(Collision collision)
