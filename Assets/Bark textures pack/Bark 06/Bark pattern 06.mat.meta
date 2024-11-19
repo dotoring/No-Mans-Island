@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 235f48fe1909bed49a6861cec6c8e358
+labels:
+- Bark
+- Nature
+- Pattern
+- Tree
+- Exotic
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 12956
+  packageName: Bark Textures Pack
+  packageVersion: 1.00
+  assetPath: Assets/Bark textures pack/Bark 06/Bark pattern 06.mat
+  uploadId: 29417
