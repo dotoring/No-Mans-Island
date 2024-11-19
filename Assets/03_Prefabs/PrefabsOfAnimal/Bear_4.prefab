@@ -1771,12 +1771,14 @@ MonoBehaviour:
   is_alive: 0
   animal_rb: {fileID: 0}
   animal_anim: {fileID: 0}
-  meat: {fileID: 2913998121485800329, guid: cb5014fd201ee4443b657a056a9522cb, type: 3}
+  meat: {fileID: 2564325500527734051, guid: cb5014fd201ee4443b657a056a9522cb, type: 3}
   Player: {fileID: 0}
   find_area: 0
   attack_area: 0
   attack_time: 0
+  short_distance: 50
   t_state: 0
+  PhotonPlayer: []
 --- !u!1 &7432912766813437211
 GameObject:
   m_ObjectHideFlags: 0

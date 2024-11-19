@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum AnimalState
@@ -30,8 +31,11 @@ public class AnimalClass : MonoBehaviour
     public float find_area;
     public float attack_area;
     public float attack_time;
+    public float short_distance = 50.0f;
 
     public AnimalState t_state = new AnimalState();
+
+    public List<GameObject> PhotonPlayer = new List<GameObject>();
 
 
 
@@ -48,8 +52,13 @@ public class AnimalClass : MonoBehaviour
 
         animal_rb = this.GetComponent<Rigidbody>();
         animal_anim = this.GetComponent<Animator>();
-        Player = GameObject.Find("Player");
+
         t_state = AnimalState.Idle;
+
+        AddListPlayer();
+        ShortDistance();
+
+
 
     }
 
@@ -65,6 +74,27 @@ public class AnimalClass : MonoBehaviour
         {
             corpse_hp -= damage;
             print($"{damage} 만큼 피해를 입었습니다. 남은 체력은 {corpse_hp} 입니다.");
+        }
+    }
+
+    public void AddListPlayer()                 // Player 들을 PhotonPlayer list 에 추가
+    {
+        foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            PhotonPlayer.Add(player);
+        }
+    }
+
+    public void ShortDistance()                 // Player와의 거리를 계산한 뒤, 젤 가까운 Player를 타겟으로 설정
+    {
+        foreach (GameObject short_player in PhotonPlayer)
+        {
+            float Distance_m = Vector3.Distance(this.transform.position, short_player.transform.position);
+            if (Distance_m < short_distance)
+            {
+                short_distance = Distance_m;
+                Player = short_player;
+            }
         }
     }
 

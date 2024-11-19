@@ -83,13 +83,6 @@ public class TigerClass : AnimalClass
 
     public void Animal_Idle()
     {
-        if (rest_Time >= 5f)
-        {
-            rest_Time = 0;
-
-            t_state = AnimalState.Move;
-            animal_anim.SetTrigger("Move");
-        }
 
         if (Vector3.Distance(this.transform.position, Player.transform.position) < attack_area)
         {
@@ -102,6 +95,13 @@ public class TigerClass : AnimalClass
 
             t_state = AnimalState.Watch;
 
+        }
+        if (rest_Time >= 5f)
+        {
+            rest_Time = 0;
+
+            t_state = AnimalState.Move;
+            animal_anim.SetTrigger("Move");
         }
     }
     public void Animal_Move()
@@ -144,7 +144,7 @@ public class TigerClass : AnimalClass
     public void Animal_Attack()
     {
         rest_Time += Time.deltaTime;
-        if (Vector3.Distance(this.transform.position, Player.transform.position) > attack_area)
+        if (Vector3.Distance(this.transform.position, Player.transform.position) >= attack_area)
         {
             rest_Time = 0;
             t_state = AnimalState.Watch;
