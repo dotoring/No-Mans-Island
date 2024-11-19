@@ -499,7 +499,6 @@ GameObject:
   - component: {fileID: 434128168}
   - component: {fileID: 434128167}
   - component: {fileID: 434128166}
-  - component: {fileID: 434128169}
   - component: {fileID: 434128165}
   m_Layer: 0
   m_Name: XR Origin (VR)
@@ -582,33 +581,9 @@ Transform:
   m_Children:
   - {fileID: 1277932990}
   - {fileID: 773176615}
+  - {fileID: 1163789004}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!143 &434128169
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 434128164}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &437434753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,6 +1342,38 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &1163789003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1163789004}
+  m_Layer: 0
+  m_Name: Player offset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1163789004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163789003}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3773308950227797460}
+  m_Father: {fileID: 434128168}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1277932989
 GameObject:
   m_ObjectHideFlags: 0
@@ -3903,14 +3910,14 @@ Transform:
   m_GameObject: {fileID: 3773308950228162612}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.1176, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3773308950227797478}
   - {fileID: 3773308950227797498}
   - {fileID: 3773308950227797462}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1163789004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &3773308950227797462
 Transform:
@@ -4640,6 +4647,7 @@ GameObject:
   - component: {fileID: 3773308950228162613}
   - component: {fileID: 3773308950228162617}
   - component: {fileID: 3773308950228162615}
+  - component: {fileID: 3773308950228162619}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4659,6 +4667,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3aea2b3370f7f4dba56f7ea4fc9228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  _moveAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Move
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 5abbfdd7-594c-4669-af1a-ed82b5493435
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!1 &3773308950228162614
 GameObject:
   m_ObjectHideFlags: 0
@@ -4790,6 +4811,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!143 &3773308950228162619
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3773308950228162612}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1 &3773308950228162620
 GameObject:
   m_ObjectHideFlags: 0
@@ -6822,7 +6868,6 @@ SceneRoots:
   - {fileID: 437434755}
   - {fileID: 79713331}
   - {fileID: 608660571}
-  - {fileID: 3773308950227797460}
   - {fileID: 434128168}
   - {fileID: 2141281449}
   - {fileID: 432800896}
