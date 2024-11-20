@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a147d5e6b044b154383bfaac216ab7c5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 151921
+  packageName: Fuga spiders with destructible eggs and Mummy
+  packageVersion: 1.0
+  assetPath: Assets/BizulkaProduction/Spiders/SampleScene/SampleScripts/SampleMobMover.cs
+  uploadId: 325386
