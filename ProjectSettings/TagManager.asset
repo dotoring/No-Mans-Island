@@ -8,6 +8,7 @@ TagManager:
   - Land
   - Stone
   - FireWood
+  - Fire
   layers:
   - Default
   - TransparentFX

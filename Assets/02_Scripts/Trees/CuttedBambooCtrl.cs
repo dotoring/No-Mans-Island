@@ -110,7 +110,6 @@ public class CuttedBambooCtrl : InteractableObject
             //충돌시 속도가 일정 이상, 트리거를 누른 상태
             if (rb.linearVelocity.magnitude > 0.7f && isTrigger)
             {
-                Debug.Log("박히기");
                 Fix();
             }
         }
