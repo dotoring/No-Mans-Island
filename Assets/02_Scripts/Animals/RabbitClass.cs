@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class FrogClass : AnimalClass
+public class RabbitClass : AnimalClass
 {
     XRGrabInteractable xrgrab;
 
@@ -40,7 +40,7 @@ public class FrogClass : AnimalClass
     void Update()
     {
         ShortDistance();
-        FrogCheck();
+        RabbitCheck();
 
 
         if (corpse_hp <= 0)
@@ -49,7 +49,7 @@ public class FrogClass : AnimalClass
         }
     }
 
-    private void FrogCheck()
+    private void RabbitCheck()
     {
         rest_Time += Time.deltaTime;
         damage_Time += Time.deltaTime;
@@ -81,7 +81,7 @@ public class FrogClass : AnimalClass
 
     public void Animal_Idle()               // 가만히 서기      // 울음소리 내기
     {
-        if (rest_Time >= 7f)
+        if (rest_Time >= 5f)
         {
             rest_Time = 0;
 
@@ -100,18 +100,10 @@ public class FrogClass : AnimalClass
     }
     public void Animal_Move()           // 움직이기
     {
-        jump_Time += Time.deltaTime;
-        if (jump_Time <= 1.2f)
-        {
-            this.transform.Translate(Vector3.forward * 0.4f * Time.deltaTime, Space.Self);
-        }
-        else if (jump_Time > 1.5f)
-        {
-            jump_Time = 0;
-        }
+        this.transform.Translate(Vector3.forward * 0.4f * Time.deltaTime, Space.Self);
 
 
-        if (rest_Time >= 3f)
+        if (rest_Time >= 5f)
         {
             rest_Time = 0;
             jump_Time = 0;
@@ -136,15 +128,8 @@ public class FrogClass : AnimalClass
         this.transform.forward = watch_v;
 
         jump_Time += Time.deltaTime;
-        if (jump_Time <= 1.2f)
-        {
-            this.transform.Translate(Vector3.forward * 0.4f * Time.deltaTime, Space.Self);
-            animal_anim.SetTrigger("Move");
-        }
-        else if (jump_Time > 1.5f)
-        {
-            jump_Time = 0f;
-        }
+        this.transform.Translate(Vector3.forward * 0.4f * Time.deltaTime, Space.Self);
+        animal_anim.SetTrigger("Move");
 
 
 
@@ -202,8 +187,6 @@ public class FrogClass : AnimalClass
 
     private void OnCollisionEnter(Collision other)
     {
-
-
         if (other.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
         {
             GetDamage(5);

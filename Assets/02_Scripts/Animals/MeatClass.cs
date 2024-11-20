@@ -11,7 +11,7 @@ public class MeatClass : FoodClass
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InitData();
+
         fullness = 3;
         Reduce_Hp = 5;
         cookTime = 10f;
@@ -49,13 +49,5 @@ public class MeatClass : FoodClass
         Destroy(this.gameObject, 0.1f);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.name == "Player Mouse")
-        {
-            GetFullness(0);
-            ReduceHP(5);
-            Destroy(this.gameObject);
-        }
-    }
+
 }

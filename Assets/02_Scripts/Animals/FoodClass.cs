@@ -2,6 +2,12 @@ using UnityEngine;
 
 public class FoodClass : MonoBehaviour
 {
+    //playerClass pc;
+    //pc.Eat(int val);
+
+
+    public int baseHp;
+    int curHp;
     public int fullness;
     public int Reduce_Hp;
     public float cookTime;
@@ -11,23 +17,34 @@ public class FoodClass : MonoBehaviour
 
     public void InitData()
     {
-        fullness = 0;
-        Reduce_Hp = 0;
+
         cookTime = 0f;
-        infireTime = 0f;
+
     }
 
-    public void GetFullness(int PlayerFullness)
+    public void GetFullness(int fullness_val)
     {
-        PlayerFullness += fullness;
-        print($"포만감이 {fullness} 만큼 올랐습니다.");
+        ////pc.Eat(fullness_val);
+        print($"포만감이 {fullness_val} 만큼 올랐습니다.");
     }
 
-    public void ReduceHP(int PlayerHP)
+    public void ReduceHP(int Reduce_Hp_val)
     {
-        PlayerHP -= Reduce_Hp;
+        //pc.TakeDamage(Reduce_Hp_val);
 
-        print($"체력이 {Reduce_Hp} 만큼 감소했습니다.");
+        print($"체력이 {Reduce_Hp_val} 만큼 감소했습니다.");
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+
+
+        if (other.gameObject.name == "Player Mouse")
+        {
+            GetFullness(fullness);
+            ReduceHP(Reduce_Hp);
+            Destroy(this.gameObject);
+        }
     }
 
 

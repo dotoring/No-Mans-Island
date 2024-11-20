@@ -12,7 +12,7 @@ public enum AnimalState
     Die
 }
 
-public class AnimalClass : FoodClass
+public class AnimalClass : MonoBehaviour
 {
     public int animal_hp;               // 동물의 체력
     public int animal_atk;              // 동물의 공격력
@@ -55,7 +55,7 @@ public class AnimalClass : FoodClass
 
         t_state = AnimalState.Idle;
 
-        AddListPlayer();
+        FirstAddListPlayer();
         ShortDistance();
 
 
@@ -77,13 +77,16 @@ public class AnimalClass : FoodClass
         }
     }
 
-    public void AddListPlayer()                 // Player 들을 PhotonPlayer list 에 추가
+    public void FirstAddListPlayer()                 // Player 들을 PhotonPlayer list 에 추가
     {
         foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
         {
             PhotonPlayer.Add(player);
         }
     }
+
+
+
 
     public void ShortDistance()                 // Player와의 거리를 계산한 뒤, 젤 가까운 Player를 타겟으로 설정
     {
