@@ -6,11 +6,10 @@ using UnityEngine.InputSystem;
 
 public class HandAnimation : MonoBehaviour
 {
-    [SerializeField]private bool isleft;
-    //public InputActionProperty leftPinch;
+    public InputActionProperty leftPinch;
     public InputActionProperty leftGrip;
 
-    //public InputActionProperty rightPinch;
+    public InputActionProperty rightPinch;
     public InputActionProperty rightGrip;
 
     public Animator lanim;
@@ -19,17 +18,17 @@ public class HandAnimation : MonoBehaviour
     void Update()
     {
         
-            //float leftTriggerValue = leftPinch.action.ReadValue<float>();
-            //animator.SetFloat("Left Trigger", leftTriggerValue);
+            float leftTriggerValue = leftPinch.action.ReadValue<float>();
+            lanim.SetFloat("TriggerL", leftTriggerValue);
 
             float leftGripValue = leftGrip.action.ReadValue<float>();
-            lanim.SetFloat("TriggerL", leftGripValue);
+            lanim.SetFloat("GripL", leftGripValue);
        
-            //float rightTriggerValue = rightPinch.action.ReadValue<float>();
-            //animator.SetFloat("Right Trigger", rightTriggerValue);
+            float rightTriggerValue = rightPinch.action.ReadValue<float>();
+            ranim.SetFloat("TriggerR", rightTriggerValue);
 
             float rightGripValue = rightGrip.action.ReadValue<float>();
-            ranim.SetFloat("TriggerR", rightGripValue);
+            ranim.SetFloat("GripR", rightGripValue);
         
     }
 }

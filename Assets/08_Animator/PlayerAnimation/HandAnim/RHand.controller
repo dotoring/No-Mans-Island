@@ -15,6 +15,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: GripR
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -94,16 +100,32 @@ BlendTree:
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 1487166750395223977, guid: efa35d749b82b9b44a276adb279bc0d7, type: 3}
-    m_Threshold: 1
-    m_Position: {x: 1, y: 1}
+    m_Threshold: 0.33333334
+    m_Position: {x: 0, y: 1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Trigger
     m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: -6432295774376486302, guid: e85d9d230863c214a8b111b3aff7bc9c, type: 3}
+    m_Threshold: 0.6666667
+    m_Position: {x: 1, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: TriggerR
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: -8511937912342099366, guid: dc816dd856f31a44697f3b7a2c2d430a, type: 3}
+    m_Threshold: 1
+    m_Position: {x: 1, y: 1}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: TriggerR
+    m_Mirror: 0
   m_BlendParameter: TriggerR
-  m_BlendParameterY: ZeroVal
+  m_BlendParameterY: GripR
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
-  m_BlendType: 0
+  m_BlendType: 3

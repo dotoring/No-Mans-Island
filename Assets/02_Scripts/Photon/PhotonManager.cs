@@ -12,15 +12,12 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     [SerializeField] private string nickname = " ";
 
 
-
-
-
     public static PhotonManager Instance
     {
         get
         {
             if(instance == null)
-            {
+            { 
                 return null;
             }
             return instance;
