@@ -4668,13 +4668,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  _moveAction:
+  moveAction:
     m_UseReference: 0
     m_Action:
       m_Name: Move
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 5abbfdd7-594c-4669-af1a-ed82b5493435
+      m_Id: b3f2fd25-df09-4732-a0d7-2cd922618c8e
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
