@@ -31,9 +31,9 @@ public class PlayerController : MonoBehaviour
        
         //this.transform.forward=Camera.main.transform.forward;
         Vector3 temp = Camera.main.transform.eulerAngles;
-        print("temp1 :"+ temp);
+       // print("temp1 :"+ temp);
         temp.x = temp.z=0;
-        print("temp2 :" + temp);
+        //print("temp2 :" + temp);
      
         this.transform.eulerAngles = temp;
         

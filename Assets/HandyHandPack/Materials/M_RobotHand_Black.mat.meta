@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d1815c0588e47c34c9503859cfe2fe0e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 200607
+  packageName: VR Hand Models Mega Pack - Handy Hands ( Left & Right )
+  packageVersion: 1.1
+  assetPath: Assets/HandyHandPack/Materials/M_RobotHand_Black.mat
+  uploadId: 511033
