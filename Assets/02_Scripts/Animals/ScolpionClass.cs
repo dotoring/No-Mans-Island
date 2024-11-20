@@ -29,19 +29,22 @@ public class ScolpionClass : AnimalClass
 
     }
 
+    public override void InitStat()
+    {
+        base.InitStat();
+        animal_anim = this.GetComponentInChildren<Animator>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        TigerCheck();
+        ScolpionCheck();
 
 
-        if (corpse_hp <= 0)
-        {
-            ChangeToMeat();
-        }
+
     }
 
-    private void TigerCheck()
+    private void ScolpionCheck()
     {
         rest_Time += Time.deltaTime;
         damage_Time += Time.deltaTime;

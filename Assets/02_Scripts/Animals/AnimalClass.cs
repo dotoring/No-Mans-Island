@@ -39,7 +39,7 @@ public class AnimalClass : MonoBehaviour
 
 
 
-    public void InitStat()              // 스탯 초기화
+    public virtual void InitStat()              // 스탯 초기화
     {
         animal_hp = 0;
         animal_atk = 0;
