@@ -3,6 +3,7 @@ using UnityEngine;
 public class TreeCtrl : InteractableObject
 {
     [SerializeField] GameObject pref;
+    [SerializeField] Transform[] spawnPoints;
 
     public override void TakeDamage(int dmg)
     {
@@ -21,6 +22,9 @@ public class TreeCtrl : InteractableObject
 
     public void SpawnWood()
     {
-        Instantiate(pref, transform.position, Quaternion.identity);
+        for(int i = 0; i < spawnPoints.Length; i++)
+        {
+            Instantiate(pref, spawnPoints[i].position, Quaternion.identity);
+        }
     }
 }

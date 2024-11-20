@@ -3,6 +3,7 @@ using UnityEngine;
 public class BambooCtrl : InteractableObject
 {
     [SerializeField] GameObject pref;
+    [SerializeField] Transform spawnPoint;
 
     public override void TakeDamage(int dmg)
     {
@@ -21,6 +22,6 @@ public class BambooCtrl : InteractableObject
 
     public void SpawnBamboo()
     {
-        Instantiate(pref, transform.position, transform.rotation);
+        Instantiate(pref, spawnPoint.position, transform.rotation);
     }
 }
