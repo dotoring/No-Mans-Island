@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 7722679930030298213}
   - component: {fileID: 1966044207508364913}
   m_Layer: 0
-  m_Name: TesPalmTree
+  m_Name: PalmTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
