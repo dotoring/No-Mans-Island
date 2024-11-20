@@ -1,9 +1,10 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class FrogClass : AnimalClass
 {
-    //XRGrabInteractable xrgrab;
+    XRGrabInteractable xrgrab;
 
 
     protected float rest_Time;
@@ -22,14 +23,16 @@ public class FrogClass : AnimalClass
         corpse_hp = 30;
         is_alive = true;
 
-
+        InitData();
+        fullness = 3;
+        Reduce_Hp = 5;
 
 
 
         rest_Time = 0f;
         jump_Time = 0f;
-        //xrgrab = GetComponent<XRGrabInteractable>();
-        //xrgrab.enabled = false;
+        xrgrab = GetComponent<XRGrabInteractable>();
+        xrgrab.enabled = false;
 
 
 
@@ -72,7 +75,7 @@ public class FrogClass : AnimalClass
                 break;
             case AnimalState.Die:
                 Animal_Die();
-                //xrgrab.enabled = true;
+                xrgrab.enabled = true;
                 break;
         }
     }
@@ -164,17 +167,13 @@ public class FrogClass : AnimalClass
 
     public void Animal_Damage()
     {
-        if (damage_Time >= 5f)
-        {
-            damage_Time = 0;
-            animal_anim.SetTrigger("Damage");
-        }
+
 
         if (animal_hp <= 0) t_state = AnimalState.Die;
         else
         {
-            t_state = AnimalState.Idle;
-            animal_anim.SetTrigger("Idle");
+            t_state = AnimalState.Watch;
+
         }
 
 
@@ -186,6 +185,18 @@ public class FrogClass : AnimalClass
     {
         animal_anim.SetTrigger("Die");
         Die();
+
+
+    }
+
+    public override void GetDamage(int damage)
+    {
+        if (is_alive)
+        {
+            animal_hp -= damage;
+            print($"{damage} 만큼 피해를 입었습니다. 남은 체력은 {animal_hp} 입니다.");
+
+        }
     }
 
 
@@ -198,8 +209,16 @@ public class FrogClass : AnimalClass
             GetDamage(5);
             t_state = AnimalState.Damage;
         }
+    }
 
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (is_alive == false && other.gameObject.name == "Player Mouse")
+        {
+            GetFullness(0);
+            ReduceHP(5);
+            Destroy(this.gameObject);
+        }
     }
 
 

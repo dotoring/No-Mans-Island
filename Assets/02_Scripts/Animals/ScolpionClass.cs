@@ -18,6 +18,7 @@ public class ScolpionClass : AnimalClass
         animal_atk = 10;
         corpse_hp = 30;
         is_alive = true;
+        attack_area = 2.5f;
 
 
 

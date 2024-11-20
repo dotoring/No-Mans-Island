@@ -12,7 +12,7 @@ public enum AnimalState
     Die
 }
 
-public class AnimalClass : MonoBehaviour
+public class AnimalClass : FoodClass
 {
     public int animal_hp;               // 동물의 체력
     public int animal_atk;              // 동물의 공격력
@@ -62,7 +62,7 @@ public class AnimalClass : MonoBehaviour
 
     }
 
-    public void GetDamage(int damage)   // 데미지를 받는다.
+    public virtual void GetDamage(int damage)   // 데미지를 받는다.
     {
         if (is_alive)
         {
