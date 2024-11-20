@@ -2,14 +2,15 @@ using Unity.VisualScripting;
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.OpenXR.Input;
 
 public class CuttedBambooCtrl : InteractableObject
 {
     bool isBuildReady;
-    bool isGrabed;
-    bool isFixed;
+    int grabCount;
+    public bool isFixed;
     bool isTrigger;
     Rigidbody rb;
     XRGrabInteractable interactable;
@@ -42,45 +43,37 @@ public class CuttedBambooCtrl : InteractableObject
 
         interactable.selectEntered.AddListener((var) =>
         {
-            Debug.Log("잡았다");
-            Debug.Log(var);
-
-            isGrabed = true;
+            grabCount++;
         });
 
         interactable.selectExited.AddListener((var) =>
         {
-            Debug.Log("놨다");
-            Debug.Log(var);
-            if(isFixed)
-            {
-                Fix();
-            }
-            isGrabed = false;
+            grabCount--;
         });
     }
 
     public override void TakeDamage(int dmg) 
     {
+        //건설 준비 완료시
         if(isBuildReady)
         {
             Fix();
         }
     }
 
+    //고정 시키는 함수
     void Fix()
     {
-        Debug.Log("Fix");
-        rb.useGravity = false;
+        //물리 안받기
         rb.isKinematic = true;
         isFixed = true;
-
-        interactable.enabled = false;
+        //그랩 상호작용 레이어 변경해서, 잡기 막기
+        interactable.interactionLayers = 1 << InteractionLayerMask.NameToLayer("Fixed");
     }
 
     void LeftTriggerEnter(InputAction.CallbackContext context)
     {
-        if(isGrabed)
+        if(grabCount > 0)
         {
             isTrigger = true;
         }
@@ -88,7 +81,7 @@ public class CuttedBambooCtrl : InteractableObject
 
     void RightTriggerEnter(InputAction.CallbackContext context)
     {
-        if (isGrabed)
+        if (grabCount > 0)
         {
             isTrigger = true;
         }
@@ -96,7 +89,7 @@ public class CuttedBambooCtrl : InteractableObject
 
     void LeftTriggerExit(InputAction.CallbackContext context)
     {
-        if (isGrabed)
+        if (grabCount > 0)
         {
             isTrigger = false;
         }
@@ -104,7 +97,7 @@ public class CuttedBambooCtrl : InteractableObject
 
     void RightTriggerExit(InputAction.CallbackContext context)
     {
-        if (isGrabed)
+        if (grabCount > 0)
         {
             isTrigger = false;
         }
@@ -114,9 +107,10 @@ public class CuttedBambooCtrl : InteractableObject
     {
         if (collision.gameObject.CompareTag("Land"))
         {
-            //충돌시 속도가 일정 이상일 때만 작동
+            //충돌시 속도가 일정 이상, 트리거를 누른 상태
             if (rb.linearVelocity.magnitude > 0.7f && isTrigger)
             {
+                Debug.Log("박히기");
                 Fix();
             }
         }
@@ -124,6 +118,7 @@ public class CuttedBambooCtrl : InteractableObject
 
     private void OnCollisionStay(Collision collision)
     {
+        //건설 가능 물체와 접촉중이면
         if (collision.gameObject.CompareTag("CanBuild"))
         {
             isBuildReady = true;
@@ -131,6 +126,7 @@ public class CuttedBambooCtrl : InteractableObject
     }
     private void OnCollisionExit(Collision collision)
     {
+        //건설 가능 물체와 떨어지면
         if (collision.gameObject.CompareTag("CanBuild"))
         {
             isBuildReady = false;

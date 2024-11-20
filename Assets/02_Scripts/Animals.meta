@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/01_Scenes/SJHTestScene.unity.meta
+guid: 41ed8b281bd489b48be763ee07e74c29
+========
 guid: ab1203c8ceedb4a47b7133db145601b9
 folderAsset: yes
+>>>>>>>> 9b8957fd0ae1166caabca437c1eb6f6ebd14c91f:Assets/02_Scripts/Animals.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

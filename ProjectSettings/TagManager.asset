@@ -7,6 +7,7 @@ TagManager:
   - CanBuild
   - Land
   - Stone
+  - FireWood
   layers:
   - Default
   - TransparentFX
