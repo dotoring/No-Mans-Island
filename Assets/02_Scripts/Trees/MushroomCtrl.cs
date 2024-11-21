@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class MushroomCtrl : MonoBehaviour
+public class MushroomCtrl : FoodClass
 {
     Rigidbody rb;
     XRGrabInteractable interactable;
