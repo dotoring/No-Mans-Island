@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: fb25c902d78dc6b4299a01e765707fdf
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 165249
+  packageName: AssassinAri
+  packageVersion: 1.0
+  assetPath: Assets/AssassinAri/Scripts/ChangeMesh.cs
+  uploadId: 358786
