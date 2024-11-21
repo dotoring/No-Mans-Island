@@ -6373,6 +6373,7 @@ GameObject:
   - component: {fileID: 7007253581613394081}
   - component: {fileID: 6904292657756213701}
   - component: {fileID: 8065394555556584644}
+  - component: {fileID: 8065394555556584645}
   m_Layer: 0
   m_Name: Left Controller
   m_TagString: Untagged
@@ -9630,6 +9631,7 @@ GameObject:
   - component: {fileID: 6323200867752254483}
   - component: {fileID: 2742956481647300334}
   - component: {fileID: 8344359957366107680}
+  - component: {fileID: 8344359957366107681}
   m_Layer: 0
   m_Name: Right Controller
   m_TagString: Untagged
@@ -9722,6 +9724,22 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+--- !u!114 &8065394555556584645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4123158525541192295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!114 &8087053012852920607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10253,6 +10271,22 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+--- !u!114 &8344359957366107681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8031850726900037180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!4 &8352174262459222445
 Transform:
   m_ObjectHideFlags: 0
