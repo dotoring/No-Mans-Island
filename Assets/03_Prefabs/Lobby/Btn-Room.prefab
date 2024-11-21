@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6676866908980941561}
   - component: {fileID: 7487228791052476570}
   - component: {fileID: 110826964452261659}
+  - component: {fileID: 6169185892403277775}
   m_Layer: 5
   m_Name: Btn-Room
   m_TagString: Untagged
@@ -121,6 +122,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6169185892403277775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431240695523409590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49ce0f0174f3144481393890f29963e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3449383126824327356
 GameObject:
   m_ObjectHideFlags: 0

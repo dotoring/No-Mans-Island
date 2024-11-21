@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum AnimalState
@@ -30,17 +31,26 @@ public class AnimalClass : MonoBehaviour
     public float find_area;
     public float attack_area;
     public float attack_time;
+    public float short_distance = 50.0f;
+    public bool is_Sticked;
 
     public AnimalState t_state = new AnimalState();
 
+    public List<GameObject> PhotonPlayer = new List<GameObject>();
 
 
-    public void InitStat()              // 스탯 초기화
+    //PlayerClass pc;
+
+
+
+    public virtual void InitStat()              // 스탯 초기화
     {
         animal_hp = 0;
         animal_atk = 0;
         corpse_hp = 0;
+
         is_alive = true;
+        is_Sticked = false;
 
         find_area = 3f;
         attack_area = 2f;
@@ -48,12 +58,17 @@ public class AnimalClass : MonoBehaviour
 
         animal_rb = this.GetComponent<Rigidbody>();
         animal_anim = this.GetComponent<Animator>();
-        Player = GameObject.Find("Player");
+
         t_state = AnimalState.Idle;
+
+        FirstAddListPlayer();
+        ShortDistance();
+
+
 
     }
 
-    public void GetDamage(int damage)   // 데미지를 받는다.
+    public virtual void GetDamage(int damage)   // 데미지를 받는다.
     {
         if (is_alive)
         {
@@ -68,9 +83,34 @@ public class AnimalClass : MonoBehaviour
         }
     }
 
-    public void Hit(int other_hp)       // 데미지를 가한다.
+    public void FirstAddListPlayer()                 // Player 들을 PhotonPlayer list 에 추가
     {
-        other_hp -= animal_atk;
+        foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            PhotonPlayer.Add(player);
+        }
+    }
+
+
+
+
+    public void ShortDistance()                 // Player와의 거리를 계산한 뒤, 젤 가까운 Player를 타겟으로 설정
+    {
+        foreach (GameObject short_player in PhotonPlayer)
+        {
+            float Distance_m = Vector3.Distance(this.transform.position, short_player.transform.position);
+            if (Distance_m < short_distance)
+            {
+                short_distance = Distance_m;
+                Player = short_player;
+            }
+        }
+    }
+
+    public void Hit(int animal_atk_val)       // 데미지를 가한다.
+    {
+        //pc.TakeDamage(animal_atk_val);
+        print($"{this.transform.root.gameObject.name} 이가 {Player.gameObject.name} 를 공격");
     }
 
     public void Die()                   // 시체가 된다.     // 시체의 체력이 동물의 체력을 대체한다.

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5571879532294658504}
   - component: {fileID: 5998508578282598614}
   - component: {fileID: 7600371828092144150}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Distortion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4853,7 +4853,7 @@ GameObject:
   - component: {fileID: 6161074018837576113}
   - component: {fileID: 5793643920655801168}
   - component: {fileID: 8384152351784451887}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Fire Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10028,7 +10028,7 @@ GameObject:
   - component: {fileID: 3514345463274407941}
   - component: {fileID: 2149539757507075833}
   - component: {fileID: 6278985597821743331}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14882,7 +14882,7 @@ GameObject:
   - component: {fileID: 3653095393144309204}
   - component: {fileID: 511798532151633070}
   - component: {fileID: 635616925513010130}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: VFX_Fire_Floor_01_Simple
   m_TagString: Fire
   m_Icon: {fileID: 0}
