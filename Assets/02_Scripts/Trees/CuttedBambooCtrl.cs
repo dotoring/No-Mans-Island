@@ -1,3 +1,4 @@
+using NUnit.Framework.Internal;
 using Unity.VisualScripting;
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
@@ -16,6 +17,8 @@ public class CuttedBambooCtrl : InteractableObject
     XRGrabInteractable interactable;
     [SerializeField] private InputActionProperty leftTriggerAction;
     [SerializeField] private InputActionProperty rightTriggerAction;
+
+    [SerializeField] GameObject contackPoints;
 
     private void OnEnable()
     {
@@ -41,11 +44,11 @@ public class CuttedBambooCtrl : InteractableObject
         rb = GetComponent<Rigidbody>();
         interactable = GetComponent<XRGrabInteractable>();
 
+        //현재 플레이어가 잡고있는지 체크하는 코드
         interactable.selectEntered.AddListener((var) =>
         {
             grabCount++;
         });
-
         interactable.selectExited.AddListener((var) =>
         {
             grabCount--;
@@ -67,10 +70,11 @@ public class CuttedBambooCtrl : InteractableObject
         //물리 안받기
         rb.isKinematic = true;
         isFixed = true;
-        //그랩 상호작용 레이어 변경해서, 잡기 막기
+        //그랩 상호작용 레이어 변경으로 잡을 수 없도록 변경
         interactable.interactionLayers = 1 << InteractionLayerMask.NameToLayer("Fixed");
     }
 
+    //트리거 입력 체크 함수들
     void LeftTriggerEnter(InputAction.CallbackContext context)
     {
         if(grabCount > 0)
@@ -78,7 +82,6 @@ public class CuttedBambooCtrl : InteractableObject
             isTrigger = true;
         }
     }
-
     void RightTriggerEnter(InputAction.CallbackContext context)
     {
         if (grabCount > 0)
@@ -86,7 +89,6 @@ public class CuttedBambooCtrl : InteractableObject
             isTrigger = true;
         }
     }
-
     void LeftTriggerExit(InputAction.CallbackContext context)
     {
         if (grabCount > 0)
@@ -94,7 +96,6 @@ public class CuttedBambooCtrl : InteractableObject
             isTrigger = false;
         }
     }
-
     void RightTriggerExit(InputAction.CallbackContext context)
     {
         if (grabCount > 0)
@@ -105,12 +106,12 @@ public class CuttedBambooCtrl : InteractableObject
 
     private void OnCollisionEnter(Collision collision)
     {
+        //바닥에 꽂을 수 있도록 해주는 코드
         if (collision.gameObject.CompareTag("Land"))
         {
             //충돌시 속도가 일정 이상, 트리거를 누른 상태
             if (rb.linearVelocity.magnitude > 0.7f && isTrigger)
             {
-                Debug.Log("박히기");
                 Fix();
             }
         }
@@ -118,16 +119,39 @@ public class CuttedBambooCtrl : InteractableObject
 
     private void OnCollisionStay(Collision collision)
     {
-        //건설 가능 물체와 접촉중이면
+        //건설 가능 물체와 닿으면
         if (collision.gameObject.CompareTag("CanBuild"))
         {
-            isBuildReady = true;
+            //콜리더 접촉 지점에 돌 감지 트리거 콜리더를 세팅
+            contackPoints.SetActive(true);
+            ContactPoint contactPoint = collision.GetContact(0);
+            contackPoints.transform.position = contactPoint.point;
         }
     }
     private void OnCollisionExit(Collision collision)
     {
         //건설 가능 물체와 떨어지면
         if (collision.gameObject.CompareTag("CanBuild"))
+        {
+            //감지 콜리더 모두 비활성화, 건설 준비 해제
+            contackPoints.SetActive(false);
+            isBuildReady = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //콜리더 접촉 지점에 돌이 들어오면 건설준비
+        if (other.CompareTag("Stone"))
+        {
+            isBuildReady = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        //콜리더 접촉 지점에서 돌이 나가면 건설준비 해제
+        if (other.CompareTag("Stone"))
         {
             isBuildReady = false;
         }
