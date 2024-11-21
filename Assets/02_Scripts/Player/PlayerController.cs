@@ -1,8 +1,10 @@
 using Photon.Pun;
-using UnityEditor.Animations;
+using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,32 +15,55 @@ public class PlayerController : MonoBehaviour
     private Vector3 rotV;
     [SerializeField]private PhotonView pv;
     private Rigidbody rb;
-
+    [SerializeField] private GameObject[] models;
 
     private int hasstickX = Animator.StringToHash("stickX");
     private int hasstickY = Animator.StringToHash("stickY");
 
     private void Start()
-    {   
-        
+    {
+
         //rb.isKinematic = !pv.IsMine;
         if (pv.IsMine)
         {
-            Transform tr =GameObject.Find("XR Origin (VR)").transform;
+            models[0].SetActive(false);
+            models[1].SetActive(false);
+            Transform tr = GameObject.Find("XR Origin (VR)").transform;
             Vector3 temp = this.transform.position;
             temp.y = 0;
             this.transform.parent = tr;
-            this.transform.position = new Vector3(0, 1.7f, 0);
-            tr.position= temp;
+            this.transform.position = new Vector3(0, 0f, 0);
+            tr.position = temp;
+
         }
+         HandOff(pv.IsMine);
+        
     }
 
+    //NEAR-FAR, CONTROLLER에 INPUTACTION,TRACKER 내꺼 아니면 끄기
+    private void HandOff(bool isMine)
+    {
+        //this.transform.Find("Left Controller").GetComponent<ControllerInputActionManager>().enabled = false;
+        //this.transform.Find("Left Controller").GetComponent<TrackedPoseDriver>().enabled = false;
+        //this.transform.Find("Left_NearFarInteractor").gameObject.SetActive(false);
+        //왼손
+        this.transform.GetChild(0).GetComponent<ControllerInputActionManager>().enabled = isMine;
+        this.transform.GetChild(0).GetComponent<TrackedPoseDriver>().enabled = isMine;
+        this.transform.GetChild(0).GetChild(2).gameObject.SetActive(isMine);
+        this.transform.GetChild(0).GetChild(0).GetComponent<Animator>().enabled = isMine;
+        //오른손
+        this.transform.GetChild(1).GetComponent<ControllerInputActionManager>().enabled = isMine;
+        this.transform.GetChild(1).GetComponent<TrackedPoseDriver>().enabled = isMine;
+        this.transform.GetChild(1).GetChild(2).gameObject.SetActive(isMine);
+        this.transform.GetChild(1).GetChild(0).GetComponent<Animator>().enabled = isMine;
+    }
 
 
     private void Update()
     {
         if (!pv.IsMine)
             return;
+
         //플레이어 이동 애니메이션 연결 적용중
         inputVec = moveAction.action.ReadValue<Vector2>();
         //rotQ = rotHead.action.ReadValue<Quaternion>();
