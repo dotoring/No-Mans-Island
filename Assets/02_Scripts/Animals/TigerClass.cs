@@ -17,7 +17,7 @@ public class TigerClass : AnimalClass
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
 
         InitStat();
@@ -36,10 +36,13 @@ public class TigerClass : AnimalClass
 
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
         TigerCheck();
+
 
 
         if (corpse_hp <= 0)
@@ -51,7 +54,7 @@ public class TigerClass : AnimalClass
     private void TigerCheck()
     {
         rest_Time += Time.deltaTime;
-        damage_Time += Time.deltaTime;
+
 
         switch (t_state)
         {
@@ -83,14 +86,14 @@ public class TigerClass : AnimalClass
 
     public void Animal_Idle()
     {
-        if (rest_Time >= 5f)
+
+        if (rest_Time >= 10.0f)
         {
             rest_Time = 0;
 
             t_state = AnimalState.Move;
             animal_anim.SetTrigger("Move");
         }
-
         if (Vector3.Distance(this.transform.position, Player.transform.position) < attack_area)
         {
             t_state = AnimalState.Attack;
@@ -130,7 +133,7 @@ public class TigerClass : AnimalClass
         watch_v.y = 0;
         this.transform.forward = watch_v;
 
-        if (Vector3.Distance(this.transform.position, Player.transform.position) < attack_area)
+        if (Vector3.Distance(this.transform.position, Player.transform.position) <= attack_area)
         {
             t_state = AnimalState.Attack;
 
@@ -143,30 +146,33 @@ public class TigerClass : AnimalClass
     }
     public void Animal_Attack()
     {
-        rest_Time += Time.deltaTime;
+
+        if (rest_Time >= attack_time)
+        {
+            rest_Time = 0;
+            animal_anim.SetTrigger("Attack");
+
+        }
+
+
+
+
         if (Vector3.Distance(this.transform.position, Player.transform.position) > attack_area)
         {
             rest_Time = 0;
             t_state = AnimalState.Watch;
-
-
         }
         else
         {
-            if (rest_Time >= attack_time)
-            {
-                animal_anim.SetTrigger("Attack");
-                rest_Time = 0;
-            }
+            animal_anim.SetTrigger("Idle");
         }
+
     }
+
+
     public void Animal_Damage()
     {
-        if (damage_Time >= 5f)
-        {
-            damage_Time = 0;
-            animal_anim.SetTrigger("Damage");
-        }
+
 
         if (animal_hp <= 0) t_state = AnimalState.Die;
         else
