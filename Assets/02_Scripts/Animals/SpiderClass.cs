@@ -3,12 +3,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-
-public class TigerClass : AnimalClass
+public class SpiderClass : AnimalClass
 {
-
-
-
     //XRGrabInteractable xrgrab;
 
 
@@ -41,7 +37,7 @@ public class TigerClass : AnimalClass
     // Update is called once per frame
     void Update()
     {
-        TigerCheck();
+        SpiderCheck();
 
 
 
@@ -51,7 +47,7 @@ public class TigerClass : AnimalClass
         }
     }
 
-    private void TigerCheck()
+    private void SpiderCheck()
     {
         rest_Time += Time.deltaTime;
 

@@ -183,6 +183,7 @@ public class FrogClass : AnimalClass
     {
         animal_anim.SetTrigger("Die");
         Die();
+        this.GetComponent<BoxCollider>().enabled = false;
 
 
     }

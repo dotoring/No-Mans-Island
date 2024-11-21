@@ -38,6 +38,9 @@ public class AnimalClass : MonoBehaviour
     public List<GameObject> PhotonPlayer = new List<GameObject>();
 
 
+    //PlayerClass pc;
+
+
 
     public virtual void InitStat()              // 스탯 초기화
     {
@@ -101,9 +104,10 @@ public class AnimalClass : MonoBehaviour
         }
     }
 
-    public void Hit(int other_hp)       // 데미지를 가한다.
+    public void Hit(int animal_atk_val)       // 데미지를 가한다.
     {
-        other_hp -= animal_atk;
+        //pc.TakeDamage(animal_atk_val);
+        print($"{this.transform.root.gameObject.name} 이가 {Player.gameObject.name} 를 공격");
     }
 
     public void Die()                   // 시체가 된다.     // 시체의 체력이 동물의 체력을 대체한다.

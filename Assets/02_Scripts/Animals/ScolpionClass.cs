@@ -30,11 +30,7 @@ public class ScolpionClass : AnimalClass
 
     }
 
-    public override void InitStat()
-    {
-        base.InitStat();
-        animal_anim = this.GetComponentInChildren<Animator>();
-    }
+
 
     // Update is called once per frame
     void Update()
@@ -88,7 +84,7 @@ public class ScolpionClass : AnimalClass
             animal_anim.SetTrigger("Move");
         }
 
-        if (Vector3.Distance(this.transform.position, Player.transform.position) < attack_area)
+        if (Vector3.Distance(this.transform.position, Player.transform.position) <= attack_area)
         {
             t_state = AnimalState.Attack;
 
@@ -127,7 +123,7 @@ public class ScolpionClass : AnimalClass
         watch_v.y = 0;
         this.transform.forward = watch_v;
 
-        if (Vector3.Distance(this.transform.position, Player.transform.position) < attack_area)
+        if (Vector3.Distance(this.transform.position, Player.transform.position) <= attack_area)
         {
             t_state = AnimalState.Attack;
 
@@ -140,21 +136,24 @@ public class ScolpionClass : AnimalClass
     }
     public void Animal_Attack()
     {
-        rest_Time += Time.deltaTime;
+        if (rest_Time >= attack_time)
+        {
+            rest_Time = 0;
+            animal_anim.SetTrigger("Attack");
+            print($"{this.gameObject.name} 이가 {Player.gameObject.name} 를 공격");
+        }
+
+
+
+
         if (Vector3.Distance(this.transform.position, Player.transform.position) > attack_area)
         {
             rest_Time = 0;
             t_state = AnimalState.Watch;
-
-
         }
         else
         {
-            if (rest_Time >= attack_time)
-            {
-                animal_anim.SetTrigger("Attack");
-                rest_Time = 0;
-            }
+            animal_anim.SetTrigger("Idle");
         }
     }
     public void Animal_Damage()
