@@ -113,15 +113,21 @@ public class PhotonManager : MonoBehaviourPunCallbacks
                 }
                 continue;
             }
-
-            //새로 생성된 룸, 변경된 경우 로직 처리
-            //처음 생성된 룸(Dictionary 검색했을 때 결과가 없을 경우)
+            //룸리스트에는 있는데 dic에 없을 때 (신규룸)
             if (roomDict.ContainsKey(room.Name) == false)
             {
-                //room prefab 생성
                 var _room = Instantiate(roomPrefab, contentTr);
+                _room.GetComponent<RoomData>().RoomInfo = room;
                 roomDict.Add(room.Name, _room);
             }
+            //이미 있는데 숫자가 변했을 경우
+            if (roomDict.ContainsKey(room.Name))
+            {
+                if (roomDict[room.Name].GetComponent<RoomData>().RoomInfo.PlayerCount == room.PlayerCount)
+                    continue;
+                roomDict[room.Name].GetComponent<RoomData>().RoomInfo = room;
+            }
+         
         }//foreach room
 
     }//OnRoomListUpdate
