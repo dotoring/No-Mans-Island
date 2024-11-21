@@ -17,10 +17,10 @@ GameObject:
   - component: {fileID: 5649856011304607757}
   m_Layer: 0
   m_Name: RawMeat
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3449710072723364316
 Transform:
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 1
   m_DistanceCalculationMode: 1
-  m_SelectMode: 0
+  m_SelectMode: 1
   m_FocusMode: 1
   m_CustomReticle: {fileID: 0}
   m_AllowGazeInteraction: 0
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -272,9 +272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b60b15024c8ab94d8b3a89e94827700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHp: 0
-  fullness: 0
+  fullness: 10
+  thirst: 0
   Reduce_Hp: 0
-  cookTime: 0
-  infireTime: 0
+  cookTime: 5
+  is_Sticked: 0
   roast: {fileID: 1088307825180922503, guid: 7ad9942c9c5eff7409d126f3102f9b43, type: 3}

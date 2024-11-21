@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8282274613134134351}
   m_Layer: 0
-  m_Name: PeeledCoconuts
+  m_Name: CuttedCoconuts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
