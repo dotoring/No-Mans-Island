@@ -6,12 +6,20 @@ public class FoodClass : MonoBehaviour
     //pc.Eat(int val);
 
 
+
+
     public int baseHp;
     int curHp;
     public int fullness;
     public int Reduce_Hp;
     public float cookTime;
     public float infireTime;
+    public bool is_Sticked;
+
+
+
+
+
 
 
 
@@ -19,8 +27,13 @@ public class FoodClass : MonoBehaviour
     {
 
         cookTime = 0f;
+        is_Sticked = false;
+
+
 
     }
+
+
 
     public void GetFullness(int fullness_val)
     {
@@ -45,7 +58,10 @@ public class FoodClass : MonoBehaviour
             ReduceHP(Reduce_Hp);
             Destroy(this.gameObject);
         }
+
     }
+
+
 
 
 }

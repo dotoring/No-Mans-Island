@@ -32,6 +32,7 @@ public class AnimalClass : MonoBehaviour
     public float attack_area;
     public float attack_time;
     public float short_distance = 50.0f;
+    public bool is_Sticked;
 
     public AnimalState t_state = new AnimalState();
 
@@ -47,7 +48,9 @@ public class AnimalClass : MonoBehaviour
         animal_hp = 0;
         animal_atk = 0;
         corpse_hp = 0;
+
         is_alive = true;
+        is_Sticked = false;
 
         find_area = 3f;
         attack_area = 2f;
