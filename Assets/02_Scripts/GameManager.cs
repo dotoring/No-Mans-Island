@@ -8,19 +8,14 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     IEnumerator Start()
     {
-        yield return null;
+        yield return new WaitForSeconds(0.2f);
         CreatePlayer();
     }
 
     // Update is called once per frame
     private void CreatePlayer()
     {
-        Vector3 pos = new Vector3(Random.Range(-100.0f, 100.0f), 5.0f, Random.Range(-100.0f, 100.0f));
-        GameObject temp =PhotonNetwork.Instantiate("Charactor", pos, Quaternion.identity);
-        if (temp.GetPhotonView().IsMine)
-        {
-            temp.transform.parent= tr;
-            temp.transform.position = Vector3.zero;
-        }
+        Vector3 pos = new Vector3(Random.Range(-10.0f, 10.0f), 1.7f, Random.Range(-10.0f, 10.0f));
+        PhotonNetwork.Instantiate("Charactor", pos, Quaternion.identity);
     }
 }

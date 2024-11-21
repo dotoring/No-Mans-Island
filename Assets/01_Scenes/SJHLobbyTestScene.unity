@@ -6635,7 +6635,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9150214444350180696}
-  - component: {fileID: 5602303518195578273}
   - component: {fileID: 660785869324279018}
   - component: {fileID: 8154529471606736709}
   - component: {fileID: 5064156960129580071}
@@ -7571,43 +7570,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &5602303518195578273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4222825342881078393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c3aea2b3370f7f4dba56f7ea4fc9228, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  moveAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Move
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: b3f2fd25-df09-4732-a0d7-2cd922618c8e
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  rotHead:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Rot Head
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 94742251-6421-44db-8836-9b9e6c626efd
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
 --- !u!4 &5638887092871397342
 Transform:
   m_ObjectHideFlags: 0
@@ -7649,6 +7611,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4910494145264233608}
   - component: {fileID: 2544536070230277901}
+  - component: {fileID: 5723587785486267955}
   m_Layer: 0
   m_Name: Pr_RobotHand_Red_R
   m_TagString: Untagged
@@ -7656,6 +7619,30 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5723587785486267955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5723587785486267954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 1
+    SynchronizeType: 0
+    Name: TriggerR
+  - Type: 1
+    SynchronizeType: 0
+    Name: GripR
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!210 &5728178320212509155
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -8046,6 +8033,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6762225165692517867}
   - component: {fileID: 7705877256204061926}
+  - component: {fileID: 7705877256204061927}
   m_Layer: 0
   m_Name: Pr_RobotHand_Red_L
   m_TagString: Untagged
@@ -8097,9 +8085,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4910494145264233608}
   - {fileID: 1781034184129976986}
   - {fileID: 6706379090497460995}
-  - {fileID: 4910494145264233608}
   m_Father: {fileID: 8281638668610211653}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &6328756387389093269
@@ -8706,6 +8694,7 @@ GameObject:
   - component: {fileID: 8281638668610211653}
   - component: {fileID: 7938445617341388801}
   - component: {fileID: 4470940618439990449}
+  - component: {fileID: 8281638668610211654}
   m_Layer: 0
   m_Name: Charactor
   m_TagString: Untagged
@@ -9328,6 +9317,30 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7705877256204061927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6238593075560539985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 1
+    SynchronizeType: 0
+    Name: TriggerL
+  - Type: 1
+    SynchronizeType: 0
+    Name: GripL
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &7757797222926678537
 GameObject:
   m_ObjectHideFlags: 0
@@ -9504,6 +9517,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4470940618439990449}
   - {fileID: 2167269714960796410}
+  - {fileID: 7705877256204061927}
+  - {fileID: 5723587785486267955}
   sceneViewId: 1
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -10124,6 +10139,32 @@ Transform:
   - {fileID: 9150214444350180696}
   m_Father: {fileID: 1277932990}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8281638668610211654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988579924041535913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c3aea2b3370f7f4dba56f7ea4fc9228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 660785869324279018}
+  moveAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Move
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: b3f2fd25-df09-4732-a0d7-2cd922618c8e
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  pv: {fileID: 7938445617341388801}
 --- !u!4 &8320087970919589159
 Transform:
   m_ObjectHideFlags: 0

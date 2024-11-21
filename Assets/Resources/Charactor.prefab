@@ -2066,7 +2066,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9027990326167285316}
-  - component: {fileID: 5623495712056465085}
   - component: {fileID: 765154468568432630}
   - component: {fileID: 8259460471185990745}
   - component: {fileID: 5040290205431586619}
@@ -2096,43 +2095,6 @@ Transform:
   - {fileID: 6759032311401973004}
   m_Father: {fileID: 8168263832173522009}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5623495712056465085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4120714041927188325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c3aea2b3370f7f4dba56f7ea4fc9228, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  moveAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Move
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: b3f2fd25-df09-4732-a0d7-2cd922618c8e
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  rotHead:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Rot Head
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 94742251-6421-44db-8836-9b9e6c626efd
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
 --- !u!95 &765154468568432630
 Animator:
   serializedVersion: 7
@@ -3381,6 +3343,7 @@ GameObject:
   - component: {fileID: 8168263832173522009}
   - component: {fileID: 7898976104509799197}
   - component: {fileID: 4449048585262219181}
+  - component: {fileID: 8731752012674157890}
   m_Layer: 0
   m_Name: Charactor
   m_TagString: Untagged
@@ -3427,6 +3390,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4449048585262219181}
   - {fileID: 2136529774553229798}
+  - {fileID: 1622253418659876009}
+  - {fileID: 470603714616174508}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -3446,6 +3411,32 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &8731752012674157890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7154432800246280885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c3aea2b3370f7f4dba56f7ea4fc9228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 765154468568432630}
+  moveAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Move
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: b3f2fd25-df09-4732-a0d7-2cd922618c8e
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  pv: {fileID: 7898976104509799197}
 --- !u!1 &7181202699532016637
 GameObject:
   m_ObjectHideFlags: 0
@@ -4011,9 +4002,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5156725720606904212}
   - {fileID: 1946201514701502854}
   - {fileID: 6819596145812863007}
-  - {fileID: 5156725720606904212}
   m_Father: {fileID: 8168263832173522009}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2712638891269582322
@@ -5255,7 +5246,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7883094192757917790, guid: 5e6d606de05260b4e957a7f080555ba5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 470603714616174508}
   m_SourcePrefab: {fileID: 100100000, guid: 5e6d606de05260b4e957a7f080555ba5, type: 3}
 --- !u!95 &2370521519341657105 stripped
 Animator:
@@ -5267,6 +5261,35 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7362735349480002276, guid: 5e6d606de05260b4e957a7f080555ba5, type: 3}
   m_PrefabInstance: {fileID: 2431361550801608048}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5538176384244208942 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7883094192757917790, guid: 5e6d606de05260b4e957a7f080555ba5, type: 3}
+  m_PrefabInstance: {fileID: 2431361550801608048}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &470603714616174508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5538176384244208942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 1
+    SynchronizeType: 0
+    Name: TriggerR
+  - Type: 1
+    SynchronizeType: 0
+    Name: GripR
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1001 &8149329295577515419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5326,8 +5349,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2611558198679912918, guid: 92d0c06cad2f10540a8a818aeaf845a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1622253418659876009}
   m_SourcePrefab: {fileID: 100100000, guid: 92d0c06cad2f10540a8a818aeaf845a4, type: 3}
+--- !u!1 &6135632814458422349 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2611558198679912918, guid: 92d0c06cad2f10540a8a818aeaf845a4, type: 3}
+  m_PrefabInstance: {fileID: 8149329295577515419}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1622253418659876009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6135632814458422349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 1
+    SynchronizeType: 0
+    Name: TriggerL
+  - Type: 1
+    SynchronizeType: 0
+    Name: GripL
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!4 &6804364155327749879 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3419867042849954668, guid: 92d0c06cad2f10540a8a818aeaf845a4, type: 3}
