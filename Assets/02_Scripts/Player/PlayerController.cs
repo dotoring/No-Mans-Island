@@ -83,5 +83,30 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat(hasstickY, inputVec.y);
     }
 
-    
+    public void IncreaseHp(int val)
+    {
+
+    }
+    public void DecreaseHp(int val)
+    {
+
+    }
+
+    public void IncreaseFullness(int val)
+    {
+        Debug.Log("포만도 증가 " + val);
+    }
+
+    public void DecreaseFullness(int val)
+    {
+    }
+
+    public void IncreaseThirst(int val)
+    {
+        Debug.Log("수분 섭취 " + val);
+    }
+
+    public void DecreaseThirst(int val)
+    {
+    }
 }
