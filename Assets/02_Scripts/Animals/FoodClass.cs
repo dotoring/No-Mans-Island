@@ -48,7 +48,7 @@ public class FoodClass : MonoBehaviour
         print($"체력이 {Reduce_Hp_val} 만큼 감소했습니다.");
     }
 
-    public void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
 
 

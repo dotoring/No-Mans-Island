@@ -20,7 +20,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7117040086813595856
 Transform:
@@ -277,4 +277,4 @@ MonoBehaviour:
   Reduce_Hp: 0
   cookTime: 0
   infireTime: 0
-  fullness_roast: 5
+  is_Sticked: 0
