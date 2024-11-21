@@ -137,6 +137,8 @@ public class TigerClass : AnimalClass
         {
             t_state = AnimalState.Attack;
 
+            rest_Time = 0f;
+
         }
         else
         {
@@ -146,6 +148,8 @@ public class TigerClass : AnimalClass
     }
     public void Animal_Attack()
     {
+
+
 
         if (rest_Time >= attack_time)
         {
