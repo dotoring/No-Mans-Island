@@ -25,14 +25,5 @@ public class FrogAsFoodClass : FoodClass
 
     }
 
-    public override void OnTriggerEnter(Collider other)
-    {
-        base.OnTriggerEnter(other);
-        if (other.gameObject.CompareTag("CanBuild"))
-        {
-            if (this.GetComponent<FrogClass>().t_state == AnimalState.Die) is_Sticked = true;
-            stick = other.transform;
 
-        }
-    }
 }

@@ -46,6 +46,11 @@ public class MeatClass : FoodClass
     {
         print("요리가 완성되었습니다.");
         GameObject tmp = Instantiate(roast, this.transform.position, this.transform.rotation);
+        if (this.transform.parent.gameObject != null)
+        {
+            roast.transform.parent = this.transform.parent;
+            roast.GetComponent<Rigidbody>().isKinematic = true;
+        }
         Destroy(this.gameObject, 0.1f);
     }
 
