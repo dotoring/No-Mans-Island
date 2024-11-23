@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class FrogClass : AnimalClass
+public class FrogClass : StickClass
 {
     XRGrabInteractable xrgrab;
 
@@ -65,11 +65,8 @@ public class FrogClass : AnimalClass
             case AnimalState.Watch:
                 Animal_Watch();
                 break;
-
             case AnimalState.Damage:
                 Animal_Damage();
-
-
                 break;
             case AnimalState.Die:
                 Animal_Die();
@@ -205,11 +202,10 @@ public class FrogClass : AnimalClass
 
 
 
-    private void OnCollisionEnter(Collision other)
+    public override void OnCollisionEnter(Collision collision)
     {
-
-
-        if (other.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
+        base.OnCollisionEnter(collision);
+        if (collision.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
         {
             GetDamage(5);
             t_state = AnimalState.Damage;

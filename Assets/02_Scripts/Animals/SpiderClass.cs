@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class SpiderClass : AnimalClass
+public class SpiderClass : StickClass
 {
     //XRGrabInteractable xrgrab;
 
@@ -13,7 +13,7 @@ public class SpiderClass : AnimalClass
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
+    void Start()
     {
 
         InitStat();
@@ -194,9 +194,10 @@ public class SpiderClass : AnimalClass
 
 
 
-    private void OnCollisionEnter(Collision other)
+    public override void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
+        base.OnCollisionEnter(collision);
+        if (collision.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
         {
             GetDamage(5);
             t_state = AnimalState.Damage;

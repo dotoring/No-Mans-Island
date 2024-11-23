@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class RabbitClass : AnimalClass
+public class RabbitClass : StickClass
 {
     XRGrabInteractable xrgrab;
 
@@ -128,7 +128,7 @@ public class RabbitClass : AnimalClass
         this.transform.forward = watch_v;
 
         jump_Time += Time.deltaTime;
-        this.transform.Translate(Vector3.forward * 0.4f * Time.deltaTime, Space.Self);
+        this.transform.Translate(Vector3.forward * 3.0f * Time.deltaTime, Space.Self);
         animal_anim.SetTrigger("Move");
 
 
@@ -189,9 +189,12 @@ public class RabbitClass : AnimalClass
 
 
 
-    private void OnCollisionEnter(Collision other)
+
+
+    public override void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
+        base.OnCollisionEnter(collision);
+        if (collision.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
         {
             GetDamage(5);
             t_state = AnimalState.Damage;
