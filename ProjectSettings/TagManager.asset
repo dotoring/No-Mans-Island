@@ -9,7 +9,7 @@ TagManager:
   - Stone
   - FireWood
   - Fire
-  - Meat
+  - Food
   layers:
   - Default
   - TransparentFX

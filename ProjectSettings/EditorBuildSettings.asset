@@ -6,14 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/01_Scenes/1_TitleScene.unity
-    guid: 54cdef6359344f44c826454dde017787
+    path: Assets/01_Scenes/SJHLobbyTestScene.unity
+    guid: e9878710ecc7ff846a1b774df0e62d18
   - enabled: 1
-    path: Assets/01_Scenes/2_LobbyScene.unity
-    guid: 02dd831f34202eb42aa0807087be4543
-  - enabled: 1
-    path: Assets/01_Scenes/3_GameScene.unity
-    guid: aedb11382b9213b4a8ca903e1da39255
+    path: Assets/01_Scenes/SJHRoomTestScene.unity
+    guid: 9745c6b6c3e6f3143b52257924ead807
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: af1a5c2bc714f5f4489360950a7b737e, type: 2}
