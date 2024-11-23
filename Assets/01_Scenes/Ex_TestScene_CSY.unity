@@ -1711,6 +1711,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire_Test
       objectReference: {fileID: 0}
+    - target: {fileID: 2849619522297811993, guid: c1e1cbef222051c4c9f1bb89e6d5f8c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3196,6 +3200,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodStick
       objectReference: {fileID: 0}
+    - target: {fileID: 5382003842135603211, guid: 04e7aa73c9f82c34687edabe2bd0cff8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3551,7 +3559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 270952190709048347, guid: fc1fa0522f446e649a9e6ac050b55387, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3021077850893320454, guid: fc1fa0522f446e649a9e6ac050b55387, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3609,6 +3617,10 @@ PrefabInstance:
     - target: {fileID: 2317415984001249117, guid: 527a4aaa2d6dc16419b3540c8b1504ca, type: 3}
       propertyPath: m_Name
       value: Spider
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317415984001249117, guid: 527a4aaa2d6dc16419b3540c8b1504ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3675769655776192607, guid: 527a4aaa2d6dc16419b3540c8b1504ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3707,6 +3719,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rabbit
       objectReference: {fileID: 0}
+    - target: {fileID: 542895934206153572, guid: d368b4f2528345949ba0836587facbcf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3723,6 +3739,10 @@ PrefabInstance:
     - target: {fileID: 5628001307581544608, guid: b2fb4cc359e00b444897970d278f6720, type: 3}
       propertyPath: m_Name
       value: Scorpion
+      objectReference: {fileID: 0}
+    - target: {fileID: 5628001307581544608, guid: b2fb4cc359e00b444897970d278f6720, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8519236924596959599, guid: b2fb4cc359e00b444897970d278f6720, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3780,6 +3800,10 @@ PrefabInstance:
     - target: {fileID: 1626050389558724460, guid: 19a806faf07143042820a058861a57f4, type: 3}
       propertyPath: m_Name
       value: Frog
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626050389558724460, guid: 19a806faf07143042820a058861a57f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6561726165152624047, guid: 19a806faf07143042820a058861a57f4, type: 3}
       propertyPath: m_LocalPosition.x
