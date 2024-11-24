@@ -7,7 +7,7 @@ public class MeatClass : FoodClass
 
     void Start()
     {
-        InitData();
+
     }
 
     private void CookMeat()
@@ -24,7 +24,12 @@ public class MeatClass : FoodClass
     {
         print("요리가 완성되었습니다.");
         GameObject tmp = Instantiate(roast, this.transform.position, this.transform.rotation);
-        Destroy(this.gameObject);
+        if (this.transform.parent.gameObject != null)
+        {
+            roast.transform.parent = this.transform.parent;
+            roast.GetComponent<Rigidbody>().isKinematic = true;
+        }
+        Destroy(this.gameObject, 0.1f);
     }
 
     private void OnTriggerStay(Collider other)

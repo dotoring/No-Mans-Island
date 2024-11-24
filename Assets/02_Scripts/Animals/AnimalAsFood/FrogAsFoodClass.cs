@@ -3,6 +3,7 @@ using UnityEngine;
 public class FrogAsFoodClass : FoodClass
 {
 
+    protected Transform stick;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -15,19 +16,14 @@ public class FrogAsFoodClass : FoodClass
 
     private void Update()
     {
-        if (this.GetComponent<FrogClass>().t_state == AnimalState.Die)
+        if (is_Sticked)
         {
-            is_Sticked = true;
+            this.transform.parent = stick;
+            this.transform.position = stick.position;
+            this.transform.rotation = stick.rotation;
         }
 
     }
 
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("CanBuild"))
-        {
-            if (is_Sticked) this.transform.parent = collision.transform;
 
-        }
-    }
 }

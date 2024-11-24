@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8600547498503735135}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderHub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1396762367008886036}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg3477456556
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2894964752715491376}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg3212377676
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1072434371059100706}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderLLeg3567567444
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7672800065869168914}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg27755
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5354832059260604087}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderLLeg4987'''0'0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 3224820522670884622}
   - component: {fileID: 6613057224060578030}
   - component: {fileID: 6250844416244086101}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderLLegPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,6 +280,7 @@ MonoBehaviour:
   attack_area: 0
   attack_time: 0
   short_distance: 50
+  is_Sticked: 0
   t_state: 0
   PhotonPlayer: []
 --- !u!1 &1327339745496541505
@@ -291,7 +292,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1434578587360462158}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg0485643337
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +323,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1392407104962149297}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spider100
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1180990293001385899}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg1488644565
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +385,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4439151231039198827}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg44556564
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,7 +416,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7717463138710178386}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg224454221111
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -447,7 +448,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5365873424085493562}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg131321366
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +480,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1282771988850130888}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg449989898666
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,7 +511,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6966978346473616893}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg4Platform001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +546,8 @@ GameObject:
   - component: {fileID: 8360527985232044490}
   - component: {fileID: 6350868271814347772}
   - component: {fileID: 4355739786521243063}
-  m_Layer: 0
+  - component: {fileID: 2051556134701617613}
+  m_Layer: 7
   m_Name: Spider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +611,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2317415984001249117}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be5358c8d8a20c84da55664f9e8cf554, type: 3}
   m_Name: 
@@ -626,6 +628,7 @@ MonoBehaviour:
   attack_area: 0
   attack_time: 0
   short_distance: 50
+  is_Sticked: 0
   t_state: 0
   PhotonPlayer: []
 --- !u!54 &6350868271814347772
@@ -777,6 +780,24 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
+--- !u!114 &2051556134701617613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2317415984001249117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0592e9dc9c77bf04c870243128dc1f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHp: 0
+  fullness: 0
+  Reduce_Hp: 0
+  cookTime: 0
+  infireTime: 0
+  is_Sticked: 0
 --- !u!1 &2329103874991490599
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,7 +809,7 @@ GameObject:
   - component: {fileID: 2674498485277170038}
   - component: {fileID: 8268324760813348417}
   - component: {fileID: 4025188562414892943}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -940,7 +961,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7887122354369324871}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg11111
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -974,7 +995,7 @@ GameObject:
   - component: {fileID: 6085770386049146170}
   - component: {fileID: 4124604147439953679}
   - component: {fileID: 6521085207678846645}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLegPlatform 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1041,6 +1062,7 @@ MonoBehaviour:
   attack_area: 0
   attack_time: 0
   short_distance: 50
+  is_Sticked: 0
   t_state: 0
   PhotonPlayer: []
 --- !u!1 &2641910017290248896
@@ -1052,7 +1074,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4625447245097652221}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg42477673
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1084,7 +1106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8862647290229154943}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg046123666
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1116,7 +1138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4173529070023180598}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg1212132
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1148,7 +1170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3395454912303141753}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg4398707
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1180,7 +1202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8322612954503767413}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg415545454
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1212,7 +1234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2954751526084169164}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg0451122332
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1244,7 +1266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3757388152614022532}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderLLeg13322233
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1276,7 +1298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6441152952644644212}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg1Platform001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1307,7 +1329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6164169015603467814}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg33997888
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1339,7 +1361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8589439324081494541}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderLLeg24433
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1371,7 +1393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3222171754007037077}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spider 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1402,7 +1424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3739313202053273343}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg2377788
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1434,7 +1456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6482905786582481293}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg14554
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1466,7 +1488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2269324328026333413}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg2Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1497,7 +1519,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6606222674017437712}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLegPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1528,7 +1550,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7491804005468139436}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg1Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1559,7 +1581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7971439573591747211}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg2478909090
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1590,7 +1612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4181477367018719042}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1621,7 +1643,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1086096708637650218}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderLLeg40909078787
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1652,7 +1674,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2265562032046508447}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg300997
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1684,7 +1706,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1927290848349394348}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg051788844556
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1716,7 +1738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1740723229428164337}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderLLegPlatform 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1747,7 +1769,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1093216409703772291}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg4878900909
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1778,7 +1800,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6571119396533742661}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg049445
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1810,7 +1832,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6164926529235051190}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg2112332
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1842,7 +1864,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 182829868843330260}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderLLeg2336662
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1874,7 +1896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8551832772946700751}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spider200
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1905,7 +1927,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8960292332733986636}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg232151
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1937,7 +1959,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 123186492007531779}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg35676585
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1969,7 +1991,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 555168883566031413}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg31434343
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2001,7 +2023,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9161658837455364011}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg04778987000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2033,7 +2055,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1924025779489007291}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg3Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2064,7 +2086,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6254110003124296753}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderLLeg1112233223
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2096,7 +2118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5091164355334872852}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg0522355
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2128,7 +2150,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3192727594914793762}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderLLeg3667899
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2160,7 +2182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1286400462320246233}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg4Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2191,7 +2213,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2286302497963019340}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg11123322
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2223,7 +2245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1316437646091324801}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderRLeg0507876844565
   m_TagString: Untagged
   m_Icon: {fileID: 0}

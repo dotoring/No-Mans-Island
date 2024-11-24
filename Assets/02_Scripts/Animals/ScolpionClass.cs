@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ScolpionClass : AnimalClass
+public class ScolpionClass : StickClass
 {
     //XRGrabInteractable xrgrab;
 
@@ -178,16 +178,21 @@ public class ScolpionClass : AnimalClass
 
     public void Animal_Die()
     {
-        animal_anim.SetTrigger("Die");
-        Die();
+        if (is_alive)
+        {
+            animal_anim.SetTrigger("Die");
+            Die();
+        }
+
     }
 
 
 
 
-    private void OnCollisionEnter(Collision other)
+    public override void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
+        base.OnCollisionEnter(collision);
+        if (collision.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
         {
             GetDamage(5);
             t_state = AnimalState.Damage;
