@@ -13,5 +13,5 @@ public class FoodClass : StickClass
     public float cookTime;
     public float infireTime;
 
-
+    public bool is_Sticked;
 }
