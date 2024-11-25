@@ -54,13 +54,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
         this.transform.GetChild(0).GetComponent<ControllerInputActionManager>().enabled = isMine;
         this.transform.GetChild(0).GetComponent<TrackedPoseDriver>().enabled = isMine;
         this.transform.GetChild(0).GetChild(2).gameObject.SetActive(isMine);
-        this.transform.GetChild(0).GetChild(0).GetComponent<Animator>().enabled = isMine;
+        //this.transform.GetChild(0).GetChild(0).GetComponent<Animator>().enabled = isMine;
         //¿À¸¥¼Õ
         this.transform.GetChild(1).GetComponent<ControllerInputActionManager>().enabled = isMine;
         this.transform.GetChild(1).GetComponent<TrackedPoseDriver>().enabled = isMine;
         this.transform.GetChild(1).GetChild(2).gameObject.SetActive(isMine);
-        this.transform.GetChild(1).GetChild(0).GetComponent<Animator>().enabled = isMine;
+        //this.transform.GetChild(1).GetChild(0).GetComponent<Animator>().enabled = isMine;
 
+        //Locomotion
         pv.transform.GetChild(1).gameObject.SetActive(isMine);
     }
 
@@ -87,8 +88,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
         //print("Move : " + inputVec);
         anim.SetFloat(hasstickX, inputVec.x);
         anim.SetFloat(hasstickY, inputVec.y);
-
-       
     }
 
     public void IncreaseHp(int val)
