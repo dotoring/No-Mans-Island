@@ -1863,6 +1863,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6323200867752254483}
+  - {fileID: 7007253581613394081}
   - {fileID: 902865156}
   - {fileID: 8281638668610211653}
   m_Father: {fileID: 434128168}
@@ -6373,7 +6375,6 @@ GameObject:
   - component: {fileID: 7007253581613394081}
   - component: {fileID: 6904292657756213701}
   - component: {fileID: 8065394555556584644}
-  - component: {fileID: 8065394555556584645}
   m_Layer: 0
   m_Name: Left Controller
   m_TagString: Untagged
@@ -6782,22 +6783,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4470940618439990449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6988579924041535913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!4 &4480222442787274387
 Transform:
   m_ObjectHideFlags: 0
@@ -8089,7 +8074,7 @@ Transform:
   - {fileID: 4910494145264233608}
   - {fileID: 1781034184129976986}
   - {fileID: 6706379090497460995}
-  m_Father: {fileID: 8281638668610211653}
+  m_Father: {fileID: 1277932990}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &6328756387389093269
 Transform:
@@ -8694,7 +8679,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8281638668610211653}
   - component: {fileID: 7938445617341388801}
-  - component: {fileID: 4470940618439990449}
   - component: {fileID: 8281638668610211654}
   m_Layer: 0
   m_Name: Charactor
@@ -8719,7 +8703,7 @@ Transform:
   - {fileID: 6762225165692517867}
   - {fileID: 3381787433704675541}
   - {fileID: 6332783594202687064}
-  m_Father: {fileID: 8281638668610211653}
+  m_Father: {fileID: 1277932990}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &7015031642286459779
 MeshRenderer:
@@ -9516,12 +9500,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 4470940618439990449}
-  - {fileID: 8065394555556584645}
-  - {fileID: 8344359957366107681}
   - {fileID: 2167269714960796410}
-  - {fileID: 7705877256204061927}
-  - {fileID: 5723587785486267955}
   sceneViewId: 1
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -9633,7 +9612,6 @@ GameObject:
   - component: {fileID: 6323200867752254483}
   - component: {fileID: 2742956481647300334}
   - component: {fileID: 8344359957366107680}
-  - component: {fileID: 8344359957366107681}
   m_Layer: 0
   m_Name: Right Controller
   m_TagString: Untagged
@@ -9726,22 +9704,6 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
---- !u!114 &8065394555556584645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4123158525541192295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!114 &8087053012852920607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10092,8 +10054,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7007253581613394081}
-  - {fileID: 6323200867752254483}
   - {fileID: 9150214444350180696}
   m_Father: {fileID: 1277932990}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10126,6 +10086,8 @@ MonoBehaviour:
   models:
   - {fileID: 3566523394236697793}
   - {fileID: 5787511090503742313}
+  leftCont: {fileID: 4123158525541192295}
+  rightCont: {fileID: 8031850726900037180}
 --- !u!4 &8320087970919589159
 Transform:
   m_ObjectHideFlags: 0
@@ -10211,22 +10173,6 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
---- !u!114 &8344359957366107681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8031850726900037180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!4 &8352174262459222445
 Transform:
   m_ObjectHideFlags: 0
