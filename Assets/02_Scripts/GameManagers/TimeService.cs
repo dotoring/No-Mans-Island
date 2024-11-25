@@ -23,7 +23,7 @@ public class TimeService : MonoBehaviour
     public TimeService(TimeSettings settings)
     {
         this.settings = settings;
-        curTime = DateTime.Now + TimeSpan.FromHours(settings.startHour);
+        curTime = new DateTime(2024, 11, 25, (int)settings.startHour, 00, 00);
         sunriseTime = TimeSpan.FromHours(settings.sunriseHour);
         sunsetTime = TimeSpan.FromHours(settings.sunsetHour);
 

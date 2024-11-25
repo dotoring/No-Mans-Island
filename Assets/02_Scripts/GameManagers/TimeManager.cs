@@ -39,7 +39,7 @@ public class TimeManager : MonoBehaviour
         UpdateTimeOfDay();
         RotateSun();
         UpdateLightSettings();
-        //UpdateSkyBlend();
+        UpdateSkyBlend();
     }
 
     void UpdateSkyBlend()
@@ -96,8 +96,6 @@ public class TimeManager : MonoBehaviour
 
     IEnumerator SpawnAggressiveAnimal()
     {
-        //Debug.Log("짜란");
-        //yield return null;
         while (true)
         {
             //플레이어 근처에 선공 동물 소환
