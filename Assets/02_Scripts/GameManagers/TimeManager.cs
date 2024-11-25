@@ -22,6 +22,8 @@ public class TimeManager : MonoBehaviour
     ColorAdjustments colorAdjustments;
 
     [SerializeField] TimeSettings timeSettings;
+    [SerializeField] TempGameMgr tempGameMgr;
+    [SerializeField] EscapeMgr escapeMgr;
 
     TimeService service;
     IEnumerator coroutine;
@@ -92,6 +94,15 @@ public class TimeManager : MonoBehaviour
                 StopCoroutine(coroutine);
             }
         }
+
+        if(i == 7)
+        {
+            escapeMgr.ComeShip();
+        }
+        if(i == 12)
+        {
+            escapeMgr.LeaveShip();
+        }
     }
 
     IEnumerator SpawnAggressiveAnimal()
@@ -99,7 +110,7 @@ public class TimeManager : MonoBehaviour
         while (true)
         {
             //플레이어 근처에 선공 동물 소환
-            Debug.Log("선공 동물 소환");
+            tempGameMgr.SpawnAnimals();
             yield return new WaitForSeconds(5f);
         }
     }
