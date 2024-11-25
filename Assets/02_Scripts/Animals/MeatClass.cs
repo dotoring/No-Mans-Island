@@ -5,10 +5,12 @@ public class MeatClass : FoodClass
 {
     public GameObject roast;
 
-    void Start()
+    void Update()
     {
-
+        ShakeStick();
     }
+
+
 
     private void CookMeat()
     {

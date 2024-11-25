@@ -38,6 +38,7 @@ public class SpiderClass : StickClass
     void Update()
     {
         SpiderCheck();
+        ThisStick();
 
 
 

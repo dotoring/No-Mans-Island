@@ -16,6 +16,6 @@ public class GameManager : MonoBehaviour
     private void CreatePlayer()
     {
         Vector3 pos = new Vector3(Random.Range(-10.0f, 10.0f), 1.18f, Random.Range(-10.0f, 10.0f));
-        PhotonNetwork.Instantiate("Charactor", pos, Quaternion.identity);
+        PhotonNetwork.Instantiate("XR Origin (VR)", pos, Quaternion.identity);
     }
 }

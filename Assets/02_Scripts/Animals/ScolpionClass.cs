@@ -36,6 +36,7 @@ public class ScolpionClass : StickClass
     void Update()
     {
         ScolpionCheck();
+        ThisStick();
 
 
 
