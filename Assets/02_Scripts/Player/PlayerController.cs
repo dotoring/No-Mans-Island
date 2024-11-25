@@ -6,7 +6,7 @@ using UnityEngine.InputSystem.XR;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviourPunCallbacks
 {
     [SerializeField] private Animator anim;
     [SerializeField] private InputActionProperty moveAction;
@@ -37,8 +37,9 @@ public class PlayerController : MonoBehaviour
 
         }
          HandOff(pv.IsMine);
-        
     }
+
+
 
     //NEAR-FAR, CONTROLLER¿¡ INPUTACTION,TRACKER ³»²¨ ¾Æ´Ï¸é ²ô±â
     private void HandOff(bool isMine)
