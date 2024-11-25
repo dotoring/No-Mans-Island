@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4040168769748026608}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_MidBackLeg_Knee1SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3454637280438213927}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_Pedipalp_01_03SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3584697246869331429}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_MidFrontLeg_Knee2SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6201086313888366672}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_BackLeg_AnkleSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 211354326311819504}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_FrontLeg_HipSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5358702032408864468}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_MidFrontLeg_HipSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8538924544112773902}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_FrontLeg_Knee2SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8549054561265094911}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_FrontLeg_BallSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3351284669788720525}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_FrontLeg_ToeSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2946300642604309900}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_Sting_01_02SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1014859044154911070}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_Abdomen_01_05SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2185125680432981779}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_Pedipalp_01_03SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2066090791770396731}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_FrontLeg_BallSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 628530519321027696}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_BackLeg_AnkleSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3890494471018254165}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_Abdomen_01_01SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6266989967177635363}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_BackLeg_HipSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +520,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5297364905714961307}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_BackLeg_Knee1SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,7 +552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8474417921091872979}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_Pedipalp_01_02SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5069524215054224931}
   - component: {fileID: 3550338390992478641}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -637,7 +637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3799895453305835949}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_Abdomen_01_02SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,7 +669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3398683921364791482}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_MidFrontLeg_HipSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -701,7 +701,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 896593517104438721}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_Pedipalp_01_04SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -734,7 +734,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8566090413589814608}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_Abdomen_01_03SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -766,7 +766,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4400691963865800945}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_Sting_01_06SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -798,7 +798,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6718260457473735934}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_Claw_01_02SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -829,7 +829,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3067658364683989520}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_Sting_01_04SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -861,7 +861,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4315267850473290230}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_FrontLeg_AnkleSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -893,7 +893,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6946160468394159356}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_BackLeg_BallSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -925,7 +925,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3972605124729929}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_Claw_01_01SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -957,7 +957,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6942103588714409750}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_Claw_02_01SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -989,7 +989,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2198585605560113251}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_Pedipalp_01_01SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1021,7 +1021,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2121912982137437914}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_MidFrontLeg_BallSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1053,7 +1053,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 321610003363261124}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_FrontLeg_AnkleSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1085,7 +1085,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 893476323177542640}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_Sting_01_01SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1117,7 +1117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7658688552276467514}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_MidFrontLeg_Knee1SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1149,7 +1149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7089697313717569419}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_Pedipalp_01_02SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1181,7 +1181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7093873747288662408}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_MidFrontLeg_AnkleSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1213,7 +1213,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3867224286747953559}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_Claw_01_02SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1244,7 +1244,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9134299393343160013}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_MidBackLeg_ToeSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1275,7 +1275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 789809269004984980}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_MidFrontLeg_Knee1SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1308,7 +1308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4796394579401487230}
   - component: {fileID: 4281314330295486614}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_Sting_01_07SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1360,7 +1360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5695975983391096723}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_BackLeg_Knee2SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1392,7 +1392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7265013044268765715}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_MidFrontLeg_Knee2SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1424,7 +1424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4865285437086690955}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_FrontLeg_Knee1SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1456,7 +1456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2098681856190838347}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_MidBackLeg_HipSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1488,7 +1488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2018110556030375638}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_Abdomen_01_04SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1520,7 +1520,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3480594923052600985}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_MidBackLeg_Knee2SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1553,7 +1553,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8065427656719853889}
   - component: {fileID: 6057765708563508567}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1708,7 +1708,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3196219491608620142}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_MidBackLeg_BallSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1740,7 +1740,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4856904400301892088}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_MAINSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1772,7 +1772,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6122142084766031992}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_Pedipalp_01_04SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1805,7 +1805,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5447344244704607608}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_Sting_01_03SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1837,7 +1837,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6677661322620416667}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_ROOTSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1879,7 +1879,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4197298394191358328}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_MidFrontLeg_AnkleSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1911,7 +1911,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1430008841578914163}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_BackLeg_Knee2SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1946,7 +1946,8 @@ GameObject:
   - component: {fileID: 870609332575596105}
   - component: {fileID: 7176260539855952556}
   - component: {fileID: 2396465964734245854}
-  m_Layer: 0
+  - component: {fileID: 6418132844089440262}
+  m_Layer: 7
   m_Name: Scorpion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1961,7 +1962,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5628001307581544608}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.582, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2142,6 +2143,33 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
+--- !u!114 &6418132844089440262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5628001307581544608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdbdffb9622105c4db875790059a653e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animal_hp: 0
+  animal_atk: 0
+  corpse_hp: 0
+  is_alive: 0
+  animal_rb: {fileID: 0}
+  animal_anim: {fileID: 0}
+  meat: {fileID: 0}
+  Player: {fileID: 0}
+  find_area: 0
+  attack_area: 0
+  attack_time: 0
+  short_distance: 50
+  is_Sticked: 0
+  t_state: 0
+  PhotonPlayer: []
 --- !u!1 &6178739067942532991
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,7 +2179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2383952965714533313}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_MidFrontLeg_ToeSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2182,7 +2210,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2288929871334626095}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_FrontLeg_HipSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2214,7 +2242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2247380625699522483}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_BackLeg_BallSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2246,7 +2274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2629123152463376973}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_MidBackLeg_BallSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2278,7 +2306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3614084091760314741}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_MidBackLeg_AnkleSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2310,7 +2338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3438070656603210863}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_Pedipalp_01_01SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2342,7 +2370,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2709137977021678101}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_FrontLeg_Knee1SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2374,7 +2402,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8946950769445101364}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_MidBackLeg_HipSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2406,7 +2434,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6479765746229943824}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_BackLeg_ToeSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2437,7 +2465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8116356091051918431}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_FrontLeg_ToeSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2468,7 +2496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5810058337730471849}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_MidFrontLeg_ToeSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2499,7 +2527,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7354295810212439536}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_Sting_01_05SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2531,7 +2559,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9060207956921801409}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_Claw_01_01SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2563,7 +2591,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1864861479867136558}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_MidBackLeg_Knee2SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2595,7 +2623,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6911222698742647612}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_Claw_02_02SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2626,7 +2654,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6148860346689968011}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_Claw_02_02SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2657,7 +2685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8392724059917042900}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_MidBackLeg_Knee1SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2689,7 +2717,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3542987034289675767}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_FrontLeg_Knee2SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2721,7 +2749,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5628327359097917885}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_MidBackLeg_ToeSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2752,7 +2780,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2928102191899267095}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_BackLeg_Knee1SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2784,7 +2812,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1288901800463022601}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_BackLeg_HipSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2816,7 +2844,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8289839584449362723}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_BackLeg_ToeSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2847,7 +2875,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4251567486542680156}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_l_Claw_02_01SHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2879,7 +2907,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7168060562293730090}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_MidBackLeg_AnkleSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2911,7 +2939,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3425055371374451990}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion_r_MidFrontLeg_BallSHJnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}

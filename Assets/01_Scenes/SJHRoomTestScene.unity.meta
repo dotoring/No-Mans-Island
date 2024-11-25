@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/01_Scenes/SJHRoomTestScene.unity.meta
 guid: 9745c6b6c3e6f3143b52257924ead807
 DefaultImporter:
+========
+guid: 074a891592128064a8cf83d946ba13c6
+PrefabImporter:
+>>>>>>>> dev/YSW:Assets/03_Prefabs/Stone.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
