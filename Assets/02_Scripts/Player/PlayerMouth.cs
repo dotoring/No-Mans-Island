@@ -2,17 +2,13 @@ using UnityEngine;
 
 public class PlayerMouth : MonoBehaviour
 {
-    PlayerController player;
-
-    private void Start()
-    {
-        //transform.root.GetComponent<PlayerController>();
-    }
+    [SerializeField] PlayerState playerState;
 
     void EatFood(FoodClass food)
     {
-        //player.IncreaseFullness(food.fullness);
-        //player.IncreaseThirst(food.thirst);
+        playerState.IncreaseFullness(food.fullness);
+        playerState.IncreaseThirst(food.thirst);
+        playerState.TakeDamage(food.Reduce_Hp);
         Debug.Log("포만도 증가 " + food.fullness);
         Debug.Log("수분 섭취 " + food.thirst);
     }
