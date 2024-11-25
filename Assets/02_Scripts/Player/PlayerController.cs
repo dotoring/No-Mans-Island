@@ -51,12 +51,12 @@ public class PlayerController : MonoBehaviourPunCallbacks
         this.transform.GetChild(0).GetComponent<ControllerInputActionManager>().enabled = isMine;
         this.transform.GetChild(0).GetComponent<TrackedPoseDriver>().enabled = isMine;
         this.transform.GetChild(0).GetChild(2).gameObject.SetActive(isMine);
-        this.transform.GetChild(0).GetChild(0).GetComponent<Animator>().enabled = isMine;
+        //this.transform.GetChild(0).GetChild(0).GetComponent<Animator>().enabled = isMine;
         //¿À¸¥¼Õ
         this.transform.GetChild(1).GetComponent<ControllerInputActionManager>().enabled = isMine;
         this.transform.GetChild(1).GetComponent<TrackedPoseDriver>().enabled = isMine;
         this.transform.GetChild(1).GetChild(2).gameObject.SetActive(isMine);
-        this.transform.GetChild(1).GetChild(0).GetComponent<Animator>().enabled = isMine;
+        //this.transform.GetChild(1).GetChild(0).GetComponent<Animator>().enabled = isMine;
     }
 
 
