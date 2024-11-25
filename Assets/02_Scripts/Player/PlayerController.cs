@@ -1,5 +1,6 @@
 using Photon.Pun;
 using Photon.Realtime;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
@@ -28,18 +29,20 @@ public class PlayerController : MonoBehaviourPunCallbacks
         {
             models[0].SetActive(false);
             models[1].SetActive(false);
-            Transform tr = GameObject.Find("XR Origin (VR)").transform;
             Vector3 temp = this.transform.position;
             temp.y = 0;
-            this.transform.parent = tr;
-            this.transform.position = new Vector3(0, 0f, 0);
-            tr.position = temp;
-
         }
-         HandOff(pv.IsMine);
+      
+        CameraOff(pv.IsMine);
+        HandOff(pv.IsMine);
     }
 
+    
 
+    void CameraOff(bool mine)
+    {
+        pv.transform.GetChild(0).gameObject.SetActive(mine);
+    }
 
     //NEAR-FAR, CONTROLLER에 INPUTACTION,TRACKER 내꺼 아니면 끄기
     private void HandOff(bool isMine)
@@ -51,12 +54,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
         this.transform.GetChild(0).GetComponent<ControllerInputActionManager>().enabled = isMine;
         this.transform.GetChild(0).GetComponent<TrackedPoseDriver>().enabled = isMine;
         this.transform.GetChild(0).GetChild(2).gameObject.SetActive(isMine);
-        //this.transform.GetChild(0).GetChild(0).GetComponent<Animator>().enabled = isMine;
+        this.transform.GetChild(0).GetChild(0).GetComponent<Animator>().enabled = isMine;
         //오른손
         this.transform.GetChild(1).GetComponent<ControllerInputActionManager>().enabled = isMine;
         this.transform.GetChild(1).GetComponent<TrackedPoseDriver>().enabled = isMine;
         this.transform.GetChild(1).GetChild(2).gameObject.SetActive(isMine);
-        //this.transform.GetChild(1).GetChild(0).GetComponent<Animator>().enabled = isMine;
+        this.transform.GetChild(1).GetChild(0).GetComponent<Animator>().enabled = isMine;
+
+        pv.transform.GetChild(1).gameObject.SetActive(isMine);
     }
 
 
@@ -73,7 +78,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         Vector3 temp = Camera.main.transform.eulerAngles;
        // print("temp1 :"+ temp);
         temp.x = temp.z=0;
-        //print("temp2 :" + temp);
+        //print("temp2 :" + temp);git 
      
         this.transform.eulerAngles = temp;
         
@@ -82,6 +87,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
         //print("Move : " + inputVec);
         anim.SetFloat(hasstickX, inputVec.x);
         anim.SetFloat(hasstickY, inputVec.y);
+
+       
     }
 
     public void IncreaseHp(int val)
