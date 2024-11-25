@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TimeSettings
   m_EditorClassIdentifier: 
   timeMultiplier: 2000
-  startHour: 12
+  startHour: 10
   sunriseHour: 6
   sunsetHour: 18

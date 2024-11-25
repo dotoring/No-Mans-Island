@@ -68,14 +68,15 @@ public class TimeManager : MonoBehaviour
     void UpdateTimeOfDay()
     {
         service.UpdateTime(Time.deltaTime);
-        if (timeText != null)
-        {
-            timeText.text = service.CurTime.ToString("hh:mm");
-        }
+        //if (timeText != null)
+        //{
+        //    timeText.text = service.CurTime.ToString("hh:mm");
+        //}
     }
 
     void CheckTime(int i)
     {
+        Debug.Log(i);
         if (i == 21)
         {
             if (coroutine != null)
