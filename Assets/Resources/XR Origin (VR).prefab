@@ -1809,6 +1809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a82ed36db4d497b4ead79ca35d261021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pv: {fileID: 1175206473659645700}
   leftPinch:
     m_UseReference: 1
     m_Action:
