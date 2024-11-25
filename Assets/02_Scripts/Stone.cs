@@ -21,6 +21,8 @@ public class Stone : MonoBehaviourPunCallbacks
 
     private void Start()
     {
+        isGriped = false;
+        pv.ControllerActorNr = 0;
         //PhotonNetwork.SetPlayerCustomProperties(ht);
         //ht.Add("Grip",false);
         rig = GetComponent<Rigidbody>();
@@ -85,6 +87,7 @@ public class Stone : MonoBehaviourPunCallbacks
     {
         //rig.isKinematic = isGriped;
         rig.useGravity = !isGriped;
+        print("bool = " + isGriped);
     }
 
     
