@@ -45,7 +45,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     void CameraOff(bool mine)
     {
-        pv.transform.GetChild(0).gameObject.SetActive(mine);
+        //
+        pv.transform.GetChild(0).GetChild(0).gameObject.SetActive(mine);
     }
 
     //NEAR-FAR, CONTROLLER¿¡ INPUTACTION,TRACKER ³»²¨ ¾Æ´Ï¸é ²ô±â
