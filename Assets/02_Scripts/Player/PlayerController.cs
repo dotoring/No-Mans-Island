@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private Rigidbody rb;
     [SerializeField] private GameObject[] models;
 
+    [SerializeField] private GameObject leftCont;
+    [SerializeField] private GameObject rightCont;
+
+
     private int hasstickX = Animator.StringToHash("stickX");
     private int hasstickY = Animator.StringToHash("stickY");
 
@@ -51,14 +55,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
         //this.transform.Find("Left Controller").GetComponent<TrackedPoseDriver>().enabled = false;
         //this.transform.Find("Left_NearFarInteractor").gameObject.SetActive(false);
         //¿Þ¼Õ
-        this.transform.GetChild(0).GetComponent<ControllerInputActionManager>().enabled = isMine;
-        this.transform.GetChild(0).GetComponent<TrackedPoseDriver>().enabled = isMine;
-        this.transform.GetChild(0).GetChild(2).gameObject.SetActive(isMine);
+        leftCont.transform.GetComponent<ControllerInputActionManager>().enabled = isMine;
+        leftCont.transform.GetComponent<TrackedPoseDriver>().enabled = isMine;
+        leftCont.transform.GetChild(2).gameObject.SetActive(isMine);
         //this.transform.GetChild(0).GetChild(0).GetComponent<Animator>().enabled = isMine;
         //¿À¸¥¼Õ
-        this.transform.GetChild(1).GetComponent<ControllerInputActionManager>().enabled = isMine;
-        this.transform.GetChild(1).GetComponent<TrackedPoseDriver>().enabled = isMine;
-        this.transform.GetChild(1).GetChild(2).gameObject.SetActive(isMine);
+       rightCont.transform.GetComponent<ControllerInputActionManager>().enabled = isMine;
+       rightCont.transform.GetComponent<TrackedPoseDriver>().enabled = isMine;
+       rightCont.transform.GetChild(2).gameObject.SetActive(isMine);
         //this.transform.GetChild(1).GetChild(0).GetComponent<Animator>().enabled = isMine;
 
         //Locomotion
