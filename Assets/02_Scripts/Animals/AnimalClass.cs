@@ -7,6 +7,7 @@ public enum AnimalState
     Idle,
     Move,
     Watch,
+    Eat,
     Attack,
     Damage,
     Die
@@ -32,7 +33,7 @@ public class AnimalClass : MonoBehaviour
     public float attack_area;
     public float attack_time;
     public float short_distance = 50.0f;
-    public bool is_Sticked;
+
 
     public AnimalState t_state = new AnimalState();
 
@@ -50,7 +51,7 @@ public class AnimalClass : MonoBehaviour
         corpse_hp = 0;
 
         is_alive = true;
-        is_Sticked = false;
+
 
         find_area = 3f;
         attack_area = 2f;
@@ -129,6 +130,19 @@ public class AnimalClass : MonoBehaviour
             Instantiate(meat, this.transform.position, this.transform.rotation);        // 동물 오브젝트 위치에 생고기를 생성하고
             Destroy(this.gameObject);                                                   // 동물 오브젝트를 삭제한다.
         }
+    }
+
+    public void EatFood()
+    {
+        Collider[] colliders = Physics.OverlapSphere(this.transform.position, 1.5f);
+        foreach (Collider col in colliders)
+        {
+            if (col.name.Contains("Food"))
+            {
+
+            }
+        }
+
     }
 
 

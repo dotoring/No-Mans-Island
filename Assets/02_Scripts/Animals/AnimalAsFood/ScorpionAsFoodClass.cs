@@ -1,19 +1,16 @@
 using UnityEngine;
 
-public class RoastClass : FoodClass
+public class ScorpionAsFoodClass : MonoBehaviour
 {
-
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
-        fullness = 5;
-        Reduce_Hp = 0;
+        
     }
 
-
-
-
-
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }

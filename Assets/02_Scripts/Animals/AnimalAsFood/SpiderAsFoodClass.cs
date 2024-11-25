@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class FrogAsFoodClass : FoodClass
+public class SpiderAsFoodClass : FoodClass
 {
-
     protected Transform stick;
 
 
