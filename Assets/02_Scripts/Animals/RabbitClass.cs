@@ -41,6 +41,7 @@ public class RabbitClass : StickClass
     {
         ShortDistance();
         RabbitCheck();
+        ThisStick();
 
 
         if (corpse_hp <= 0)

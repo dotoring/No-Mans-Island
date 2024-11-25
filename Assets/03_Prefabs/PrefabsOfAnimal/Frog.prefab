@@ -875,7 +875,6 @@ GameObject:
   - component: {fileID: 3748415626372443674}
   - component: {fileID: 553720007263932402}
   - component: {fileID: 3244282605744568659}
-  - component: {fileID: 7458594890247070678}
   m_Layer: 7
   m_Name: Frog
   m_TagString: Untagged
@@ -945,7 +944,6 @@ MonoBehaviour:
   attack_area: 0
   attack_time: 0
   short_distance: 50
-  is_Sticked: 0
   t_state: 0
   PhotonPlayer: []
 --- !u!54 &3748415626372443674
@@ -1118,24 +1116,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.1, y: 0.01, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7458594890247070678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626050389558724460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa05b09fe9e14204ba7b42196da438e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseHp: 0
-  fullness: 0
-  Reduce_Hp: 0
-  cookTime: 0
-  infireTime: 0
-  is_Sticked: 0
 --- !u!1 &1693866145210721565
 GameObject:
   m_ObjectHideFlags: 0

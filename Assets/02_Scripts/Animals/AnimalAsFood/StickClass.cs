@@ -19,8 +19,9 @@ public class StickClass : AnimalClass
     }
 
 
-    // Update is called once per frame
-    public void FixedUpdate()
+
+
+    public void ThisStick()
     {
         if (is_alive) return;
         ShakeStick();

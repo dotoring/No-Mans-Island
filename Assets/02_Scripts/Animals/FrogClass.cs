@@ -41,6 +41,7 @@ public class FrogClass : StickClass
     {
         ShortDistance();
         FrogCheck();
+        ThisStick();
 
 
         if (corpse_hp <= 0)
@@ -84,6 +85,7 @@ public class FrogClass : StickClass
 
             t_state = AnimalState.Move;
             animal_anim.SetTrigger("Move");
+
         }
 
 
