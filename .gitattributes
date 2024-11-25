@@ -158,4 +158,6 @@ Assets/Plugins/**       linguist-vendored
 *.skel.bytes            lfs
 
 # Exceptions for .asset files such as lightning pre-baking
-LightingData.asset     binary
+*LightingData*.asset    binary
+*Lightmap*.asset        binary
+*Terrain*.asset         binary
