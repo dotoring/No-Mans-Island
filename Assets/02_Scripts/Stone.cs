@@ -5,15 +5,21 @@ public class Stone : MonoBehaviour
 {
     [SerializeField] int childcount;
     private Rigidbody rig;
+    [SerializeField]XRGrabInteractable inter;
 
     private void Start()
     {
         rig = GetComponent<Rigidbody>();
+        inter.hoverEntered.AddListener((args) => { print(args+"Hover"); });
+        inter.selectEntered.AddListener((args) => { print(args+"Select"); });
     }
 
 
     private void Update()
     {
+       
+
+
         //중력을 사용중이면 잡히지 않은 것이고
         //중력을 사용중이 아니면 잡힌 것이다
         if (rig.useGravity)
@@ -36,5 +42,5 @@ public class Stone : MonoBehaviour
         //나무판자의 경우 대나무랑 같이 있으면 연결됨
         
     }
-
+    
 }
