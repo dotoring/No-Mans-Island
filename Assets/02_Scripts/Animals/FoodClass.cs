@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FoodClass : StickClass
+public class FoodClass : MonoBehaviour
 {
     public int fullness;
     public int thirst;
@@ -8,5 +8,5 @@ public class FoodClass : StickClass
     public float cookTime;
     public float infireTime;
 
-    public bool is_Sticked;
+
 }

@@ -7,7 +7,7 @@ public class MeatClass : FoodClass
 
     void Update()
     {
-        ShakeStick();
+        //ShakeStick();
     }
 
 
