@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     private void CreatePlayer()
     {
         //Vector3 pos = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
-        GameObject obj = PhotonNetwork.Instantiate("Player", spawnPoint.position, Quaternion.identity);
-        id = obj.GetComponent<PhotonView>().ViewID;
+       PhotonNetwork.Instantiate("Charactor", spawnPoint.position, Quaternion.identity);
+
     }
 }

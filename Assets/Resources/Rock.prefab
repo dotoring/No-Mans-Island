@@ -313,4 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00ef98a0c7ace8045a63c7b1e644477f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inter: {fileID: 1757458866778863864}
+  isGriped: 0
+  pv: {fileID: 7325210960478875206}
   di: {fileID: 1757458866778863864}
