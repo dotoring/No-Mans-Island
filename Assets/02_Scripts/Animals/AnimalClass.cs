@@ -32,7 +32,7 @@ public class AnimalClass : MonoBehaviour
     public float find_area;
     public float attack_area;
     public float attack_time;
-    public float short_distance = 50.0f;
+    public float short_distance = 400.0f;
 
 
     public AnimalState t_state = new AnimalState();
