@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 2143060945072437096}
   - component: {fileID: 4459095895286302182}
   - component: {fileID: 5333413918001917430}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: PlankMain
   m_TagString: CanBuild
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inter: {fileID: 6893454631152059078}
-  isGriped: 0
+  grabCount: 0
   pv: {fileID: 4459095895286302182}
   Hp: 0
   contactPoints:
