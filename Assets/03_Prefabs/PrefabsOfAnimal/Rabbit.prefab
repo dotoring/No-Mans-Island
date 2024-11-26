@@ -1114,6 +1114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d38bf02408e43e4895d02b71bb863d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inter: {fileID: 5124573349733339230}
+  isGriped: 0
+  pv: {fileID: 3524122020699787323}
   animal_hp: 0
   animal_atk: 0
   corpse_hp: 0
@@ -1159,7 +1162,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4993081365553003552}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
@@ -1182,7 +1185,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4993081365553003552}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 
