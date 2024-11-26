@@ -174,6 +174,8 @@ GameObject:
   - component: {fileID: 7388100977593354195}
   - component: {fileID: 6893454631152059078}
   - component: {fileID: 2143060945072437096}
+  - component: {fileID: 4459095895286302182}
+  - component: {fileID: 5333413918001917430}
   m_Layer: 0
   m_Name: PlankMain
   m_TagString: CanBuild
@@ -434,11 +436,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c8e4675a84182c4ab14d007d28b12b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inter: {fileID: 6893454631152059078}
+  isGriped: 0
+  pv: {fileID: 4459095895286302182}
   Hp: 0
   contactPoints:
   - {fileID: 3290292607029741845}
   - {fileID: 2017685621489886759}
   - {fileID: 3148621902806000132}
+--- !u!114 &4459095895286302182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834380800459582666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 5333413918001917430}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &5333413918001917430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834380800459582666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &8256803385102292854
 GameObject:
   m_ObjectHideFlags: 0

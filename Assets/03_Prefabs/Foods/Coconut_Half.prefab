@@ -273,6 +273,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74264ebb9ed9b7408549d4d270ce311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animal_hp: 0
+  animal_atk: 0
+  corpse_hp: 0
+  is_alive: 0
+  animal_rb: {fileID: 0}
+  animal_anim: {fileID: 0}
+  meat: {fileID: 0}
+  Player: {fileID: 0}
+  find_area: 0
+  attack_area: 0
+  attack_time: 0
+  short_distance: 400
+  t_state: 0
+  PhotonPlayer: []
+  yesorno: 0
   fullness: 0
   thirst: 20
   Reduce_Hp: 0
