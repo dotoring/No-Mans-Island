@@ -26,7 +26,7 @@ public class PlayerState : MonoBehaviour
                 TakeDamage(5);
             }
 
-            if(hunger > 0)
+            if (hunger > 0)
             {
                 DecreaseFullness(1);
             }
@@ -36,12 +36,12 @@ public class PlayerState : MonoBehaviour
                 DecreaseThirst(3);
             }
 
-            if(hunger >= 75 && thirst >= 75)
+            if (hunger >= 75 && thirst >= 75)
             {
                 RecureHp(5);
             }
 
-            if(isCold)
+            if (isCold)
             {
                 DecreaseTemp(2);
             }
@@ -79,7 +79,7 @@ public class PlayerState : MonoBehaviour
 
     public void IncreaseFullness(int val)
     {
-        Debug.Log("Æ÷¸¸µµ Áõ°¡ " + val);
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ " + val);
         hunger += val;
         if (hunger > 100)
         {
@@ -94,7 +94,7 @@ public class PlayerState : MonoBehaviour
 
     public void IncreaseThirst(int val)
     {
-        Debug.Log("¼öºÐ ¼·Ãë " + val);
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ " + val);
         thirst += val;
         if (thirst > 100)
         {
@@ -120,4 +120,10 @@ public class PlayerState : MonoBehaviour
     {
         temperature -= val;
     }
+
+
+
+
+
+    public bool isPoisoned = false;
 }

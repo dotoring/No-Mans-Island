@@ -5,7 +5,7 @@ public class TailClass : MonoBehaviour
     [SerializeField] ScolpionClass scorpion;
     [SerializeField] PlayerState player_s;
 
-    protected bool is_poison;
+
 
     private void Update()
     {

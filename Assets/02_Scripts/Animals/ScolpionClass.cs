@@ -12,7 +12,7 @@ public class ScolpionClass : AnimalClass
     [SerializeField] protected float cool_Time_max;
     protected float cool_Time;
 
-    protected bool is_poison;
+    public bool is_poison;
     protected int duration_posion;
 
 
@@ -229,7 +229,7 @@ public class ScolpionClass : AnimalClass
     {
         base.Hit(animal_atk_val);
         int ran = Random.Range(0, 2);
-        if (ran == 0 && !is_poison)
+        if (ran == 0 && !player_s.isPoisoned)
         {
             duration_posion = 3;
         }
@@ -239,7 +239,7 @@ public class ScolpionClass : AnimalClass
     {
         if (duration > 0)
         {
-            is_poison = true;
+            player_s.isPoisoned = true;
             if (cool_Time <= 0f)
             {
                 Hit(2);
@@ -251,6 +251,10 @@ public class ScolpionClass : AnimalClass
             {
                 cool_Time -= Time.deltaTime;
             }
+        }
+        else
+        {
+            player_s.isPoisoned = false;
         }
     }
 }

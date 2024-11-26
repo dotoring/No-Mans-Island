@@ -40,6 +40,8 @@ public class AnimalClass : PhotonGrabObject
 
     public List<GameObject> PhotonPlayer = new List<GameObject>();
 
+    public PlayerState player_s;
+
 
     //PlayerClass pc;
 
@@ -58,8 +60,12 @@ public class AnimalClass : PhotonGrabObject
 
 
 
+
         FirstAddListPlayer();
         ShortDistance();
+
+
+        player_s = Player.GetComponentInChildren<PlayerState>();
 
 
 
@@ -106,17 +112,13 @@ public class AnimalClass : PhotonGrabObject
 
     public virtual void Hit(int animal_atk_val)       // 데미지를 가한다.
     {
-        //pc.TakeDamage(animal_atk_val);
+        player_s.TakeDamage(animal_atk_val);
         print($"{this.transform.root.gameObject.name} 이가 {Player.gameObject.name} 를 공격");
     }
 
     public void Die()                   // 시체가 된다.     // 시체의 체력이 동물의 체력을 대체한다.
     {
-
         is_alive = false;
-
-
-
     }
 
     public void ChangeToMeat()          // 생고기로 변한다.      // 동물 오브젝트가 소멸하고 생고기 오브젝트가 대체한다.
@@ -127,42 +129,5 @@ public class AnimalClass : PhotonGrabObject
             Destroy(this.gameObject);                                                   // 동물 오브젝트를 삭제한다.
         }
     }
-
-    public void EatFood()
-    {
-        Collider[] colliders = Physics.OverlapSphere(this.transform.position, 1.5f);
-        foreach (Collider col in colliders)
-        {
-            if (col.name.Contains("Food"))
-            {
-
-            }
-        }
-
-    }
-
-    public bool yesorno;
-
-    public bool InPlayer(float area)
-    {
-
-        Collider[] colliders = Physics.OverlapSphere(this.transform.position, area);
-        foreach (Collider col in colliders)
-        {
-            if (col.transform.root == Player)
-            {
-                yesorno = true;
-            }
-            yesorno = false;
-        }
-        return yesorno;
-    }
-
-
-
-
-
-
-
 
 }
