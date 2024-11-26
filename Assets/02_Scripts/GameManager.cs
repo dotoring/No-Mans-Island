@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private Transform tr;
+    [SerializeField] private Transform spawnPoint;
     Room ri = PhotonNetwork.CurrentRoom;
     int id = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,8 +27,8 @@ public class GameManager : MonoBehaviour
 
     private void CreatePlayer()
     {
-        Vector3 pos = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
-        GameObject obj = PhotonNetwork.Instantiate("XR Origin (VR)", pos, Quaternion.identity);
+        //Vector3 pos = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
+        GameObject obj = PhotonNetwork.Instantiate("XR Origin (VR)", spawnPoint.position, Quaternion.identity);
         id = obj.GetComponent<PhotonView>().ViewID;
     }
 }
