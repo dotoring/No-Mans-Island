@@ -22,7 +22,9 @@ public class SpiderClass : AnimalClass
         corpse_hp = 30;
         is_alive = true;
 
-
+        find_area = 3f;
+        attack_area = 2f;
+        attack_time = 5f;
 
         rest_Time = 0f;
         xrgrab = GetComponent<XRGrabInteractable>();
@@ -117,7 +119,7 @@ public class SpiderClass : AnimalClass
         if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
         {
             rest_Time = 0;
-            animal_anim.SetTrigger("Move");
+
             t_state = AnimalState.Watch;
 
         }
@@ -144,7 +146,10 @@ public class SpiderClass : AnimalClass
     public void Animal_Attack()
     {
 
-
+        Vector3 watch_v = Player.transform.position - this.transform.position;
+        watch_v.Normalize();
+        watch_v.y = 0;
+        this.transform.forward = watch_v;
 
         if (rest_Time >= attack_time)
         {
@@ -177,8 +182,8 @@ public class SpiderClass : AnimalClass
         if (animal_hp <= 0) t_state = AnimalState.Die;
         else
         {
-            t_state = AnimalState.Idle;
-            animal_anim.SetTrigger("Idle");
+            t_state = AnimalState.Attack;
+
         }
 
 

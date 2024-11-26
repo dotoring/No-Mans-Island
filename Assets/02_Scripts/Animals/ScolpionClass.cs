@@ -22,7 +22,9 @@ public class ScolpionClass : AnimalClass
         attack_area = 2.5f;
 
 
-
+        find_area = 3f;
+        attack_area = 2f;
+        attack_time = 5f;
         rest_Time = 0f;
         xrgrab = GetComponent<XRGrabInteractable>();
         xrgrab.enabled = false;
@@ -36,6 +38,7 @@ public class ScolpionClass : AnimalClass
     // Update is called once per frame
     void Update()
     {
+        ShortDistance();
         ScolpionCheck();
         //ThisStick();
 
@@ -94,6 +97,10 @@ public class ScolpionClass : AnimalClass
             t_state = AnimalState.Watch;
 
         }
+        if (Vector3.Distance(this.transform.position, Player.transform.position) < attack_area)
+        {
+            t_state = AnimalState.Attack;
+        }
 
 
     }
@@ -111,10 +118,10 @@ public class ScolpionClass : AnimalClass
         if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
         {
             rest_Time = 0;
-            animal_anim.SetTrigger("Move");
             t_state = AnimalState.Watch;
 
         }
+
     }
     public void Animal_Watch()
     {
@@ -133,11 +140,15 @@ public class ScolpionClass : AnimalClass
         {
             this.transform.Translate(Vector3.forward * 1.0f * Time.deltaTime, Space.Self);
 
+
         }
     }
     public void Animal_Attack()
     {
-
+        Vector3 watch_v = Player.transform.position - this.transform.position;
+        watch_v.Normalize();
+        watch_v.y = 0;
+        this.transform.forward = watch_v;
 
 
         if (rest_Time >= attack_time)
@@ -153,8 +164,9 @@ public class ScolpionClass : AnimalClass
         if (Vector3.Distance(this.transform.position, Player.transform.position) >= attack_area)
         {
             rest_Time = 0;
-            animal_anim.SetTrigger("Move");
+
             t_state = AnimalState.Watch;
+            animal_anim.SetTrigger("Move");
         }
         else
         {
@@ -171,8 +183,7 @@ public class ScolpionClass : AnimalClass
         if (animal_hp <= 0) t_state = AnimalState.Die;
         else
         {
-            t_state = AnimalState.Idle;
-            animal_anim.SetTrigger("Idle");
+            t_state = AnimalState.Attack;
         }
 
 
