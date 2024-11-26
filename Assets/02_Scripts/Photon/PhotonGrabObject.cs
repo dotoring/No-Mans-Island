@@ -10,12 +10,11 @@ public class PhotonGrabObject : MonoBehaviourPunCallbacks
 {
     protected Rigidbody rig;
     [SerializeField] protected XRGrabInteractable inter;
-    //public bool isGriped;
     public int grabCount;
     [SerializeField] PhotonView pv;
 
 
-    private void Start()
+    protected virtual void Start()
     {
         //isGriped = false;
         grabCount = 0;
@@ -29,14 +28,12 @@ public class PhotonGrabObject : MonoBehaviourPunCallbacks
                 //오브젝트의 PhotonView에서 Ownership Transfer를 Takeover로 설정하면 소유권(컨트롤러 포함)을 강제로 가져올 수 있도록 한다
                 //TransferOwnership(Player) -> 현재 PhotonView의 소유권을 Player로 바꾸는 함수
                 pv.TransferOwnership(PhotonNetwork.LocalPlayer);
-                //isGriped = true;
                 grabCount++;
                 pv.RPC(nameof(Griped), RpcTarget.AllViaServer, grabCount);
                 OnGrabChangeLayer(grabCount);
             });
             inter.selectExited.AddListener((args) =>
             {
-                //isGriped = false;
                 grabCount--;
                 pv.RPC(nameof(Griped), RpcTarget.AllViaServer, grabCount);
                 OnGrabChangeLayer(grabCount);
@@ -45,7 +42,7 @@ public class PhotonGrabObject : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    void Griped(int count)
+    public void Griped(int count)
     {
         if(count > 0)
         {
@@ -59,7 +56,7 @@ public class PhotonGrabObject : MonoBehaviourPunCallbacks
         //그립 상태가 아니면 중력 키키
         //rig.useGravity = !isGriped;
     }
-
+   
     void OnGrabChangeLayer(int count)
     {
         int grabLayer = LayerMask.NameToLayer("GrabObject");
