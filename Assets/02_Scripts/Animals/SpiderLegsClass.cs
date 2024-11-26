@@ -1,16 +1,12 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class SpiderLegsClass : MonoBehaviour
+public class SpiderLegsClass : SpiderClass
 {
-    SpiderClass sc;
 
 
-    private void Start()
-    {
-        sc = this.transform.root.GetComponent<SpiderClass>();
 
-    }
+
 
 
 
@@ -19,9 +15,9 @@ public class SpiderLegsClass : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (sc.t_state == AnimalState.Attack)
+            if (t_state == AnimalState.Attack)
             {
-                sc.Hit(sc.animal_atk);
+                Hit(animal_atk);
             }
 
 

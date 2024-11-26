@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 8733182623504343670}
   - component: {fileID: 2811201528970307342}
   - component: {fileID: 355016309575013130}
+  - component: {fileID: 961079474551736975}
+  - component: {fileID: 5926699980361440484}
   m_Layer: 0
   m_Name: Mushroom
   m_TagString: Food
@@ -151,27 +153,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3533450efa4622143882620ae065eaa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animal_hp: 0
-  animal_atk: 0
-  corpse_hp: 0
-  is_alive: 0
-  animal_rb: {fileID: 0}
-  animal_anim: {fileID: 0}
-  meat: {fileID: 0}
-  Player: {fileID: 0}
-  find_area: 0
-  attack_area: 0
-  attack_time: 0
-  short_distance: 50
-  t_state: 0
-  PhotonPlayer: []
-  baseHp: 0
-  fullness: 20
-  thirst: 0
-  Reduce_Hp: 0
-  cookTime: 0
-  infireTime: 0
-  is_Sticked: 0
+  inter: {fileID: 355016309575013130}
+  isGriped: 0
+  pv: {fileID: 5926699980361440484}
+  Hp: 0
+  foodSO: {fileID: 11400000, guid: 4cad732935de8fc4298441a0637a2d48, type: 2}
 --- !u!114 &355016309575013130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,3 +280,42 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
+--- !u!114 &961079474551736975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600471576988555411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &5926699980361440484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600471576988555411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 961079474551736975}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0

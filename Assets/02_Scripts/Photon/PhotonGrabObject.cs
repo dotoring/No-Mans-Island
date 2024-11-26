@@ -20,21 +20,22 @@ public class PhotonGrabObject : MonoBehaviourPunCallbacks
 
         rig = GetComponent<Rigidbody>();
 
-        inter.selectEntered.AddListener((args) =>
+        if(inter != null)
         {
-            //오브젝트의 PhotonView에서 Ownership Transfer를 Takeover로 설정하면 소유권(컨트롤러 포함)을 강제로 가져올 수 있도록 한다
-            //TransferOwnership(Player) -> 현재 PhotonView의 소유권을 Player로 바꾸는 함수
-            pv.TransferOwnership(PhotonNetwork.LocalPlayer);
-            isGriped = true;
-            pv.RPC(nameof(Griped), RpcTarget.AllViaServer, isGriped);
-        });
-        inter.selectExited.AddListener((args) =>
-        {
-            isGriped = false;
-            pv.RPC(nameof(Griped), RpcTarget.AllViaServer, isGriped);
-        });
-
-
+            inter.selectEntered.AddListener((args) =>
+            {
+                //오브젝트의 PhotonView에서 Ownership Transfer를 Takeover로 설정하면 소유권(컨트롤러 포함)을 강제로 가져올 수 있도록 한다
+                //TransferOwnership(Player) -> 현재 PhotonView의 소유권을 Player로 바꾸는 함수
+                pv.TransferOwnership(PhotonNetwork.LocalPlayer);
+                isGriped = true;
+                pv.RPC(nameof(Griped), RpcTarget.AllViaServer, isGriped);
+            });
+            inter.selectExited.AddListener((args) =>
+            {
+                isGriped = false;
+                pv.RPC(nameof(Griped), RpcTarget.AllViaServer, isGriped);
+            });
+        }
     }
 
     [PunRPC]

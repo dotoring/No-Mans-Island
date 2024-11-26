@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class ScolpionClass : AnimalClass
 {
-    //XRGrabInteractable xrgrab;
+    XRGrabInteractable xrgrab;
 
 
     protected float rest_Time;
@@ -23,8 +24,8 @@ public class ScolpionClass : AnimalClass
 
 
         rest_Time = 0f;
-        //xrgrab = GetComponent<XRGrabInteractable>();
-        //xrgrab.enabled = false;
+        xrgrab = GetComponent<XRGrabInteractable>();
+        xrgrab.enabled = false;
 
 
 
@@ -69,7 +70,7 @@ public class ScolpionClass : AnimalClass
                 break;
             case AnimalState.Die:
                 Animal_Die();
-                //xrgrab.enabled = true;
+                xrgrab.enabled = true;
                 break;
         }
     }
