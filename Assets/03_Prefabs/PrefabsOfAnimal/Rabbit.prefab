@@ -905,6 +905,8 @@ GameObject:
   - component: {fileID: 5124573349733339230}
   - component: {fileID: 4199700134421839581}
   - component: {fileID: 4996128770566254769}
+  - component: {fileID: 3524122020699787323}
+  - component: {fileID: 302859386038069344}
   m_Layer: 0
   m_Name: Rabbit
   m_TagString: Untagged
@@ -1150,6 +1152,45 @@ CapsuleCollider:
   m_Height: 0.7
   m_Direction: 2
   m_Center: {x: 0, y: 0.15, z: 0.06}
+--- !u!114 &3524122020699787323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4993081365553003552}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 1
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 302859386038069344}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &302859386038069344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4993081365553003552}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &5055646647061195257
 GameObject:
   m_ObjectHideFlags: 0
