@@ -762,6 +762,7 @@ Transform:
   m_Children:
   - {fileID: 1277932990}
   - {fileID: 773176615}
+  - {fileID: 8281638668610211653}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &434128169
@@ -1892,7 +1893,6 @@ Transform:
   - {fileID: 902865156}
   - {fileID: 6323200867752254483}
   - {fileID: 7007253581613394081}
-  - {fileID: 8281638668610211653}
   m_Father: {fileID: 434128168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1328384724
@@ -10051,13 +10051,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6988579924041535913}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9150214444350180696}
-  m_Father: {fileID: 1277932990}
+  m_Father: {fileID: 434128168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8281638668610211654
 MonoBehaviour:
@@ -10084,26 +10084,12 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  leftGrip:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Left Grip
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: fa1bafda-0ceb-41af-976a-61513a868fee
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
   pv: {fileID: 434128169}
   models:
   - {fileID: 3566523394236697793}
   - {fileID: 5787511090503742313}
   leftCont: {fileID: 4123158525541192295}
   rightCont: {fileID: 8031850726900037180}
-  curGrabObj: {fileID: 0}
-  range: 0.5
 --- !u!4 &8320087970919589159
 Transform:
   m_ObjectHideFlags: 0
