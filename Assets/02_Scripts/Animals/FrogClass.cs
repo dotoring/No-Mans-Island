@@ -24,7 +24,9 @@ public class FrogClass : AnimalClass
         is_alive = true;
 
 
-
+        find_area = 3f;
+        attack_area = 2f;
+        attack_time = 5f;
 
 
         rest_Time = 0f;
@@ -53,7 +55,7 @@ public class FrogClass : AnimalClass
     private void FrogCheck()
     {
         rest_Time += Time.deltaTime;
-        damage_Time += Time.deltaTime;
+
 
         switch (t_state)
         {
@@ -92,7 +94,7 @@ public class FrogClass : AnimalClass
         else if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
         {
             rest_Time = 0;
-
+            animal_anim.SetTrigger("Move");
             t_state = AnimalState.Watch;
 
         }
@@ -138,7 +140,7 @@ public class FrogClass : AnimalClass
         if (jump_Time <= 1.2f)
         {
             this.transform.Translate(Vector3.forward * 0.4f * Time.deltaTime, Space.Self);
-            animal_anim.SetTrigger("Move");
+
         }
         else if (jump_Time > 1.5f)
         {
@@ -169,6 +171,7 @@ public class FrogClass : AnimalClass
         if (animal_hp <= 0) t_state = AnimalState.Die;
         else
         {
+            animal_anim.SetTrigger("Move");
             t_state = AnimalState.Watch;
 
         }
