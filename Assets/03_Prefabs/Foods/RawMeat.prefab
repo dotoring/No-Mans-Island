@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5500888043170753459}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 1.34}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -272,9 +272,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b60b15024c8ab94d8b3a89e94827700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animal_hp: 0
+  animal_atk: 0
+  corpse_hp: 0
+  is_alive: 0
+  animal_rb: {fileID: 0}
+  animal_anim: {fileID: 0}
+  meat: {fileID: 0}
+  Player: {fileID: 0}
+  find_area: 0
+  attack_area: 0
+  attack_time: 0
+  short_distance: 50
+  t_state: 0
+  PhotonPlayer: []
+  baseHp: 0
   fullness: 10
   thirst: 0
   Reduce_Hp: 0
   cookTime: 5
+  infireTime: 0
   is_Sticked: 0
   roast: {fileID: 1088307825180922503, guid: 7ad9942c9c5eff7409d126f3102f9b43, type: 3}

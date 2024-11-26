@@ -94,18 +94,16 @@ public class TigerClass : AnimalClass
             t_state = AnimalState.Move;
             animal_anim.SetTrigger("Move");
         }
-        if (Vector3.Distance(this.transform.position, Player.transform.position) < attack_area)
-        {
-            t_state = AnimalState.Attack;
 
-        }
         else if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
         {
             rest_Time = 0;
-
+            animal_anim.SetTrigger("Move");
             t_state = AnimalState.Watch;
 
         }
+
+
     }
     public void Animal_Move()
     {
@@ -121,7 +119,7 @@ public class TigerClass : AnimalClass
         if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
         {
             rest_Time = 0;
-
+            animal_anim.SetTrigger("Move");
             t_state = AnimalState.Watch;
 
         }
@@ -133,17 +131,19 @@ public class TigerClass : AnimalClass
         watch_v.y = 0;
         this.transform.forward = watch_v;
 
-        if (Vector3.Distance(this.transform.position, Player.transform.position) <= attack_area)
+        if (Vector3.Distance(this.transform.position, Player.transform.position) < attack_area)
         {
+            animal_anim.SetTrigger("Attack");
             t_state = AnimalState.Attack;
-
             rest_Time = 0f;
+
+
 
         }
         else
         {
             this.transform.Translate(Vector3.forward * 1.0f * Time.deltaTime, Space.Self);
-            animal_anim.SetTrigger("Move");
+
         }
     }
     public void Animal_Attack()
@@ -164,11 +164,12 @@ public class TigerClass : AnimalClass
         if (Vector3.Distance(this.transform.position, Player.transform.position) > attack_area)
         {
             rest_Time = 0;
+            animal_anim.SetTrigger("Move");
             t_state = AnimalState.Watch;
         }
         else
         {
-            animal_anim.SetTrigger("Idle");
+
         }
 
     }

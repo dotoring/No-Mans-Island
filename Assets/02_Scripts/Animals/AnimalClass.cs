@@ -32,7 +32,7 @@ public class AnimalClass : MonoBehaviour
     public float find_area;
     public float attack_area;
     public float attack_time;
-    public float short_distance = 50.0f;
+    public float short_distance = 400.0f;
 
 
     public AnimalState t_state = new AnimalState();
@@ -57,10 +57,10 @@ public class AnimalClass : MonoBehaviour
         attack_area = 2f;
         attack_time = 5f;
 
-        animal_rb = this.GetComponent<Rigidbody>();
+
         animal_anim = this.GetComponent<Animator>();
 
-        t_state = AnimalState.Idle;
+
 
         FirstAddListPlayer();
         ShortDistance();
@@ -143,6 +143,23 @@ public class AnimalClass : MonoBehaviour
             }
         }
 
+    }
+
+    public bool yesorno;
+
+    public bool InPlayer(float area)
+    {
+
+        Collider[] colliders = Physics.OverlapSphere(this.transform.position, area);
+        foreach (Collider col in colliders)
+        {
+            if (col.transform.root == Player)
+            {
+                yesorno = true;
+            }
+            yesorno = false;
+        }
+        return yesorno;
     }
 
 
