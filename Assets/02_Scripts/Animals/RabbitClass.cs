@@ -151,12 +151,7 @@ public class RabbitClass : AnimalClass
             animal_anim.SetTrigger("Idle");
 
             t_state = AnimalState.Idle;
-
         }
-
-
-
-
     }
 
     public void Animal_Damage()
