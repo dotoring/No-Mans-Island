@@ -26,6 +26,8 @@ public class RabbitClass : AnimalClass
         corpse_hp = 30;
         is_alive = true;
 
+        find_area = 3f;
+        attack_area = 2f;
 
 
 
@@ -148,9 +150,9 @@ public class RabbitClass : AnimalClass
         {
 
 
-            animal_anim.SetTrigger("Idle");
+            animal_anim.SetTrigger("Move");
 
-            t_state = AnimalState.Idle;
+            t_state = AnimalState.Watch;
         }
     }
 
