@@ -6,19 +6,17 @@ using Photon.Realtime;
 using System.Collections;
 using Unity.VisualScripting;
 
-public class Stone : MonoBehaviourPunCallbacks
+public class PhotonGrabObject : MonoBehaviourPunCallbacks
 {
-    [SerializeField] int childcount;
     private Rigidbody rig;
-    [SerializeField]XRGrabInteractable inter;
+    [SerializeField] XRGrabInteractable inter;
     public bool isGriped;
     [SerializeField] PhotonView pv;
-    
+
 
     private void Start()
     {
         isGriped = false;
-        pv.ControllerActorNr = 0;
 
         rig = GetComponent<Rigidbody>();
 
@@ -28,8 +26,6 @@ public class Stone : MonoBehaviourPunCallbacks
             //TransferOwnership(Player) -> 현재 PhotonView의 소유권을 Player로 바꾸는 함수
             pv.TransferOwnership(PhotonNetwork.LocalPlayer);
             isGriped = true;
-            //ht["Grip"] = true;
-            //pv.OwnershipTransfer = OwnershipOption.Fixed;
             pv.RPC(nameof(Griped), RpcTarget.AllViaServer, isGriped);
         });
         inter.selectExited.AddListener((args) =>
@@ -38,16 +34,14 @@ public class Stone : MonoBehaviourPunCallbacks
             pv.RPC(nameof(Griped), RpcTarget.AllViaServer, isGriped);
         });
 
-        
+
     }
 
     [PunRPC]
     void Griped(bool isGriped)
     {
-        //if(!pv.IsMine)
-        //rig.isKinematic = isGriped;
         rig.useGravity = !isGriped;
     }
 
-    
+
 }
