@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     [SerializeField] private Animator anim;
     [SerializeField] private InputActionProperty moveAction;
-    [SerializeField] private InputActionProperty leftGrip;
 
     private Vector2 inputVec;
     private Quaternion rotQ;
@@ -26,21 +25,12 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject leftCont;
     [SerializeField] private GameObject rightCont;
 
-    [SerializeField] private GameObject curGrabObj;
-
-    [SerializeField] private float range;
-
-    [SerializeField] private float leftGripVal => leftGrip.action.ReadValue<float>();//왼손이 현재 잡고있는지 저장하는 변수
 
 
     private int hasstickX = Animator.StringToHash("stickX");
     private int hasstickY = Animator.StringToHash("stickY");
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position+ Vector3.up * 1.17f, range);
-    }
+
 
     private void Start()
     {
@@ -59,6 +49,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
         
     }
+
 
     
 
@@ -95,9 +86,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
         if (!pv.IsMine)
             return;
 
-
-        SearchGripedObj(leftGripVal);
-
         //플레이어 이동 애니메이션 연결 적용중
         inputVec = moveAction.action.ReadValue<Vector2>();
         //rotQ = rotHead.action.ReadValue<Quaternion>();
@@ -117,29 +105,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         anim.SetFloat(hasstickY, inputVec.y);
     }
 
-    private void SearchGripedObj(float val)
-    {
-        if(val>0)
-        {
-            Collider[] cols = Physics.OverlapSphere(transform.position + Vector3.up * 1.17f, range);
-            List<Stone> cangrabs=new List<Stone>();
-            foreach(Collider col in cols)
-            {
-                if(col.GetComponent<Stone>()!=null)
-                {
-                    cangrabs.Add(col.GetComponent<Stone>());
-                }
-            }
-            foreach(Stone obj in cangrabs)
-            {
-                if(obj.isGriped)
-                    curGrabObj=obj.gameObject;
-            }
-
-
-
-        }
-    }
+    
 
 
     public void IncreaseHp(int val)
