@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class SpiderClass : AnimalClass
 {
-    //XRGrabInteractable xrgrab;
+    XRGrabInteractable xrgrab;
 
 
     protected float rest_Time;
@@ -25,8 +25,8 @@ public class SpiderClass : AnimalClass
 
 
         rest_Time = 0f;
-        //xrgrab = GetComponent<XRGrabInteractable>();
-        //xrgrab.enabled = false;
+        xrgrab = GetComponent<XRGrabInteractable>();
+        xrgrab.enabled = false;
 
 
 
@@ -37,6 +37,7 @@ public class SpiderClass : AnimalClass
     // Update is called once per frame
     void Update()
     {
+        ShortDistance();
         SpiderCheck();
         //ThisStick();
 
@@ -75,7 +76,7 @@ public class SpiderClass : AnimalClass
                 break;
             case AnimalState.Die:
                 Animal_Die();
-                //xrgrab.enabled = true;
+                xrgrab.enabled = true;
                 break;
         }
     }
