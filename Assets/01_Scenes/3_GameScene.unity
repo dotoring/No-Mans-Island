@@ -916,6 +916,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireWood (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4405967985236826758, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
+      propertyPath: sceneViewId
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: 8307322294062364507, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.10000001
@@ -1092,6 +1096,10 @@ PrefabInstance:
     - target: {fileID: 1884426153098938590, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
       propertyPath: m_Name
       value: FireWood (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405967985236826758, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
+      propertyPath: sceneViewId
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 8307322294062364507, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
       propertyPath: m_LocalScale.x
@@ -1458,6 +1466,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireWood (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4405967985236826758, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
+      propertyPath: sceneViewId
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 8307322294062364507, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.10000001
@@ -1636,6 +1648,10 @@ PrefabInstance:
     - target: {fileID: 1884426153098938590, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
       propertyPath: m_Name
       value: FireWood (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405967985236826758, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
+      propertyPath: sceneViewId
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 8307322294062364507, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
       propertyPath: m_LocalScale.x
@@ -2405,6 +2421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireWood (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4405967985236826758, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
+      propertyPath: sceneViewId
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8307322294062364507, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.10000001
@@ -2505,6 +2525,10 @@ PrefabInstance:
     - target: {fileID: 1884426153098938590, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
       propertyPath: m_Name
       value: FireWood
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405967985236826758, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
+      propertyPath: sceneViewId
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8307322294062364507, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
       propertyPath: m_LocalScale.x
@@ -2990,6 +3014,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3609676455450325004, guid: 4c5f3703774438842bb751741334472f, type: 3}
   m_PrefabInstance: {fileID: 1063245234}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1774895471
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5454546546010054187, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.12203
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454546546010054187, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.178
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454546546010054187, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -72.32478
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454546546010054187, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454546546010054187, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454546546010054187, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454546546010054187, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454546546010054187, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454546546010054187, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454546546010054187, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960567223805532853, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
+      propertyPath: sceneViewId
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286078130187463290, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
+      propertyPath: m_Name
+      value: Stone
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
 --- !u!4 &1890392418 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3045615561338852164, guid: e30b2163b546d164fb504aed526a4a01, type: 3}
@@ -3273,3 +3358,4 @@ SceneRoots:
   - {fileID: 1979649766}
   - {fileID: 428266237}
   - {fileID: 975741399}
+  - {fileID: 1774895471}

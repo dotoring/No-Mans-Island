@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class FireWoodCtrl : MonoBehaviour
+public class FireWoodCtrl : PhotonGrabObject
 {
     [SerializeField] float burningTime;
     [SerializeField] GameObject fireEffect;

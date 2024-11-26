@@ -1,33 +1,14 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class StoneCtrl : InteractableObject
+public class StoneCtrl : PhotonGrabObject
 {
     [SerializeField] int power;
-    Rigidbody rb;
-    XRGrabInteractable interactable;
-    int grabCount;
-
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-        interactable = GetComponent<XRGrabInteractable>();
-
-        interactable.selectEntered.AddListener((var) =>
-        {
-            grabCount++;
-        });
-
-        interactable.selectExited.AddListener((var) =>
-        {
-            grabCount--;
-        });
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
         //충돌시 속도가 일정 이상일 때 & 플레이어가 잡고있을 때
-        if(rb.linearVelocity.magnitude > 0.7f && grabCount > 0)
+        if(rig.linearVelocity.magnitude > 0.7f && grabCount > 0)
         {
             if(collision.gameObject.GetComponent<InteractableObject>())
             {

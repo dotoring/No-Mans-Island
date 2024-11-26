@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 381839952092208137}
   - component: {fileID: 3797194759235204302}
   - component: {fileID: 6523775495464456579}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Log
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
   - {fileID: 6523775495464456579}
