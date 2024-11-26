@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -3881132179799159919}
   - component: {fileID: 5291706113330427205}
   - component: {fileID: 5717501973046017398}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RoastMeat
   m_TagString: Food
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
   - {fileID: 5717501973046017398}

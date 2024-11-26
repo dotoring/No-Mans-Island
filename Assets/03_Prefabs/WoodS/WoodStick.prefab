@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8146983968932169710}
   - component: {fileID: 5644884926283783533}
   - component: {fileID: 7862471359451178534}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WoodStick
   m_TagString: CanBuild
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
   - {fileID: 5644884926283783533}

@@ -10,7 +10,7 @@ using UnityEngine.XR.OpenXR.Input;
 public class CuttedBambooCtrl : InteractableObject
 {
     bool isBuildReady;
-    int grabCount;
+    //int grabCount;
     public bool isFixed;
     bool isTrigger;
     Rigidbody rb;
@@ -20,7 +20,7 @@ public class CuttedBambooCtrl : InteractableObject
 
     [SerializeField] GameObject contackPoints;
 
-    private void OnEnable()
+    public override void OnEnable()
     {
         //공격 이벤트 등록
         leftTriggerAction.action.performed += LeftTriggerEnter;
@@ -30,7 +30,7 @@ public class CuttedBambooCtrl : InteractableObject
         rightTriggerAction.action.canceled += RightTriggerExit;
     }
 
-    private void OnDisable()
+    public override void OnDisable()
     {
         leftTriggerAction.action.performed -= LeftTriggerEnter;
         rightTriggerAction.action.performed -= RightTriggerEnter;
@@ -45,14 +45,14 @@ public class CuttedBambooCtrl : InteractableObject
         interactable = GetComponent<XRGrabInteractable>();
 
         //현재 플레이어가 잡고있는지 체크하는 코드
-        interactable.selectEntered.AddListener((var) =>
-        {
-            grabCount++;
-        });
-        interactable.selectExited.AddListener((var) =>
-        {
-            grabCount--;
-        });
+        //interactable.selectEntered.AddListener((var) =>
+        //{
+        //    grabCount++;
+        //});
+        //interactable.selectExited.AddListener((var) =>
+        //{
+        //    grabCount--;
+        //});
     }
 
     public override void TakeDamage(int dmg) 

@@ -7,15 +7,7 @@ public class PlankCtrl : InteractableObject
 {
     bool isBuildReady;
     bool isFixed;
-    Rigidbody rb;
-    XRGrabInteractable interactable;
     [SerializeField] GameObject[] contactPoints;
-
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-        interactable = GetComponent<XRGrabInteractable>();
-    }
 
     public override void TakeDamage(int dmg)
     {
@@ -28,11 +20,11 @@ public class PlankCtrl : InteractableObject
 
     void Fix()
     {
-        rb.isKinematic = true;
+        rig.isKinematic = true;
         isFixed = true;
 
         //그랩 상호작용 레이어 변경으로 잡을 수 없도록 변경
-        interactable.interactionLayers = 1 << InteractionLayerMask.NameToLayer("Fixed");
+        inter.interactionLayers = 1 << InteractionLayerMask.NameToLayer("Fixed");
     }
 
     private void OnCollisionStay(Collision collision)

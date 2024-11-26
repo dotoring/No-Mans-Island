@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 264010034423530282}
   - component: {fileID: 6960567223805532853}
   - component: {fileID: 1605729438748964847}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stone
   m_TagString: Stone
   m_Icon: {fileID: 0}
@@ -276,9 +276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inter: {fileID: 1531183829708496095}
-  isGriped: 0
+  grabCount: 0
   pv: {fileID: 6960567223805532853}
-  Hp: 0
   power: 4
 --- !u!114 &6960567223805532853
 MonoBehaviour:
@@ -296,7 +295,7 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
   - {fileID: 1605729438748964847}

@@ -21,8 +21,8 @@ TagManager:
   - Animal
   - 
   - UIInteraction
-  - 
-  - 
+  - Player
+  - GrabObject
   - 
   - 
   - 

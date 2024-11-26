@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 355016309575013130}
   - component: {fileID: 961079474551736975}
   - component: {fileID: 5926699980361440484}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mushroom
   m_TagString: Food
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
   - {fileID: 961079474551736975}
