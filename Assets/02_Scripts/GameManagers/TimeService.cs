@@ -31,13 +31,7 @@ public class TimeService : MonoBehaviour
         curHour = new Observable<int>(curTime.Hour);
 
         isDayTime.ValueChanged += day => (day ? OnSunrise : OnSunset)?.Invoke();
-        //curHour.ValueChanged += _ => OnHourChange?.Invoke(_);
-        //curHour.AddListener(OnHourChange);
-    }
-
-    public void UpdateListner()
-    {
-        curHour.AddListener(OnHourChange);
+        curHour.ValueChanged += _ => OnHourChange?.Invoke(_);
     }
 
     public void UpdateTime(float deltaTime)

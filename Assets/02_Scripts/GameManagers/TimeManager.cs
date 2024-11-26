@@ -27,13 +27,15 @@ public class TimeManager : MonoBehaviour
 
     TimeService service;
     IEnumerator coroutine;
+    public bool IsDay { get; private set; }
     private void Start()
     {
         service = new TimeService(timeSettings);
         //volume.profile.TryGet(out colorAdjustments);
         coroutine = SpawnAggressiveAnimal();
         service.OnHourChange += time => CheckTime(time);
-        service.UpdateListner();
+        service.OnSunrise += () => CheckDay(true);
+        service.OnSunset += () => CheckDay(false);
     }
 
     private void Update()
@@ -105,12 +107,26 @@ public class TimeManager : MonoBehaviour
         }
     }
 
+    void CheckDay(bool isDay)
+    {
+        if (isDay)
+        {
+            tempGameMgr.OnDay();
+            IsDay = true;
+        }
+        else
+        {
+            tempGameMgr.OnNight();
+            IsDay = false;
+        }
+    }
+
     IEnumerator SpawnAggressiveAnimal()
     {
         while (true)
         {
             //플레이어 근처에 선공 동물 소환
-            tempGameMgr.SpawnAnimals();
+            //tempGameMgr.SpawnAnimals();
             yield return new WaitForSeconds(5f);
         }
     }

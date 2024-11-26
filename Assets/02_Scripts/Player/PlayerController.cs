@@ -1,6 +1,8 @@
 using Photon.Pun;
 using Photon.Realtime;
+using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
@@ -9,8 +11,10 @@ using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class PlayerController : MonoBehaviourPunCallbacks
 {
+
     [SerializeField] private Animator anim;
     [SerializeField] private InputActionProperty moveAction;
+
     private Vector2 inputVec;
     private Quaternion rotQ;
     private Vector3 rotV;
@@ -22,8 +26,11 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject rightCont;
 
 
+
     private int hasstickX = Animator.StringToHash("stickX");
     private int hasstickY = Animator.StringToHash("stickY");
+
+
 
     private void Start()
     {
@@ -39,7 +46,10 @@ public class PlayerController : MonoBehaviourPunCallbacks
       
         CameraOff(pv.IsMine);
         HandOff(pv.IsMine);
+
+        
     }
+
 
     
 
@@ -95,5 +105,33 @@ public class PlayerController : MonoBehaviourPunCallbacks
         anim.SetFloat(hasstickY, inputVec.y);
     }
 
+    
 
+
+    public void IncreaseHp(int val)
+    {
+
+    }
+    public void DecreaseHp(int val)
+    {
+
+    }
+
+    public void IncreaseFullness(int val)
+    {
+        Debug.Log("포만도 증가 " + val);
+    }
+
+    public void DecreaseFullness(int val)
+    {
+    }
+
+    public void IncreaseThirst(int val)
+    {
+        Debug.Log("수분 섭취 " + val);
+    }
+
+    public void DecreaseThirst(int val)
+    {
+    }
 }

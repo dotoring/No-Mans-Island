@@ -278,7 +278,7 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
   - {fileID: 5854165780649570085}
@@ -315,4 +315,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   childcount: 0
   inter: {fileID: 1757458866778863864}
+  isGriped: 0
   pv: {fileID: 7325210960478875206}

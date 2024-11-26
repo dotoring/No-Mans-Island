@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -5,6 +6,7 @@ public class TempGameMgr : MonoBehaviour
 {
     [SerializeField] GameObject[] nightAnimals;
     [SerializeField] GameObject player;
+    Coroutine coroutine;
 
     public void SpawnAnimals()
     {
@@ -20,5 +22,15 @@ public class TempGameMgr : MonoBehaviour
 
             Instantiate(animal, hit.point, Quaternion.identity);
         }
+    }
+
+    public void OnDay()
+    {
+        player.GetComponent<PlayerState>().isCold = false;
+    }
+
+    public void OnNight()
+    {
+        player.GetComponent<PlayerState>().isCold = true;
     }
 }
