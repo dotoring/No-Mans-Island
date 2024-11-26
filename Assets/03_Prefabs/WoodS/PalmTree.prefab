@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 1966044207508364913}
   - component: {fileID: 5151300720402370973}
   - component: {fileID: 7856904315315002711}
+  - component: {fileID: 3517124733891278900}
   m_Layer: 0
   m_Name: PalmTree
   m_TagString: Untagged
@@ -165,6 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79cdfd3e019476949b27614a7f2846c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inter: {fileID: 0}
+  isGriped: 0
+  pv: {fileID: 3517124733891278900}
   Hp: 10
   pref: {fileID: 4367592847582052757, guid: 646fb86dc56ed9c4a95171fbffb9ac55, type: 3}
   spawnPoints:
@@ -216,3 +220,25 @@ CapsuleCollider:
   m_Height: 1.9569831
   m_Direction: 1
   m_Center: {x: -0.04, y: 2.3495743, z: -0.00000029802322}
+--- !u!114 &3517124733891278900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9100041632726501768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0

@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Coconut
   m_EditorClassIdentifier: 
   fullness: 0
-  thirst: 0
+  thirst: 20
   Reduce_Hp: 0
   cookTime: 0
-  infireTime: 0
