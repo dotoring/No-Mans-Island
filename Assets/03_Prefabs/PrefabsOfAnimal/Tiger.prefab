@@ -1431,6 +1431,7 @@ MonoBehaviour:
   short_distance: 50
   t_state: 0
   PhotonPlayer: []
+  yesorno: 0
 --- !u!1 &7571617807550323047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,7 +1603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3984738149132009471}
   - component: {fileID: 2730532687811394296}
-  - component: {fileID: 973255028564963438}
+  - component: {fileID: 2708604756667333632}
   m_Layer: 0
   m_Name: Head_M
   m_TagString: Untagged
@@ -1650,7 +1651,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.25
   m_Center: {x: 0, y: 0.17, z: 0}
---- !u!114 &973255028564963438
+--- !u!114 &2708604756667333632
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1662,20 +1663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4341f87b062640b4ea3a75fe8064d9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animal_hp: 0
-  animal_atk: 0
-  corpse_hp: 0
-  is_alive: 0
-  animal_rb: {fileID: 0}
-  animal_anim: {fileID: 0}
-  meat: {fileID: 0}
-  Player: {fileID: 0}
-  find_area: 0
-  attack_area: 0
-  attack_time: 0
-  short_distance: 50
-  t_state: 0
-  PhotonPlayer: []
+  tiger: {fileID: 539135482912679832}
 --- !u!1 &8453111876562109282
 GameObject:
   m_ObjectHideFlags: 0

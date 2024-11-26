@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class TailClass : ScolpionClass
+public class TailClass : MonoBehaviour
 {
+    [SerializeField] ScolpionClass scorpion;
     private void Update()
     {
-        if (t_state == AnimalState.Attack)
+        if (scorpion.t_state == AnimalState.Attack)
         {
             this.GetComponent<SphereCollider>().enabled = true;
         }
@@ -18,7 +19,7 @@ public class TailClass : ScolpionClass
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Hit(animal_atk);
+            scorpion.Hit(scorpion.animal_atk);
 
         }
     }
