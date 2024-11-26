@@ -315,4 +315,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   childcount: 0
   inter: {fileID: 1757458866778863864}
+  isGriped: 0
   pv: {fileID: 7325210960478875206}

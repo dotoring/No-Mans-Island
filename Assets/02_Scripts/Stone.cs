@@ -11,7 +11,7 @@ public class Stone : MonoBehaviourPunCallbacks
     [SerializeField] int childcount;
     private Rigidbody rig;
     [SerializeField]XRGrabInteractable inter;
-    bool isGriped;
+    public bool isGriped;
     [SerializeField] PhotonView pv;
 
 

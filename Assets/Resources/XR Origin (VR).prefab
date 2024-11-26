@@ -5010,12 +5010,26 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  leftGrip:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Left Grip
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 190585fb-2609-4db9-89fd-60cbad63dbdb
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   pv: {fileID: 1175206473659645700}
   models:
   - {fileID: 1671623728820533473}
   - {fileID: 8511034056852670281}
   leftCont: {fileID: 2266572957770769991}
   rightCont: {fileID: 5276749144641864220}
+  curGrabObj: {fileID: 0}
+  range: 0.5
 --- !u!114 &5209252491407396866
 MonoBehaviour:
   m_ObjectHideFlags: 0
