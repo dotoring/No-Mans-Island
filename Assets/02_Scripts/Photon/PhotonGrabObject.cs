@@ -14,7 +14,7 @@ public class PhotonGrabObject : MonoBehaviourPunCallbacks
     [SerializeField] PhotonView pv;
 
 
-    private void Start()
+    protected virtual void Start()
     {
         //isGriped = false;
         grabCount = 0;
@@ -42,7 +42,7 @@ public class PhotonGrabObject : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    void Griped(int count)
+    public void Griped(int count)
     {
         if(count > 0)
         {
