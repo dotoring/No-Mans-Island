@@ -1,16 +1,24 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class SpiderLegsClass : SpiderClass
+public class SpiderLegsClass : MonoBehaviour
 {
+    SpiderClass sc;
+    XRGrabInteractable animal_grab;
+
+    private void Start()
+    {
+        sc = this.transform.root.GetComponent<SpiderClass>();
+        animal_grab = this.GetComponent<XRGrabInteractable>();
+        animal_grab.enabled = false;
+    }
+
+
     private void Update()
     {
-        if (t_state == AnimalState.Attack)
+        if (sc.t_state == AnimalState.Die)
         {
-            this.GetComponent<SphereCollider>().enabled = true;
-        }
-        else
-        {
-            this.GetComponent<SphereCollider>().enabled = false;
+            animal_grab.enabled = true;
         }
     }
 
@@ -18,7 +26,11 @@ public class SpiderLegsClass : SpiderClass
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Hit(animal_atk);
+            if (sc.t_state == AnimalState.Attack)
+            {
+                sc.Hit(sc.animal_atk);
+            }
+
 
         }
     }

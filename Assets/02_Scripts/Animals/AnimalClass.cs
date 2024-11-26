@@ -57,10 +57,10 @@ public class AnimalClass : MonoBehaviour
         attack_area = 2f;
         attack_time = 5f;
 
-        animal_rb = this.GetComponent<Rigidbody>();
+
         animal_anim = this.GetComponent<Animator>();
 
-        t_state = AnimalState.Idle;
+
 
         FirstAddListPlayer();
         ShortDistance();
@@ -143,6 +143,23 @@ public class AnimalClass : MonoBehaviour
             }
         }
 
+    }
+
+    public bool yesorno;
+
+    public bool InPlayer(float area)
+    {
+
+        Collider[] colliders = Physics.OverlapSphere(this.transform.position, area);
+        foreach (Collider col in colliders)
+        {
+            if (col.transform.root == Player)
+            {
+                yesorno = true;
+            }
+            yesorno = false;
+        }
+        return yesorno;
     }
 
 

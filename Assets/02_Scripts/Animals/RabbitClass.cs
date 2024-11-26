@@ -1,8 +1,9 @@
 using Unity.VisualScripting;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class RabbitClass : StickClass
+public class RabbitClass : AnimalClass
 {
     XRGrabInteractable xrgrab;
 
@@ -11,6 +12,8 @@ public class RabbitClass : StickClass
     protected float damage_Time;
 
     protected float jump_Time;
+
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,10 +30,17 @@ public class RabbitClass : StickClass
 
 
 
+
+
+
+
+
+
+
+
+
         rest_Time = 0f;
         jump_Time = 0f;
-        xrgrab = GetComponent<XRGrabInteractable>();
-        xrgrab.enabled = false;
 
 
 
@@ -41,7 +51,7 @@ public class RabbitClass : StickClass
     {
         ShortDistance();
         RabbitCheck();
-        ThisStick();
+
 
 
         if (corpse_hp <= 0)
@@ -74,7 +84,7 @@ public class RabbitClass : StickClass
                 break;
             case AnimalState.Die:
                 Animal_Die();
-                xrgrab.enabled = true;
+
                 break;
         }
     }
@@ -171,6 +181,7 @@ public class RabbitClass : StickClass
         {
             animal_anim.SetTrigger("Die");
             Die();
+
         }
 
 
@@ -192,9 +203,9 @@ public class RabbitClass : StickClass
 
 
 
-    public override void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        base.OnCollisionEnter(collision);
+
         if (collision.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
         {
             GetDamage(5);
