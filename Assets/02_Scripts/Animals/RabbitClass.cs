@@ -9,9 +9,9 @@ public class RabbitClass : AnimalClass
 
 
     protected float rest_Time;
-    protected float damage_Time;
 
-    protected float jump_Time;
+
+
 
 
 
@@ -26,12 +26,15 @@ public class RabbitClass : AnimalClass
         corpse_hp = 30;
         is_alive = true;
 
+        find_area = 3f;
+        attack_area = 2f;
 
 
 
 
 
-
+        xrgrab = GetComponent<XRGrabInteractable>();
+        xrgrab.enabled = false;
 
 
 
@@ -40,7 +43,6 @@ public class RabbitClass : AnimalClass
 
 
         rest_Time = 0f;
-        jump_Time = 0f;
 
 
 
@@ -63,7 +65,7 @@ public class RabbitClass : AnimalClass
     private void RabbitCheck()
     {
         rest_Time += Time.deltaTime;
-        damage_Time += Time.deltaTime;
+
 
         switch (t_state)
         {
@@ -84,7 +86,7 @@ public class RabbitClass : AnimalClass
                 break;
             case AnimalState.Die:
                 Animal_Die();
-
+                xrgrab.enabled = true;
                 break;
         }
     }
@@ -138,7 +140,7 @@ public class RabbitClass : AnimalClass
         watch_v.y = 0;
         this.transform.forward = watch_v;
 
-        jump_Time += Time.deltaTime;
+
         this.transform.Translate(Vector3.forward * 1.5f * Time.deltaTime, Space.Self);
 
 
@@ -148,9 +150,9 @@ public class RabbitClass : AnimalClass
         {
 
 
-            animal_anim.SetTrigger("Idle");
+            animal_anim.SetTrigger("Move");
 
-            t_state = AnimalState.Idle;
+            t_state = AnimalState.Watch;
         }
     }
 

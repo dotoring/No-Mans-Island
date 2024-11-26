@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class FrogClass : StickClass
+public class FrogClass : AnimalClass
 {
     XRGrabInteractable xrgrab;
 
@@ -24,7 +24,9 @@ public class FrogClass : StickClass
         is_alive = true;
 
 
-
+        find_area = 3f;
+        attack_area = 2f;
+        attack_time = 5f;
 
 
         rest_Time = 0f;
@@ -41,7 +43,7 @@ public class FrogClass : StickClass
     {
         ShortDistance();
         FrogCheck();
-        ThisStick();
+        //ThisStick();
 
 
         if (corpse_hp <= 0)
@@ -53,7 +55,7 @@ public class FrogClass : StickClass
     private void FrogCheck()
     {
         rest_Time += Time.deltaTime;
-        damage_Time += Time.deltaTime;
+
 
         switch (t_state)
         {
@@ -92,7 +94,7 @@ public class FrogClass : StickClass
         else if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
         {
             rest_Time = 0;
-
+            animal_anim.SetTrigger("Move");
             t_state = AnimalState.Watch;
 
         }
@@ -138,7 +140,7 @@ public class FrogClass : StickClass
         if (jump_Time <= 1.2f)
         {
             this.transform.Translate(Vector3.forward * 0.4f * Time.deltaTime, Space.Self);
-            animal_anim.SetTrigger("Move");
+
         }
         else if (jump_Time > 1.5f)
         {
@@ -169,6 +171,7 @@ public class FrogClass : StickClass
         if (animal_hp <= 0) t_state = AnimalState.Die;
         else
         {
+            animal_anim.SetTrigger("Move");
             t_state = AnimalState.Watch;
 
         }
@@ -204,9 +207,9 @@ public class FrogClass : StickClass
 
 
 
-    public override void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
-        base.OnCollisionEnter(collision);
+
         if (collision.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
         {
             GetDamage(5);

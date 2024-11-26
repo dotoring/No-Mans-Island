@@ -1308,6 +1308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4796394579401487230}
   - component: {fileID: 4281314330295486614}
+  - component: {fileID: 881287051264449737}
   m_Layer: 0
   m_Name: Scorpion_Sting_01_07SHJnt
   m_TagString: Untagged
@@ -1351,6 +1352,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.07
   m_Center: {x: -0.2, y: 0, z: 0}
+--- !u!114 &881287051264449737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4405822735899184822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab4ea528d7838c54cacdbde3a30502df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorpion: {fileID: 6418132844089440262}
 --- !u!1 &4694601947562050790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2169,6 +2183,7 @@ MonoBehaviour:
   short_distance: 50
   t_state: 0
   PhotonPlayer: []
+  yesorno: 0
 --- !u!1 &6178739067942532991
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 5213795133290994904}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.224, z: 0}
+  m_LocalPosition: {x: 0, y: 2.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -73,8 +73,10 @@ GameObject:
   - component: {fileID: 543141222538382013}
   - component: {fileID: 4648163367634188261}
   - component: {fileID: 8868160441644115282}
-  - component: {fileID: 7722679930030298213}
   - component: {fileID: 1966044207508364913}
+  - component: {fileID: 5151300720402370973}
+  - component: {fileID: 7856904315315002711}
+  - component: {fileID: 3517124733891278900}
   m_Layer: 0
   m_Name: PalmTree
   m_TagString: Untagged
@@ -152,8 +154,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7722679930030298213
-BoxCollider:
+--- !u!114 &1966044207508364913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9100041632726501768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79cdfd3e019476949b27614a7f2846c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inter: {fileID: 0}
+  isGriped: 0
+  pv: {fileID: 3517124733891278900}
+  Hp: 10
+  pref: {fileID: 4367592847582052757, guid: 646fb86dc56ed9c4a95171fbffb9ac55, type: 3}
+  spawnPoints:
+  - {fileID: 8815824119468155592}
+  - {fileID: 8777638106773748874}
+--- !u!136 &5151300720402370973
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -170,10 +192,35 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.55228573, y: 3.3670754, z: 0.44087017}
-  m_Center: {x: -0.028870314, y: 1.6835377, z: -0.0047379136}
---- !u!114 &1966044207508364913
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Height: 1.5109031
+  m_Direction: 1
+  m_Center: {x: -0.04, y: 0.75545156, z: -0.00000029802322}
+--- !u!136 &7856904315315002711
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9100041632726501768}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15
+  m_Height: 1.9569831
+  m_Direction: 1
+  m_Center: {x: -0.04, y: 2.3495743, z: -0.00000029802322}
+--- !u!114 &3517124733891278900
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,11 +229,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 9100041632726501768}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79cdfd3e019476949b27614a7f2846c0, type: 3}
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 10
-  pref: {fileID: 4367592847582052757, guid: 646fb86dc56ed9c4a95171fbffb9ac55, type: 3}
-  spawnPoints:
-  - {fileID: 8815824119468155592}
-  - {fileID: 8777638106773748874}
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0

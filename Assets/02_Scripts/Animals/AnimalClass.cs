@@ -46,16 +46,11 @@ public class AnimalClass : MonoBehaviour
 
     public virtual void InitStat()              // 스탯 초기화
     {
-        animal_hp = 0;
-        animal_atk = 0;
-        corpse_hp = 0;
 
         is_alive = true;
 
 
-        find_area = 3f;
-        attack_area = 2f;
-        attack_time = 5f;
+
 
 
         animal_anim = this.GetComponent<Animator>();

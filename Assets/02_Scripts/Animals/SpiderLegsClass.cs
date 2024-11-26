@@ -3,25 +3,26 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class SpiderLegsClass : MonoBehaviour
 {
-    SpiderClass sc;
-
-
-    private void Start()
+    [SerializeField] SpiderClass spider;
+    private void Update()
     {
-        sc = this.transform.root.GetComponent<SpiderClass>();
-
+        if (spider.t_state == AnimalState.Attack)
+        {
+            this.GetComponent<SphereCollider>().enabled = true;
+        }
+        else
+        {
+            this.GetComponent<SphereCollider>().enabled = false;
+        }
     }
-
-
-
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (sc.t_state == AnimalState.Attack)
+            if (spider.t_state == AnimalState.Attack)
             {
-                sc.Hit(sc.animal_atk);
+                spider.Hit(spider.animal_atk);
             }
 
 

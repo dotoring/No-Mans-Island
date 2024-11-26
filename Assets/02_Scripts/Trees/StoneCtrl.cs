@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class StoneCtrl : MonoBehaviour
+public class StoneCtrl : InteractableObject
 {
     [SerializeField] int power;
     Rigidbody rb;

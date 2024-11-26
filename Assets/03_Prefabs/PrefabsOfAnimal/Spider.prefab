@@ -268,6 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a29ddcab0dfb2d4f9739aca18d811c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spider: {fileID: 8360527985232044490}
 --- !u!1 &1327339745496541505
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,7 +532,6 @@ GameObject:
   - component: {fileID: 8360527985232044490}
   - component: {fileID: 6350868271814347772}
   - component: {fileID: 4355739786521243063}
-  - component: {fileID: 2051556134701617613}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Untagged
@@ -615,6 +615,7 @@ MonoBehaviour:
   short_distance: 50
   t_state: 0
   PhotonPlayer: []
+  yesorno: 0
 --- !u!54 &6350868271814347772
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -764,39 +765,6 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
---- !u!114 &2051556134701617613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2317415984001249117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0592e9dc9c77bf04c870243128dc1f34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animal_hp: 0
-  animal_atk: 0
-  corpse_hp: 0
-  is_alive: 0
-  animal_rb: {fileID: 0}
-  animal_anim: {fileID: 0}
-  meat: {fileID: 0}
-  Player: {fileID: 0}
-  find_area: 0
-  attack_area: 0
-  attack_time: 0
-  short_distance: 50
-  t_state: 0
-  PhotonPlayer: []
-  baseHp: 0
-  fullness: 0
-  thirst: 0
-  Reduce_Hp: 0
-  cookTime: 0
-  infireTime: 0
-  is_Sticked: 0
 --- !u!1 &2329103874991490599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,6 +1017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a29ddcab0dfb2d4f9739aca18d811c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spider: {fileID: 8360527985232044490}
 --- !u!1 &2641910017290248896
 GameObject:
   m_ObjectHideFlags: 0

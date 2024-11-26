@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 6631237773602108971}
   - component: {fileID: 1940575287940733475}
   - component: {fileID: -3881132179799159919}
+  - component: {fileID: 5291706113330427205}
+  - component: {fileID: 5717501973046017398}
   m_Layer: 0
   m_Name: RoastMeat
   m_TagString: Food
@@ -272,24 +274,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96bc38895d8a361438643b7f02e31526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animal_hp: 0
-  animal_atk: 0
-  corpse_hp: 0
-  is_alive: 0
-  animal_rb: {fileID: 0}
-  animal_anim: {fileID: 0}
-  meat: {fileID: 0}
-  Player: {fileID: 0}
-  find_area: 0
-  attack_area: 0
-  attack_time: 0
-  short_distance: 50
-  t_state: 0
-  PhotonPlayer: []
-  baseHp: 0
-  fullness: 40
-  thirst: 0
-  Reduce_Hp: 0
-  cookTime: 0
-  infireTime: 0
-  is_Sticked: 0
+  inter: {fileID: 1940575287940733475}
+  isGriped: 0
+  pv: {fileID: 5291706113330427205}
+  Hp: 0
+  foodSO: {fileID: 11400000, guid: 934ff9ecc5297554185b3e8e4df1c114, type: 2}
+--- !u!114 &5291706113330427205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088307825180922503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 5717501973046017398}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &5717501973046017398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088307825180922503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
