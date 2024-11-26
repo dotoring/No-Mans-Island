@@ -104,7 +104,7 @@ public class AnimalClass : PhotonGrabObject
         }
     }
 
-    public void Hit(int animal_atk_val)       // 데미지를 가한다.
+    public virtual void Hit(int animal_atk_val)       // 데미지를 가한다.
     {
         //pc.TakeDamage(animal_atk_val);
         print($"{this.transform.root.gameObject.name} 이가 {Player.gameObject.name} 를 공격");
