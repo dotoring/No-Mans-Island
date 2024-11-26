@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 3595465725669750901}
   - component: {fileID: 1531183829708496095}
   - component: {fileID: 264010034423530282}
+  - component: {fileID: 6960567223805532853}
+  - component: {fileID: 1605729438748964847}
   m_Layer: 0
   m_Name: Stone
   m_TagString: Stone
@@ -273,4 +275,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f76ae1cb763629468c5af27fb07e3cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inter: {fileID: 1531183829708496095}
+  isGriped: 0
+  pv: {fileID: 6960567223805532853}
+  Hp: 0
   power: 4
+--- !u!114 &6960567223805532853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7286078130187463290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 1605729438748964847}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &1605729438748964847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7286078130187463290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1

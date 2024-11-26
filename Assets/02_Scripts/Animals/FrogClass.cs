@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class FrogClass : StickClass
+public class FrogClass : AnimalClass
 {
     XRGrabInteractable xrgrab;
 
@@ -41,7 +41,7 @@ public class FrogClass : StickClass
     {
         ShortDistance();
         FrogCheck();
-        ThisStick();
+        //ThisStick();
 
 
         if (corpse_hp <= 0)
@@ -204,9 +204,9 @@ public class FrogClass : StickClass
 
 
 
-    public override void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
-        base.OnCollisionEnter(collision);
+
         if (collision.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
         {
             GetDamage(5);

@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class ScolpionClass : StickClass
+public class ScolpionClass : AnimalClass
 {
-    //XRGrabInteractable xrgrab;
+    XRGrabInteractable xrgrab;
 
 
     protected float rest_Time;
@@ -23,8 +24,8 @@ public class ScolpionClass : StickClass
 
 
         rest_Time = 0f;
-        //xrgrab = GetComponent<XRGrabInteractable>();
-        //xrgrab.enabled = false;
+        xrgrab = GetComponent<XRGrabInteractable>();
+        xrgrab.enabled = false;
 
 
 
@@ -36,7 +37,7 @@ public class ScolpionClass : StickClass
     void Update()
     {
         ScolpionCheck();
-        ThisStick();
+        //ThisStick();
 
 
 
@@ -69,7 +70,7 @@ public class ScolpionClass : StickClass
                 break;
             case AnimalState.Die:
                 Animal_Die();
-                //xrgrab.enabled = true;
+                xrgrab.enabled = true;
                 break;
         }
     }
@@ -77,7 +78,8 @@ public class ScolpionClass : StickClass
 
     public void Animal_Idle()
     {
-        if (rest_Time >= 5f)
+
+        if (rest_Time >= 10.0f)
         {
             rest_Time = 0;
 
@@ -85,18 +87,15 @@ public class ScolpionClass : StickClass
             animal_anim.SetTrigger("Move");
         }
 
-        if (Vector3.Distance(this.transform.position, Player.transform.position) <= attack_area)
-        {
-            t_state = AnimalState.Attack;
-
-        }
         else if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
         {
             rest_Time = 0;
-
+            animal_anim.SetTrigger("Move");
             t_state = AnimalState.Watch;
 
         }
+
+
     }
     public void Animal_Move()
     {
@@ -112,7 +111,7 @@ public class ScolpionClass : StickClass
         if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
         {
             rest_Time = 0;
-
+            animal_anim.SetTrigger("Move");
             t_state = AnimalState.Watch;
 
         }
@@ -124,46 +123,50 @@ public class ScolpionClass : StickClass
         watch_v.y = 0;
         this.transform.forward = watch_v;
 
-        if (Vector3.Distance(this.transform.position, Player.transform.position) <= attack_area)
+        if (Vector3.Distance(this.transform.position, Player.transform.position) < attack_area)
         {
+            rest_Time = 0;
+            animal_anim.SetTrigger("Attack");
             t_state = AnimalState.Attack;
-
         }
         else
         {
             this.transform.Translate(Vector3.forward * 1.0f * Time.deltaTime, Space.Self);
-            animal_anim.SetTrigger("Move");
+
         }
     }
     public void Animal_Attack()
     {
+
+
+
         if (rest_Time >= attack_time)
         {
             rest_Time = 0;
             animal_anim.SetTrigger("Attack");
-            print($"{this.gameObject.name} 이가 {Player.gameObject.name} 를 공격");
+
         }
 
 
 
 
-        if (Vector3.Distance(this.transform.position, Player.transform.position) > attack_area)
+        if (Vector3.Distance(this.transform.position, Player.transform.position) >= attack_area)
         {
             rest_Time = 0;
+            animal_anim.SetTrigger("Move");
             t_state = AnimalState.Watch;
         }
         else
         {
-            animal_anim.SetTrigger("Idle");
+
         }
+
     }
+
+
     public void Animal_Damage()
     {
-        if (damage_Time >= 5f)
-        {
-            damage_Time = 0;
-            animal_anim.SetTrigger("Damage");
-        }
+
 
         if (animal_hp <= 0) t_state = AnimalState.Die;
         else
@@ -181,18 +184,18 @@ public class ScolpionClass : StickClass
     {
         if (is_alive)
         {
+
             animal_anim.SetTrigger("Die");
             Die();
         }
-
     }
 
 
 
 
-    public override void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
-        base.OnCollisionEnter(collision);
+
         if (collision.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
         {
             GetDamage(5);

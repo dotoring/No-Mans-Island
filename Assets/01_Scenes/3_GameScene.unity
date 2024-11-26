@@ -224,6 +224,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6960567223805532853, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7286078130187463290, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
       propertyPath: m_Name
       value: Stone
@@ -1138,6 +1142,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4172498621326391053, guid: e30b2163b546d164fb504aed526a4a01, type: 3}
+      propertyPath: sceneViewId
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8936638345375946184, guid: e30b2163b546d164fb504aed526a4a01, type: 3}
       propertyPath: m_Name
       value: Coconut (1)
@@ -1194,6 +1202,10 @@ PrefabInstance:
     - target: {fileID: 5454546546010054187, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960567223805532853, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
+      propertyPath: sceneViewId
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7286078130187463290, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
       propertyPath: m_Name
@@ -3834,6 +3846,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4172498621326391053, guid: e30b2163b546d164fb504aed526a4a01, type: 3}
+      propertyPath: sceneViewId
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8936638345375946184, guid: e30b2163b546d164fb504aed526a4a01, type: 3}
       propertyPath: m_Name
       value: Coconut (3)
@@ -4029,6 +4045,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4172498621326391053, guid: e30b2163b546d164fb504aed526a4a01, type: 3}
+      propertyPath: sceneViewId
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8936638345375946184, guid: e30b2163b546d164fb504aed526a4a01, type: 3}
       propertyPath: m_Name
       value: Coconut
@@ -4171,6 +4191,10 @@ PrefabInstance:
     - target: {fileID: 5454546546010054187, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960567223805532853, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
+      propertyPath: sceneViewId
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7286078130187463290, guid: 8d2ace390c5f85e4bb147172a57f8f8f, type: 3}
       propertyPath: m_Name
@@ -6901,6 +6925,10 @@ PrefabInstance:
     - target: {fileID: 3045615561338852164, guid: e30b2163b546d164fb504aed526a4a01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172498621326391053, guid: e30b2163b546d164fb504aed526a4a01, type: 3}
+      propertyPath: sceneViewId
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8936638345375946184, guid: e30b2163b546d164fb504aed526a4a01, type: 3}
       propertyPath: m_Name
