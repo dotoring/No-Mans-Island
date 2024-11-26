@@ -781,12 +781,12 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
+  - {fileID: 2167269714960796410}
   - {fileID: 5723587785486267955}
   - {fileID: 7705877256204061927}
-  - {fileID: 2167269714960796410}
   sceneViewId: 1
   InstantiationId: 0
   isRuntimeInstantiated: 0

@@ -13,7 +13,7 @@ public enum AnimalState
     Die
 }
 
-public class AnimalClass : MonoBehaviour
+public class AnimalClass : PhotonGrabObject
 {
     public int animal_hp;               // 동물의 체력
     public int animal_atk;              // 동물의 공격력
@@ -23,6 +23,7 @@ public class AnimalClass : MonoBehaviour
 
     public Rigidbody animal_rb;         // 동물의 물리를 받는 변수
     public Animator animal_anim;        // 동물의 애니메이션을 받는 변수
+
 
 
     public GameObject meat;                    // 생고기 오브젝트      // 프리팹 받아오면 public 으로 바꿀 예정

@@ -1961,6 +1961,8 @@ GameObject:
   - component: {fileID: 7176260539855952556}
   - component: {fileID: 2396465964734245854}
   - component: {fileID: 6418132844089440262}
+  - component: {fileID: -5799582370466509443}
+  - component: {fileID: 2876661374523662916}
   m_Layer: 0
   m_Name: Scorpion
   m_TagString: Untagged
@@ -2169,6 +2171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdbdffb9622105c4db875790059a653e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inter: {fileID: 2396465964734245854}
+  isGriped: 0
+  pv: {fileID: -5799582370466509443}
   animal_hp: 0
   animal_atk: 0
   corpse_hp: 0
@@ -2184,6 +2189,45 @@ MonoBehaviour:
   t_state: 0
   PhotonPlayer: []
   yesorno: 0
+--- !u!114 &-5799582370466509443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5628001307581544608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 1
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 2876661374523662916}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &2876661374523662916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5628001307581544608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &6178739067942532991
 GameObject:
   m_ObjectHideFlags: 0
