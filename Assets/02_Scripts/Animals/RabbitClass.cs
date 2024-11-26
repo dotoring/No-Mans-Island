@@ -104,20 +104,20 @@ public class RabbitClass : AnimalClass
         else if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
         {
             rest_Time = 0;
-
+            animal_anim.SetTrigger("Move");
             t_state = AnimalState.Watch;
 
         }
     }
     public void Animal_Move()           // 움직이기
     {
-        this.transform.Translate(Vector3.forward * 0.4f * Time.deltaTime, Space.Self);
+        this.transform.Translate(Vector3.forward * 1.0f * Time.deltaTime, Space.Self);
 
 
         if (rest_Time >= 5f)
         {
             rest_Time = 0;
-            jump_Time = 0;
+
 
             t_state = AnimalState.Idle;
             animal_anim.SetTrigger("Idle");
@@ -139,24 +139,19 @@ public class RabbitClass : AnimalClass
         this.transform.forward = watch_v;
 
         jump_Time += Time.deltaTime;
-        this.transform.Translate(Vector3.forward * 3.0f * Time.deltaTime, Space.Self);
-        animal_anim.SetTrigger("Move");
+        this.transform.Translate(Vector3.forward * 1.5f * Time.deltaTime, Space.Self);
 
 
 
-        if (Vector3.Distance(this.transform.position, Player.transform.position) > find_area + 3.0f)
+
+        if (Vector3.Distance(this.transform.position, Player.transform.position) >= find_area + 3.0f)
         {
-            jump_Time = 0f;
+
 
             animal_anim.SetTrigger("Idle");
 
             t_state = AnimalState.Idle;
-
         }
-
-
-
-
     }
 
     public void Animal_Damage()
@@ -166,6 +161,7 @@ public class RabbitClass : AnimalClass
         if (animal_hp <= 0) t_state = AnimalState.Die;
         else
         {
+            animal_anim.SetTrigger("Move");
             t_state = AnimalState.Watch;
 
         }

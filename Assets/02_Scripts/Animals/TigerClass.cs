@@ -161,7 +161,7 @@ public class TigerClass : AnimalClass
 
 
 
-        if (Vector3.Distance(this.transform.position, Player.transform.position) > attack_area)
+        if (Vector3.Distance(this.transform.position, Player.transform.position) >= attack_area)
         {
             rest_Time = 0;
             animal_anim.SetTrigger("Move");

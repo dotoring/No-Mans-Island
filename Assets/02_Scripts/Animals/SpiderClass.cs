@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class SpiderClass : StickClass
+public class SpiderClass : AnimalClass
 {
     //XRGrabInteractable xrgrab;
 
@@ -38,7 +38,7 @@ public class SpiderClass : StickClass
     void Update()
     {
         SpiderCheck();
-        ThisStick();
+        //ThisStick();
 
 
 
@@ -91,18 +91,16 @@ public class SpiderClass : StickClass
             t_state = AnimalState.Move;
             animal_anim.SetTrigger("Move");
         }
-        if (Vector3.Distance(this.transform.position, Player.transform.position) < attack_area)
-        {
-            t_state = AnimalState.Attack;
 
-        }
         else if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
         {
             rest_Time = 0;
-
+            animal_anim.SetTrigger("Move");
             t_state = AnimalState.Watch;
 
         }
+
+
     }
     public void Animal_Move()
     {
@@ -118,7 +116,7 @@ public class SpiderClass : StickClass
         if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
         {
             rest_Time = 0;
-
+            animal_anim.SetTrigger("Move");
             t_state = AnimalState.Watch;
 
         }
@@ -130,19 +128,22 @@ public class SpiderClass : StickClass
         watch_v.y = 0;
         this.transform.forward = watch_v;
 
-        if (Vector3.Distance(this.transform.position, Player.transform.position) <= attack_area)
+        if (Vector3.Distance(this.transform.position, Player.transform.position) < attack_area)
         {
+            rest_Time = 0;
+            animal_anim.SetTrigger("Attack");
             t_state = AnimalState.Attack;
-
         }
         else
         {
             this.transform.Translate(Vector3.forward * 1.0f * Time.deltaTime, Space.Self);
-            animal_anim.SetTrigger("Move");
+
         }
     }
     public void Animal_Attack()
     {
+
+
 
         if (rest_Time >= attack_time)
         {
@@ -154,14 +155,15 @@ public class SpiderClass : StickClass
 
 
 
-        if (Vector3.Distance(this.transform.position, Player.transform.position) > attack_area)
+        if (Vector3.Distance(this.transform.position, Player.transform.position) >= attack_area)
         {
             rest_Time = 0;
+            animal_anim.SetTrigger("Move");
             t_state = AnimalState.Watch;
         }
         else
         {
-            animal_anim.SetTrigger("Idle");
+
         }
 
     }
@@ -187,6 +189,7 @@ public class SpiderClass : StickClass
     {
         if (is_alive)
         {
+
             animal_anim.SetTrigger("Die");
             Die();
         }
@@ -195,9 +198,9 @@ public class SpiderClass : StickClass
 
 
 
-    public override void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
-        base.OnCollisionEnter(collision);
+
         if (collision.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
         {
             GetDamage(5);
