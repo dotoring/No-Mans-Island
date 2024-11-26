@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5649856011304607757}
   - component: {fileID: 8854271924925806914}
   - component: {fileID: 6871478822197005294}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: RawMeat
   m_TagString: Food
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inter: {fileID: 5883064865713296535}
-  isGriped: 0
+  grabCount: 0
   pv: {fileID: 6871478822197005294}
   Hp: 0
   foodSO: {fileID: 11400000, guid: 19b9ed762a65df2409e33e72e6934215, type: 2}

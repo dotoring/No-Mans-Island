@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4374347705266415242}
   - component: {fileID: 4172498621326391053}
   - component: {fileID: 7036391735732707462}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Coconut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inter: {fileID: 4374347705266415242}
-  isGriped: 0
+  grabCount: 0
   pv: {fileID: 4172498621326391053}
   Hp: 10
   halfCoconut: {fileID: 6769411908171072044, guid: 490b9ec77cd120543a8b507b7feb3775, type: 3}

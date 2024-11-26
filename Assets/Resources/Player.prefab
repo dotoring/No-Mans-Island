@@ -2123,7 +2123,7 @@ GameObject:
   - component: {fileID: 2496573383076926210}
   - component: {fileID: 1467819464003271880}
   - component: {fileID: 2024488179368581895}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Thirst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3858,7 +3858,7 @@ GameObject:
   - component: {fileID: 7127052297413473427}
   - component: {fileID: 4411406966006293095}
   - component: {fileID: 8193958866713000484}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: PlayerUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5120,7 +5120,7 @@ GameObject:
   - component: {fileID: 9148956717552473747}
   - component: {fileID: 7420611393582387406}
   - component: {fileID: 5798683477943356532}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Temp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6052,7 +6052,7 @@ GameObject:
   - component: {fileID: 6627595209296612786}
   - component: {fileID: 2519033208026258866}
   - component: {fileID: 2389464787405849882}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: HpTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6371,7 +6371,7 @@ MonoBehaviour:
   - {fileID: 5753998448078737202}
   - {fileID: 1264686037174225957}
   - {fileID: 5648378654399097117}
-  sceneViewId: 0
+  sceneViewId: 34
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &2762046252464473510
@@ -6606,7 +6606,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8866504259892189152}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7890,7 +7890,7 @@ GameObject:
   - component: {fileID: 5702285043776952176}
   - component: {fileID: 2015363240346368460}
   - component: {fileID: 2986162927302646677}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: PlayerUISensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9591,7 +9591,7 @@ GameObject:
   - component: {fileID: 3425213330249995294}
   - component: {fileID: 1550097200676784948}
   - component: {fileID: 2026895999107078034}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Hunger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10032,7 +10032,7 @@ GameObject:
   - component: {fileID: 6817953083849731149}
   - component: {fileID: 7123176850721157984}
   - component: {fileID: 3194689001090615163}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

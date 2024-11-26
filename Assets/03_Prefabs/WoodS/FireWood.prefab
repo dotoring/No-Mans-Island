@@ -9759,7 +9759,7 @@ GameObject:
   - component: {fileID: 6743419836556518339}
   - component: {fileID: 4405967985236826758}
   - component: {fileID: 670903059687212105}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: FireWood
   m_TagString: FireWood
   m_Icon: {fileID: 0}
@@ -9896,7 +9896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inter: {fileID: 6743419836556518339}
-  isGriped: 0
+  grabCount: 0
   pv: {fileID: 4405967985236826758}
   burningTime: 30
   fireEffect: {fileID: 4490267622585885892}

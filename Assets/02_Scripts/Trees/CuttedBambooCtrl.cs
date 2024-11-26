@@ -10,11 +10,8 @@ using UnityEngine.XR.OpenXR.Input;
 public class CuttedBambooCtrl : InteractableObject
 {
     bool isBuildReady;
-    //int grabCount;
     public bool isFixed;
     bool isTrigger;
-    Rigidbody rb;
-    XRGrabInteractable interactable;
     [SerializeField] private InputActionProperty leftTriggerAction;
     [SerializeField] private InputActionProperty rightTriggerAction;
 
@@ -39,22 +36,6 @@ public class CuttedBambooCtrl : InteractableObject
         rightTriggerAction.action.canceled -= RightTriggerExit;
     }
 
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-        interactable = GetComponent<XRGrabInteractable>();
-
-        //현재 플레이어가 잡고있는지 체크하는 코드
-        //interactable.selectEntered.AddListener((var) =>
-        //{
-        //    grabCount++;
-        //});
-        //interactable.selectExited.AddListener((var) =>
-        //{
-        //    grabCount--;
-        //});
-    }
-
     public override void TakeDamage(int dmg) 
     {
         //건설 준비 완료시
@@ -68,10 +49,10 @@ public class CuttedBambooCtrl : InteractableObject
     void Fix()
     {
         //물리 안받기
-        rb.isKinematic = true;
+        rig.isKinematic = true;
         isFixed = true;
         //그랩 상호작용 레이어 변경으로 잡을 수 없도록 변경
-        interactable.interactionLayers = 1 << InteractionLayerMask.NameToLayer("Fixed");
+        inter.interactionLayers = 1 << InteractionLayerMask.NameToLayer("Fixed");
     }
 
     //트리거 입력 체크 함수들
@@ -110,7 +91,7 @@ public class CuttedBambooCtrl : InteractableObject
         if (collision.gameObject.CompareTag("Land"))
         {
             //충돌시 속도가 일정 이상, 트리거를 누른 상태
-            if (rb.linearVelocity.magnitude > 0.7f && isTrigger)
+            if (rig.linearVelocity.magnitude > 0.7f && isTrigger)
             {
                 Fix();
             }
