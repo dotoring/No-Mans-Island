@@ -64,8 +64,9 @@ public class AnimalClass : PhotonGrabObject
         FirstAddListPlayer();
         ShortDistance();
 
-
-        player_s = Player.transform.Find("Charactor_c").GetComponent<PlayerState>();
+        print(Player.gameObject.name);
+        player_s = Player.GetComponentInChildren<PlayerState>();
+        print("" + player_s.isPoisoned);
 
 
 

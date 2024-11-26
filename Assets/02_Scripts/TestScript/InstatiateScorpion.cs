@@ -8,6 +8,6 @@ public class InstatiateScorpion : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GameObject tempt = Instantiate(scorpion, spawnPoint.position, Quaternion.identity);
+        Instantiate(scorpion, spawnPoint.position, Quaternion.identity);
     }
 }
