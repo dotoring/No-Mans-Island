@@ -14,8 +14,9 @@ public class PhotonGrabObject : MonoBehaviourPunCallbacks
     [SerializeField] PhotonView pv;
 
 
-    protected void Start()
+    private void Start()
     {
+
         isGriped = false;
 
         rig = GetComponent<Rigidbody>();
