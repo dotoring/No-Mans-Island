@@ -4,18 +4,12 @@ using UnityEngine;
 public class MeatClass : FoodClass
 {
     public GameObject roast;
-
-    void Update()
-    {
-        //ShakeStick();
-    }
-
-
+    float infireTime;
 
     private void CookMeat()
     {
         infireTime += Time.deltaTime;
-        if (infireTime >= cookTime)
+        if (infireTime >= foodSO.cookTime)
         {
             infireTime = 0;
             ChangeToRoast();
