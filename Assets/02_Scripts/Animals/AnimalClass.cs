@@ -13,7 +13,7 @@ public enum AnimalState
     Die
 }
 
-public class AnimalClass : MonoBehaviour
+public class AnimalClass : PhotonGrabObject
 {
     public int animal_hp;               // 동물의 체력
     public int animal_atk;              // 동물의 공격력
