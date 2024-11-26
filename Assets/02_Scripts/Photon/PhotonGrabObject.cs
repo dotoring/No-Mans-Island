@@ -14,7 +14,7 @@ public class PhotonGrabObject : MonoBehaviourPunCallbacks
     [SerializeField] PhotonView pv;
 
 
-    private void Start()
+    protected void Start()
     {
         isGriped = false;
 
@@ -28,11 +28,13 @@ public class PhotonGrabObject : MonoBehaviourPunCallbacks
                 //TransferOwnership(Player) -> 현재 PhotonView의 소유권을 Player로 바꾸는 함수
                 pv.TransferOwnership(PhotonNetwork.LocalPlayer);
                 isGriped = true;
+                print("잡힘");
                 pv.RPC(nameof(Griped), RpcTarget.AllViaServer, isGriped);
             });
             inter.selectExited.AddListener((args) =>
             {
                 isGriped = false;
+                print("잡힘");
                 pv.RPC(nameof(Griped), RpcTarget.AllViaServer, isGriped);
             });
         }

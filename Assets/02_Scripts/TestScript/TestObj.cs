@@ -5,14 +5,14 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-public class TestObj : MonoBehaviourPunCallbacks
+public class TestObj : PhotonGrabObject
 {
     [SerializeField]XRGrabInteractable di;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
-        di.selectEntered.AddListener((args) => { SceneManager.LoadScene("3_GameScene"); });
+        //di.selectEntered.AddListener((args) => { SceneManager.LoadScene("3_GameScene"); });
         
     }
 

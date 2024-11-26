@@ -37,6 +37,16 @@ public class PlayerController : MonoBehaviourPunCallbacks
         //내 객체일 경우에 모델을 꺼주고 
         if (pv.IsMine)
         {
+            Transform tr = GameObject.Find("XR Origin (VR)").transform;
+            Vector3 temp = transform.position;
+            this.transform.root.parent = tr;
+            transform.position = Vector3.zero;
+            tr.position=temp;
+            leftCont.transform.parent=tr.GetChild(0);
+            rightCont.transform.parent=tr.GetChild(0);
+
+
+
             models[0].SetActive(false);
             models[1].SetActive(false);
         }
@@ -48,7 +58,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private void NotMine(bool isMine)
     {
         //내 카메라가 아니면 모두 끈다
-        pv.transform.GetChild(0).GetChild(0).gameObject.SetActive(isMine);
+        //pv.transform.GetChild(0).GetChild(0).gameObject.SetActive(isMine);
 
         //왼손과 오른손의 컨트롤 관련된 부분을 모두 끈다
         //왼손
@@ -56,13 +66,13 @@ public class PlayerController : MonoBehaviourPunCallbacks
         leftCont.transform.GetComponent<TrackedPoseDriver>().enabled = isMine;
         leftCont.transform.GetChild(2).gameObject.SetActive(isMine);
         //오른손
-       rightCont.transform.GetComponent<ControllerInputActionManager>().enabled = isMine;
-       rightCont.transform.GetComponent<TrackedPoseDriver>().enabled = isMine;
-       rightCont.transform.GetChild(2).gameObject.SetActive(isMine);
+        rightCont.transform.GetComponent<ControllerInputActionManager>().enabled = isMine;
+        rightCont.transform.GetComponent<TrackedPoseDriver>().enabled = isMine;
+        rightCont.transform.GetChild(2).gameObject.SetActive(isMine);
 
         //컨트롤러의 움직임을 모든 객체가 받기 때문에 꺼준다
         //Locomotion
-        pv.transform.GetChild(1).gameObject.SetActive(isMine);
+        //pv.transform.GetChild(1).gameObject.SetActive(isMine);
     }
 
 
