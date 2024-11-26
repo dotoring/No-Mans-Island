@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8146983968932169710}
   - component: {fileID: 5644884926283783533}
   - component: {fileID: 7862471359451178534}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: WoodStick
   m_TagString: CanBuild
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inter: {fileID: 8146983968932169710}
-  isGriped: 0
+  grabCount: 0
   pv: {fileID: 7862471359451178534}
   Hp: 0
   isFixed: 0

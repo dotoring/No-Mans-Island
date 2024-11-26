@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -7463036435891947728}
   - component: {fileID: 5295965951296377089}
   - component: {fileID: -1922603057006596006}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Coconut_Half
   m_TagString: Food
   m_Icon: {fileID: 0}
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inter: {fileID: 5752797702488206861}
-  isGriped: 0
+  grabCount: 0
   pv: {fileID: 5295965951296377089}
   Hp: 0
   foodSO: {fileID: 11400000, guid: a2d5e3fac0930154393385a31c392062, type: 2}

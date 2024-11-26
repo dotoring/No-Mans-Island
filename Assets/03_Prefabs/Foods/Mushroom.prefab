@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 355016309575013130}
   - component: {fileID: 961079474551736975}
   - component: {fileID: 5926699980361440484}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Mushroom
   m_TagString: Food
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inter: {fileID: 355016309575013130}
-  isGriped: 0
+  grabCount: 0
   pv: {fileID: 5926699980361440484}
   Hp: 0
   foodSO: {fileID: 11400000, guid: 4cad732935de8fc4298441a0637a2d48, type: 2}
