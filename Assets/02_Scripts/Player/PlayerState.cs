@@ -15,6 +15,7 @@ public class PlayerState : MonoBehaviour
     [SerializeField] TMP_Text tThirst;
     [SerializeField] TMP_Text tTemp;
 
+    public bool isCold;
 
     private void Update()
     {
@@ -38,6 +39,15 @@ public class PlayerState : MonoBehaviour
             if(hunger >= 75 && thirst >= 75)
             {
                 RecureHp(5);
+            }
+
+            if(isCold)
+            {
+                DecreaseTemp(2);
+            }
+            else
+            {
+                IncreaseTemp(2);
             }
 
             tik = tikTime;
