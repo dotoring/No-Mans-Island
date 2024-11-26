@@ -1964,13 +1964,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1916126342840576460, guid: ec43f0846f93ee940ad816f3014d68aa, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3219657148366295416, guid: ec43f0846f93ee940ad816f3014d68aa, type: 3}
       propertyPath: sceneViewId
       value: 34
       objectReference: {fileID: 0}
+    - target: {fileID: 3486627568946955604, guid: ec43f0846f93ee940ad816f3014d68aa, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4499905715545746578, guid: ec43f0846f93ee940ad816f3014d68aa, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747466949610884394, guid: ec43f0846f93ee940ad816f3014d68aa, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5935657716537650583, guid: ec43f0846f93ee940ad816f3014d68aa, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6046872054217500982, guid: ec43f0846f93ee940ad816f3014d68aa, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7541755141227002014, guid: ec43f0846f93ee940ad816f3014d68aa, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8748026680735745465, guid: ec43f0846f93ee940ad816f3014d68aa, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965496268075609258, guid: ec43f0846f93ee940ad816f3014d68aa, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
