@@ -180,7 +180,7 @@ public class TestPhoton : MonoBehaviourPunCallbacks
 
         if (PhotonNetwork.IsMasterClient)//PhotonNetwork.AutomaticallySyncScene = true;�� �������� ������ ������ ���� �ٲٸ� ��ΰ� �ٲ�
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("SJHRoomTestScene");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Ex_TestRoom_CSY");
         }
 
     }

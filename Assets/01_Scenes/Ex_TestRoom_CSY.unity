@@ -750,6 +750,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &849944514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 849944515}
+  m_Layer: 0
+  m_Name: scorpionPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &849944515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849944514}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.98, y: 0, z: 4.1723986}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1212462070
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,6 +793,7 @@ GameObject:
   - component: {fileID: 1212462072}
   - component: {fileID: 1212462071}
   - component: {fileID: 1212462074}
+  - component: {fileID: 1212462075}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -832,6 +864,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 91335123}
+--- !u!114 &1212462075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212462070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02b9b97cd6f2fb498cd9cf000f9ef26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorpion: {fileID: 5628001307581544608, guid: b2fb4cc359e00b444897970d278f6720, type: 3}
+  spawnPoint: {fileID: 849944515}
 --- !u!1 &238045949707146665
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,7 +947,7 @@ GameObject:
   - component: {fileID: 8436868029411516947}
   m_Layer: 0
   m_Name: XR Origin (VR)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1464,5 +1510,6 @@ SceneRoots:
   - {fileID: 596583565}
   - {fileID: 1212462073}
   - {fileID: 91335123}
+  - {fileID: 849944515}
   - {fileID: 364847301}
   - {fileID: 3933793825119341742}

@@ -683,7 +683,7 @@ GameObject:
   - component: {fileID: 434128169}
   m_Layer: 0
   m_Name: XR Origin (VR)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1132,6 +1132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 646882481}
   - component: {fileID: 646882480}
+  - component: {fileID: 646882482}
   m_Layer: 0
   m_Name: PhotonManager
   m_TagString: Untagged
@@ -1146,7 +1147,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 646882479}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46988b3a34c7d254c91591a6cc00ce47, type: 3}
   m_Name: 
@@ -1172,6 +1173,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &646882482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646882479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657dd368b88c628408328dcd2e70e354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nickname: ' '
+  randomRoomBtn: {fileID: 1457362102}
+  makeRoomBtn: {fileID: 1328384726}
+  exitBtn: {fileID: 1158305659}
+  roomPrefab: {fileID: 431240695523409590, guid: b3450a8311b5d164ea29a5774aa3f985, type: 3}
+  contentTr: {fileID: 181129598}
 --- !u!1 &671922391
 GameObject:
   m_ObjectHideFlags: 0

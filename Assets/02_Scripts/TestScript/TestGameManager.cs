@@ -28,7 +28,7 @@ public class TestGameManager : MonoBehaviour
     private void CreatePlayer()
     {
         //Vector3 pos = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
-        PhotonNetwork.Instantiate("Player_c", spawnPoint.position, Quaternion.identity);
+        PhotonNetwork.Instantiate("Charactor_c", spawnPoint.position, Quaternion.identity);
 
     }
 }
