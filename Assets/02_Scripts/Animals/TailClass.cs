@@ -7,7 +7,7 @@ public class TailClass : MonoBehaviour
 
 
 
-    private void Update()
+    public void Update()
     {
         if (scorpion.t_state == AnimalState.Attack)
         {
@@ -19,7 +19,7 @@ public class TailClass : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {

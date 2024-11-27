@@ -6,19 +6,19 @@ public class ScolpionClass : AnimalClass
     XRGrabInteractable xrgrab;
 
 
-    protected float rest_Time;
-    protected float damage_Time;
+    public float rest_Time;
+    public float damage_Time;
 
-    [SerializeField] protected float cool_Time_max;
-    protected float cool_Time;
+    public float cool_Time_max = 3f;
+    public float cool_Time;
 
     public bool is_poison;
-    protected int duration_posion;
+    public int duration_posion;
 
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
+    public void Awake()
     {
 
         InitStat();
@@ -46,7 +46,7 @@ public class ScolpionClass : AnimalClass
 
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         ShortDistance();
         ScolpionCheck();
@@ -57,7 +57,7 @@ public class ScolpionClass : AnimalClass
 
     }
 
-    private void ScolpionCheck()
+    public void ScolpionCheck()
     {
         rest_Time += Time.deltaTime;
         damage_Time += Time.deltaTime;
