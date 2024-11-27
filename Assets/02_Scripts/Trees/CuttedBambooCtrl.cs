@@ -1,14 +1,14 @@
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
-using Photon.Pun;
-using Photon.Realtime;
 
 public class CuttedBambooCtrl : InteractableObject
 {
     bool isBuildReady;
     public bool isFixed;
     bool isTrigger;
+    [SerializeField] int power;
     [SerializeField] private InputActionProperty leftTriggerAction;
     [SerializeField] private InputActionProperty rightTriggerAction;
 
@@ -33,10 +33,10 @@ public class CuttedBambooCtrl : InteractableObject
         rightTriggerAction.action.canceled -= RightTriggerExit;
     }
 
-    public override void TakeDamage(int dmg) 
+    public override void TakeDamage(int dmg)
     {
         //건설 준비 완료시
-        if(isBuildReady)
+        if (isBuildReady)
         {
             //Fix();
             pv.RPC(nameof(Fix), RpcTarget.AllViaServer);
@@ -57,7 +57,7 @@ public class CuttedBambooCtrl : InteractableObject
     //트리거 입력 체크 함수들
     void LeftTriggerEnter(InputAction.CallbackContext context)
     {
-        if(grabCount > 0)
+        if (grabCount > 0)
         {
             isTrigger = true;
         }
@@ -94,6 +94,14 @@ public class CuttedBambooCtrl : InteractableObject
             {
                 //Fix();
                 pv.RPC(nameof(Fix), RpcTarget.AllViaServer);
+            }
+        }
+
+        if (rig.linearVelocity.magnitude > 0.7f && grabCount > 0)
+        {
+            if (collision.gameObject.GetComponent<AnimalClass>() != null)
+            {
+                collision.gameObject.GetComponent<AnimalClass>().GetDamage(power);
             }
         }
     }
