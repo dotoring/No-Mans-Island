@@ -13,17 +13,10 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         CreatePlayer();
-        yield return new WaitForSeconds(0.2f);
-        CreatRock();
     }
 
     // Update is called once per frame
-    void CreatRock()
-    {
-        Vector3 pos = new Vector3(-5f,1f,0f);
-        //PhotonNetwork.Instantiate("Rock", pos, Quaternion.identity);
-        PhotonNetwork.InstantiateRoomObject("Rock", pos, Quaternion.identity);
-    }
+    
 
     private void CreatePlayer()
     {
