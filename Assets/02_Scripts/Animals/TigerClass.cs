@@ -28,7 +28,7 @@ public class TigerClass : AnimalClass
         is_alive = true;
 
         find_area = 3.0f;
-        attack_area = 1.0f;
+        attack_area = 1.4f;
         attack_time = 5f;
 
         rest_Time = 0f;
@@ -174,7 +174,7 @@ public class TigerClass : AnimalClass
 
 
 
-        if (Vector3.Distance(this.transform.position, Player.transform.position) >= attack_area)
+        if (Vector3.Distance(this.transform.position, Player.transform.position) >= attack_area + 1.0f)
         {
             rest_Time = 0;
             animal_anim.SetTrigger("Move");
