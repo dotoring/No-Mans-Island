@@ -40,6 +40,11 @@ public class PhotonGrabObject : MonoBehaviourPunCallbacks
         }
     }
 
+    protected virtual void GripEvent()
+    {
+
+    }
+
     [PunRPC]
     public void Griped(int count)
     {
