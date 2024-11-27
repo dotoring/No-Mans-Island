@@ -216,8 +216,8 @@ GameObject:
   - component: {fileID: 3609676455450325004}
   - component: {fileID: 8246042377025068206}
   - component: {fileID: 5666208224123000531}
-  - component: {fileID: 7656815140424325575}
   - component: {fileID: 1243001209018286716}
+  - component: {fileID: 7591631766783542168}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -294,25 +294,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 5275861030223568812}
   m_Enabled: 1
---- !u!114 &7656815140424325575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3997096585642179757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79cdfd3e019476949b27614a7f2846c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inter: {fileID: 0}
-  isGriped: 0
-  pv: {fileID: 1243001209018286716}
-  Hp: 10
-  pref: {fileID: 5382003842135603211, guid: 04e7aa73c9f82c34687edabe2bd0cff8, type: 3}
-  spawnPoints:
-  - {fileID: 59151730913720742}
 --- !u!114 &1243001209018286716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +316,23 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &7591631766783542168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3997096585642179757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70295d8d9a5195d4190cca7905b32967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inter: {fileID: 0}
+  pv: {fileID: 1243001209018286716}
+  Hp: 10
+  spawnPoints:
+  - {fileID: 59151730913720742}
 --- !u!1 &8533924586144664287
 GameObject:
   m_ObjectHideFlags: 0

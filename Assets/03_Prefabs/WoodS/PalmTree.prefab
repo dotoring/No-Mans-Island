@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 543141222538382013}
   - component: {fileID: 4648163367634188261}
   - component: {fileID: 8868160441644115282}
-  - component: {fileID: 1966044207508364913}
+  - component: {fileID: 1156589194910109766}
   - component: {fileID: 5151300720402370973}
   - component: {fileID: 7856904315315002711}
   - component: {fileID: 3517124733891278900}
@@ -93,7 +93,7 @@ Transform:
   m_GameObject: {fileID: 9100041632726501768}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5299229, y: 0.00000011920929, z: 1.9024382}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -154,7 +154,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1966044207508364913
+--- !u!114 &1156589194910109766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,14 +163,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 9100041632726501768}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79cdfd3e019476949b27614a7f2846c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 008ad98e1cb9de24c98ed7a6f5cc183d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inter: {fileID: 0}
-  isGriped: 0
   pv: {fileID: 3517124733891278900}
   Hp: 10
-  pref: {fileID: 4367592847582052757, guid: 646fb86dc56ed9c4a95171fbffb9ac55, type: 3}
   spawnPoints:
   - {fileID: 8815824119468155592}
   - {fileID: 8777638106773748874}

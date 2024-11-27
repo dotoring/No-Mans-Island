@@ -1,11 +1,10 @@
 using UnityEngine;
 
-public class CuttedCoconutCtrl : FoodClass
+public class PalmCtrl : TreeCtrl
 {
     protected override void Start()
     {
         base.Start();
-
-        transform.SetParent(null);
+        dropLog = "Log";
     }
 }

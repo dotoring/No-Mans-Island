@@ -1,11 +1,8 @@
-using NUnit.Framework.Internal;
-using Unity.VisualScripting;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
-using UnityEngine.XR.OpenXR.Input;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class CuttedBambooCtrl : InteractableObject
 {
@@ -41,11 +38,13 @@ public class CuttedBambooCtrl : InteractableObject
         //건설 준비 완료시
         if(isBuildReady)
         {
-            Fix();
+            //Fix();
+            pv.RPC(nameof(Fix), RpcTarget.AllViaServer);
         }
     }
 
     //고정 시키는 함수
+    [PunRPC]
     void Fix()
     {
         //물리 안받기

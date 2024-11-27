@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8282274613134134351}
-  - component: {fileID: 7450064910539286402}
+  - component: {fileID: 716049462104302474}
   m_Layer: 0
   m_Name: CuttedCoconuts
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 483666411345700290}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7450064910539286402
+--- !u!114 &716049462104302474
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

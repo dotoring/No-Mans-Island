@@ -1,4 +1,6 @@
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class CoconutCtrl : InteractableObject
 {
@@ -15,7 +17,7 @@ public class CoconutCtrl : InteractableObject
 
     void CutCoconut()
     {
-        Destroy(gameObject);
-        Instantiate(halfCoconut, transform.position, transform.rotation);
+        PhotonNetwork.Destroy(gameObject);
+        PhotonNetwork.InstantiateRoomObject("CuttedCoconuts", transform.position, transform.rotation);
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class PlankCtrl : InteractableObject
 {
@@ -15,9 +15,11 @@ public class PlankCtrl : InteractableObject
         if (isBuildReady)
         {
             Fix();
+            pv.RPC(nameof(Fix), RpcTarget.AllViaServer);
         }
     }
 
+    [PunRPC]
     void Fix()
     {
         rig.isKinematic = true;

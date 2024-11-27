@@ -1,9 +1,8 @@
+using Photon.Pun;
 using UnityEngine;
 
 public class WoodCtrl : InteractableObject
 {
-    [SerializeField] GameObject pref;
-
     public override void TakeDamage(int dmg)
     {
         base.TakeDamage(dmg);
@@ -15,7 +14,7 @@ public class WoodCtrl : InteractableObject
 
     public void ChangeToPlank()
     {
-        Destroy(gameObject);
+        PhotonNetwork.Destroy(gameObject);
         SpawnPlank();
     }
 
@@ -23,7 +22,7 @@ public class WoodCtrl : InteractableObject
     {
         for(int i = 0; i < 4; i++)
         {
-            Instantiate(pref, transform.position, transform.rotation);
+            PhotonNetwork.Instantiate("Plank", transform.position, transform.rotation);
         }
     }
 }
