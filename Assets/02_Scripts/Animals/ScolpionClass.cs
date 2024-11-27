@@ -225,9 +225,9 @@ public class ScolpionClass : AnimalClass
         }
     }
 
-    public override void Hit(int animal_atk_val)
+    public override void Hit(PlayerState player_sv)
     {
-        base.Hit(animal_atk_val);
+        base.Hit(player_sv);
         int ran = Random.Range(0, 2);
         if (ran == 0 && !is_poison)
         {
@@ -242,7 +242,7 @@ public class ScolpionClass : AnimalClass
             is_poison = true;
             if (cool_Time <= 0f)
             {
-                Hit(2);
+
                 print($"{Player.gameObject.name}가 독 데미지 2를 받습니다.");
                 cool_Time = cool_Time_max;
                 duration--;
