@@ -25,7 +25,7 @@ public class HeadClass : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            tiger.Hit(other.gameObject.GetComponentInChildren<PlayerState>());
+            tiger.Hit(other.gameObject.GetComponent<PlayerState>());
         }
     }
 

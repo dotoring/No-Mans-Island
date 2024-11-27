@@ -4844,9 +4844,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f01d6cb0bd867614d88e8f56a9725a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 10
-  hunger: 2
-  thirst: 2
+  Hp: 100
+  hunger: 100
+  thirst: 100
   temperature: 100
   tikTime: 3
   isCold: 0
@@ -4872,7 +4872,7 @@ CharacterController:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Height: 2
   m_Radius: 0.5
@@ -4909,7 +4909,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e18b7021deb3749af9f58b8f33ce2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  go: {fileID: 7468026809630677034, guid: f1c84bb998078cb449e54435aff82608, type: 3}
 --- !u!1 &4184606581114567787
 GameObject:
   m_ObjectHideFlags: 0
