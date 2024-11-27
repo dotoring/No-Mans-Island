@@ -12,13 +12,15 @@ public class TestObj : PhotonGrabObject
         base.Start();
         inter.selectEntered.AddListener((args) =>
         {
-            
-            //if(pv.Owner.IsMasterClient)
+            if(pv.Owner.IsMasterClient)
                 SceneManager.LoadScene("3_GameScene");
         });
     }
 
-    
-    
+    private void Update()
+    {
+        print(pv.Owner.IsMasterClient);
+    }
+
 
 }
