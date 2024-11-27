@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public enum AnimalState
 {
     Idle,
@@ -24,10 +25,6 @@ public class AnimalClass : PhotonGrabObject
 
 
     public Animator animal_anim;        // 동물의 애니메이션을 받는 변수
-
-
-
-    public GameObject meat;                    // 생고기 오브젝트      // 프리팹 받아오면 public 으로 바꿀 예정
 
     public GameObject Player;
 
@@ -52,9 +49,7 @@ public class AnimalClass : PhotonGrabObject
 
         StartCoroutine(AddPlayer());
 
-        print(Player.gameObject.name);
 
-        print(player_s.name);
     }
 
     public virtual void GetDamage(int damage)   // 데미지를 받는다.
@@ -86,7 +81,6 @@ public class AnimalClass : PhotonGrabObject
         FirstAddListPlayer();
         ShortDistance();
         yield return null;
-
     }
 
 
@@ -120,8 +114,8 @@ public class AnimalClass : PhotonGrabObject
     {
         if (this.gameObject != null)    // 동물 오브젝트가 아직 존재할 경우
         {
-            Instantiate(meat, this.transform.position, this.transform.rotation);        // 동물 오브젝트 위치에 생고기를 생성하고
-            Destroy(this.gameObject);                                                   // 동물 오브젝트를 삭제한다.
+            PhotonNetwork.Instantiate("RawMeat", this.transform.position, this.transform.rotation);        // 동물 오브젝트 위치에 생고기를 생성하고
+            PhotonNetwork.Destroy(this.gameObject);                                                   // 동물 오브젝트를 삭제한다.
         }
     }
 

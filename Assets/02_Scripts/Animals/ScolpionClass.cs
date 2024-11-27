@@ -28,7 +28,6 @@ public class ScolpionClass : AnimalClass
         is_alive = true;
         attack_area = 2.5f;
 
-
         find_area = 3f;
         attack_area = 2f;
         attack_time = 5f;
@@ -38,6 +37,7 @@ public class ScolpionClass : AnimalClass
 
         is_poison = false;
         cool_Time = cool_Time_max;
+        t_state = AnimalState.Idle;
 
 
 
@@ -50,7 +50,7 @@ public class ScolpionClass : AnimalClass
     {
         ShortDistance();
         ScolpionCheck();
-        poison(duration_posion);
+        //poison(duration_posion);
         //ThisStick();
 
 
@@ -92,26 +92,29 @@ public class ScolpionClass : AnimalClass
 
     public void Animal_Idle()
     {
-
-        if (rest_Time >= 10.0f)
+        if (Player != null)
         {
-            rest_Time = 0;
+            if (rest_Time >= 10.0f)
+            {
+                rest_Time = 0;
 
-            t_state = AnimalState.Move;
-            animal_anim.SetTrigger("Move");
+                t_state = AnimalState.Move;
+                animal_anim.SetTrigger("Move");
+            }
+
+            else if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
+            {
+                rest_Time = 0;
+                animal_anim.SetTrigger("Move");
+                t_state = AnimalState.Watch;
+
+            }
+            if (Vector3.Distance(this.transform.position, Player.transform.position) < attack_area)
+            {
+                t_state = AnimalState.Attack;
+            }
         }
 
-        else if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
-        {
-            rest_Time = 0;
-            animal_anim.SetTrigger("Move");
-            t_state = AnimalState.Watch;
-
-        }
-        if (Vector3.Distance(this.transform.position, Player.transform.position) < attack_area)
-        {
-            t_state = AnimalState.Attack;
-        }
 
 
     }

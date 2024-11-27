@@ -1,12 +1,20 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class TempGameMgr : MonoBehaviour
 {
     [SerializeField] GameObject[] nightAnimals;
-    [SerializeField] GameObject player;
+    [SerializeField] List<GameObject> players = new List<GameObject>();
     Coroutine coroutine;
+
+    private void Start()
+    {
+        foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            players.Add(p);
+        }
+    }
 
     public void SpawnAnimals()
     {
@@ -15,7 +23,7 @@ public class TempGameMgr : MonoBehaviour
         foreach (var animal in nightAnimals)
         {
             Vector3 randomPoint = Random.insideUnitCircle * 5;
-            randomPoint += player.transform.position;
+            randomPoint += players[0].transform.position;
             randomPoint.y = 100f;
             RaycastHit hit;
             Physics.Raycast(randomPoint, Vector3.down, out hit);
@@ -26,11 +34,11 @@ public class TempGameMgr : MonoBehaviour
 
     public void OnDay()
     {
-        player.GetComponent<PlayerState>().isCold = false;
+        players[0].GetComponent<PlayerState>().isCold = false;
     }
 
     public void OnNight()
     {
-        player.GetComponent<PlayerState>().isCold = true;
+        players[0].GetComponent<PlayerState>().isCold = true;
     }
 }
