@@ -987,7 +987,6 @@ GameObject:
   - component: {fileID: 2099240898716880157}
   - component: {fileID: 4628396251632936926}
   - component: {fileID: 6302863704134451186}
-  - component: {fileID: 210970535146334529}
   - component: {fileID: 7547077117212538156}
   - component: {fileID: 7285486375421701671}
   m_Layer: 10
@@ -1100,31 +1099,6 @@ MonoBehaviour:
     m_Reference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   lanim: {fileID: 3868207767986679008}
   ranim: {fileID: 2189610733156878037}
---- !u!143 &210970535146334529
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863947168552683392}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.4
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &7547077117212538156
 MonoBehaviour:
   m_ObjectHideFlags: 0
