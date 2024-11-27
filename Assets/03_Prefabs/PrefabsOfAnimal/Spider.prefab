@@ -534,6 +534,7 @@ GameObject:
   - component: {fileID: 4355739786521243063}
   - component: {fileID: -357520237168534652}
   - component: {fileID: -2173472739187559226}
+  - component: {fileID: -1236760609195238688}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Untagged
@@ -604,7 +605,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inter: {fileID: 4355739786521243063}
-  isGriped: 0
   pv: {fileID: -357520237168534652}
   animal_hp: 0
   animal_atk: 0
@@ -620,7 +620,7 @@ MonoBehaviour:
   short_distance: 50
   t_state: 0
   PhotonPlayer: []
-  yesorno: 0
+  player_s: {fileID: 0}
 --- !u!54 &6350868271814347772
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -809,6 +809,22 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &-1236760609195238688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2317415984001249117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters: []
+  m_SynchronizeLayers: []
 --- !u!1 &2329103874991490599
 GameObject:
   m_ObjectHideFlags: 0
