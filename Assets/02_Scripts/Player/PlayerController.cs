@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private Vector2 inputVec;
     private Quaternion rotQ;
     private Vector3 rotV;
-    [SerializeField]private PhotonView pv;
+    [SerializeField] private PhotonView pv;
     [SerializeField] private CharacterController cctr;
     private Rigidbody rb;
     [SerializeField] private GameObject[] models;
