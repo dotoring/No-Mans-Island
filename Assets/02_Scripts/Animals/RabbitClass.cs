@@ -73,22 +73,26 @@ public class RabbitClass : AnimalClass
 
     public void Animal_Idle()               // 가만히 서기      // 울음소리 내기
     {
-        if (rest_Time >= 5f)
+        if (Player != null)
         {
-            rest_Time = 0;
+            if (rest_Time >= 5f)
+            {
+                rest_Time = 0;
 
-            t_state = AnimalState.Move;
-            animal_anim.SetTrigger("Move");
+                t_state = AnimalState.Move;
+                animal_anim.SetTrigger("Move");
+            }
+
+
+            else if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
+            {
+                rest_Time = 0;
+                animal_anim.SetTrigger("Move");
+                t_state = AnimalState.Watch;
+
+            }
         }
 
-
-        else if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
-        {
-            rest_Time = 0;
-            animal_anim.SetTrigger("Move");
-            t_state = AnimalState.Watch;
-
-        }
     }
     public void Animal_Move()           // 움직이기
     {
