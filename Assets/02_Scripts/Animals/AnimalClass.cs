@@ -50,8 +50,7 @@ public class AnimalClass : PhotonGrabObject
         is_alive = true;
         animal_anim = this.GetComponent<Animator>();
 
-        FirstAddListPlayer();
-        ShortDistance();
+        StartCoroutine(AddPlayer());
 
         print(Player.gameObject.name);
 
@@ -79,6 +78,15 @@ public class AnimalClass : PhotonGrabObject
         {
             PhotonPlayer.Add(player);
         }
+    }
+
+    IEnumerator AddPlayer()
+    {
+        yield return new WaitForSeconds(3.0f);
+        FirstAddListPlayer();
+        ShortDistance();
+        yield return null;
+
     }
 
 
