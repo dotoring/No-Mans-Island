@@ -14,9 +14,22 @@ public class GameStartTable : MonoBehaviour
     [SerializeField] private GameObject uiObj;
     void Start()
     {
-        inter.hoverEntered.AddListener((args) => pv.RPC(nameof(UIOpen), RpcTarget.AllViaServer));
+        inter.hoverEntered.AddListener((args) =>
+        {
+
+            if (pv.IsMine)
+            {
+                pv.RPC(nameof(UIOpen), RpcTarget.AllViaServer);
+            }
+        });
+        inter.hoverExited.AddListener((args) =>
+        {
+            if (pv.IsMine)
+            {
+                pv.RPC(nameof(UIClose), RpcTarget.AllViaServer);
+            } 
+        });
         inter.selectEntered.AddListener((args) => GameStart());
-        inter.hoverExited.AddListener((args) => pv.RPC(nameof(UIClose), RpcTarget.AllViaServer));
     }
 
     private void GameStart()
@@ -30,17 +43,11 @@ public class GameStartTable : MonoBehaviour
     [PunRPC]
     private void UIOpen()
     {
-        if ((pv.IsMine))
-        {
-            uiObj.SetActive(true);
-        }
+        uiObj.SetActive(true);
     }
     [PunRPC]
     private void UIClose()
     {
-        if ((pv.IsMine))
-        {
-            uiObj.SetActive(false);
-        }
+        uiObj.SetActive(false);
     }
 }

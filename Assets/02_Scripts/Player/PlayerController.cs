@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private Quaternion rotQ;
     private Vector3 rotV;
     [SerializeField]private PhotonView pv;
+    [SerializeField] private CharacterController cctr;
     private Rigidbody rb;
     [SerializeField] private GameObject[] models;
 
@@ -50,7 +51,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             statusUI.transform.parent = tr.GetChild(0);
             mouth.transform.parent = Camera.main.transform;
             mouth.transform.localPosition = new Vector3(0, -0.06f, 0.05f);
-
+            cctr.enabled = false;
 
             models[0].SetActive(false);
             models[1].SetActive(false);
