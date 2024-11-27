@@ -1,4 +1,5 @@
 using UnityEngine;
+using Photon.Pun;
 
 public class PlayerMouth : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class PlayerMouth : MonoBehaviour
         {
             //음식의 수치만큼 회복 함수들
             EatFood(other.GetComponent<FoodClass>());
-            Destroy(other.gameObject);
+            PhotonNetwork.Destroy(other.gameObject);
         }
     }
 }
