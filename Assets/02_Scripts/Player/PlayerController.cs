@@ -56,12 +56,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             models[1].SetActive(false);
         }
         //³» °´Ã¼°¡ ¾Æ´Ò °æ¿ì
-        else
-        {
-            leftCont.transform.parent = null;
-            rightCont.transform.parent =null;
-            statusUI.transform.parent = null;
-        }
+     
 
       
         NotMine(pv.IsMine);
