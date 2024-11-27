@@ -52,9 +52,7 @@ public class AnimalClass : PhotonGrabObject
 
         StartCoroutine(AddPlayer());
 
-        print(Player.gameObject.name);
 
-        print(player_s.name);
     }
 
     public virtual void GetDamage(int damage)   // 데미지를 받는다.
