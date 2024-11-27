@@ -65,7 +65,7 @@ public class AnimalClass : PhotonGrabObject
         ShortDistance();
 
         print(Player.gameObject.name);
-        player_s = Player.GetComponentInChildren<PlayerState>();
+        player_s = Player.GetComponent<PlayerState>();
 
         print(player_s.name);
 
