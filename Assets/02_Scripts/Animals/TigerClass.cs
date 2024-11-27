@@ -27,8 +27,8 @@ public class TigerClass : AnimalClass
         corpse_hp = 30;
         is_alive = true;
 
-        find_area = 3f;
-        attack_area = 2f;
+        find_area = 3.0f;
+        attack_area = 1.0f;
         attack_time = 5f;
 
         rest_Time = 0f;
