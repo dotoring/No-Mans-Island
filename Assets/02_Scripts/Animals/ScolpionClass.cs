@@ -28,7 +28,6 @@ public class ScolpionClass : AnimalClass
         is_alive = true;
         attack_area = 2.5f;
 
-
         find_area = 3f;
         attack_area = 2f;
         attack_time = 5f;
@@ -51,7 +50,7 @@ public class ScolpionClass : AnimalClass
     {
         ShortDistance();
         ScolpionCheck();
-        poison(duration_posion);
+        //poison(duration_posion);
         //ThisStick();
 
 
