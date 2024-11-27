@@ -1,4 +1,6 @@
+using Photon.Pun;
 using UnityEngine;
+using Photon.Realtime;
 
 public class InstatiateScorpion : MonoBehaviour
 {
@@ -6,8 +8,8 @@ public class InstatiateScorpion : MonoBehaviour
     [SerializeField] Transform spawnPoint;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Start()
     {
-        Instantiate(scorpion, spawnPoint.position, Quaternion.identity);
+        PhotonNetwork.Instantiate("Scorpion", spawnPoint.position, Quaternion.identity);
     }
 }

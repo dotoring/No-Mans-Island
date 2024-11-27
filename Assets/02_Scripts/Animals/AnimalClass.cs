@@ -66,7 +66,9 @@ public class AnimalClass : PhotonGrabObject
 
         print(Player.gameObject.name);
         player_s = Player.GetComponentInChildren<PlayerState>();
-        print("" + player_s.isPoisoned);
+
+        print(player_s.name);
+
 
 
 
