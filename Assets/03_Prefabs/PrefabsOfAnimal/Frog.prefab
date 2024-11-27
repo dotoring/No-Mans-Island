@@ -877,6 +877,7 @@ GameObject:
   - component: {fileID: 3244282605744568659}
   - component: {fileID: -2672869641030536065}
   - component: {fileID: -5117051357989678381}
+  - component: {fileID: 6206798610170599546}
   m_Layer: 0
   m_Name: Frog
   m_TagString: Untagged
@@ -935,7 +936,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inter: {fileID: 553720007263932402}
-  isGriped: 0
   pv: {fileID: -2672869641030536065}
   animal_hp: 0
   animal_atk: 0
@@ -951,7 +951,7 @@ MonoBehaviour:
   short_distance: 50
   t_state: 0
   PhotonPlayer: []
-  yesorno: 0
+  player_s: {fileID: 0}
 --- !u!54 &3748415626372443674
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1161,6 +1161,22 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &6206798610170599546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626050389558724460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters: []
+  m_SynchronizeLayers: []
 --- !u!1 &1693866145210721565
 GameObject:
   m_ObjectHideFlags: 0
