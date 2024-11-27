@@ -9,9 +9,16 @@ public class ScolpionClass : AnimalClass
     protected float rest_Time;
     protected float damage_Time;
 
+    [SerializeField] protected float cool_Time_max;
+    protected float cool_Time;
+
+    public bool is_poison;
+    protected int duration_posion;
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
 
         InitStat();
@@ -29,6 +36,9 @@ public class ScolpionClass : AnimalClass
         xrgrab = GetComponent<XRGrabInteractable>();
         xrgrab.enabled = false;
 
+        is_poison = false;
+        cool_Time = cool_Time_max;
+
 
 
     }
@@ -40,6 +50,7 @@ public class ScolpionClass : AnimalClass
     {
         ShortDistance();
         ScolpionCheck();
+        poison(duration_posion);
         //ThisStick();
 
 
@@ -211,6 +222,39 @@ public class ScolpionClass : AnimalClass
         {
             GetDamage(5);
             t_state = AnimalState.Damage;
+        }
+    }
+
+    public override void Hit(int animal_atk_val)
+    {
+        base.Hit(animal_atk_val);
+        int ran = Random.Range(0, 2);
+        if (ran == 0 && !player_s.isPoisoned)
+        {
+            duration_posion = 3;
+        }
+    }
+
+    public void poison(int duration)
+    {
+        if (duration > 0)
+        {
+            player_s.isPoisoned = true;
+            if (cool_Time <= 0f)
+            {
+                Hit(2);
+                print($"{Player.gameObject.name}가 독 데미지 2를 받습니다.");
+                cool_Time = cool_Time_max;
+                duration--;
+            }
+            else
+            {
+                cool_Time -= Time.deltaTime;
+            }
+        }
+        else
+        {
+            player_s.isPoisoned = false;
         }
     }
 }

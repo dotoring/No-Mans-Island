@@ -3,6 +3,10 @@ using UnityEngine;
 public class TailClass : MonoBehaviour
 {
     [SerializeField] ScolpionClass scorpion;
+    [SerializeField] PlayerState player_s;
+
+
+
     private void Update()
     {
         if (scorpion.t_state == AnimalState.Attack)
