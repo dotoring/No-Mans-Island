@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     [SerializeField] private GameObject leftCont;
     [SerializeField] private GameObject rightCont;
+    [SerializeField] private GameObject statusUI;
+    [SerializeField] private GameObject mouth;
 
 
 
@@ -42,9 +44,11 @@ public class PlayerController : MonoBehaviourPunCallbacks
             this.transform.root.parent = tr;
             transform.position = Vector3.zero;
             tr.position=temp;
+            //손을 XR Origin에 카메라 오프셋 하위로 옮김
             leftCont.transform.parent=tr.GetChild(0);
             rightCont.transform.parent=tr.GetChild(0);
-
+            statusUI.transform.parent = tr.GetChild(0);
+            mouth.transform.parent = Camera.main.transform;
 
 
             models[0].SetActive(false);

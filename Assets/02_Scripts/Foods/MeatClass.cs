@@ -1,9 +1,9 @@
+using Photon.Pun;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class MeatClass : FoodClass
 {
-    public GameObject roast;
     float infireTime;
 
     private void CookMeat()
@@ -18,14 +18,10 @@ public class MeatClass : FoodClass
 
     private void ChangeToRoast()
     {
-        print("요리가 완성되었습니다.");
-        GameObject tmp = Instantiate(roast, this.transform.position, this.transform.rotation);
-        if (this.transform.parent.gameObject != null)
-        {
-            roast.transform.parent = this.transform.parent;
-            roast.GetComponent<Rigidbody>().isKinematic = true;
-        }
-        Destroy(this.gameObject, 0.1f);
+        //GameObject tmp = Instantiate(roast, this.transform.position, this.transform.rotation);
+
+        PhotonNetwork.Instantiate("RoastMeat", transform.position, transform.rotation);
+        PhotonNetwork.Destroy(this.gameObject);
     }
 
     private void OnTriggerStay(Collider other)

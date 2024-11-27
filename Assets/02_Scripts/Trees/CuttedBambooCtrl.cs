@@ -92,7 +92,8 @@ public class CuttedBambooCtrl : InteractableObject
             //충돌시 속도가 일정 이상, 트리거를 누른 상태
             if (rig.linearVelocity.magnitude > 0.7f && isTrigger)
             {
-                Fix();
+                //Fix();
+                pv.RPC(nameof(Fix), RpcTarget.AllViaServer);
             }
         }
     }
