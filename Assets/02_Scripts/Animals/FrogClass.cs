@@ -35,6 +35,7 @@ public class FrogClass : AnimalClass
         jump_Time = 0f;
 
         inter.enabled = false;
+        t_state = AnimalState.Idle;
 
 
 

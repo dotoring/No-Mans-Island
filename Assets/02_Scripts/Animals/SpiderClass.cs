@@ -31,6 +31,7 @@ public class SpiderClass : AnimalClass
         rest_Time = 0f;
 
         inter.enabled = false;
+        t_state = AnimalState.Idle;
 
 
 

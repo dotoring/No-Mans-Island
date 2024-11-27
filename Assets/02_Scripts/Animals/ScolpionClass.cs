@@ -38,6 +38,7 @@ public class ScolpionClass : AnimalClass
 
         is_poison = false;
         cool_Time = cool_Time_max;
+        t_state = AnimalState.Idle;
 
 
 

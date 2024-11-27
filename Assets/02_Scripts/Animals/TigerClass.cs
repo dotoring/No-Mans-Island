@@ -32,6 +32,8 @@ public class TigerClass : AnimalClass
         attack_time = 5f;
 
         rest_Time = 0f;
+
+        t_state = AnimalState.Idle;
         //xrgrab = GetComponent<XRGrabInteractable>();
         //xrgrab.enabled = false;
 

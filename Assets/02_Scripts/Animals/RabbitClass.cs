@@ -5,16 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class RabbitClass : AnimalClass
 {
-
-
-
     protected float rest_Time;
-
-
-
-
-
-
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
@@ -31,21 +22,10 @@ public class RabbitClass : AnimalClass
         find_area = 3f;
         attack_area = 2f;
 
-
-
-
-
-
         inter.enabled = false;
 
-
-
-
-
-
-
         rest_Time = 0f;
-
+        t_state = AnimalState.Idle;
 
 
     }
@@ -56,8 +36,6 @@ public class RabbitClass : AnimalClass
         ShortDistance();
         RabbitCheck();
 
-
-
         if (corpse_hp <= 0)
         {
             ChangeToMeat();
@@ -67,7 +45,6 @@ public class RabbitClass : AnimalClass
     private void RabbitCheck()
     {
         rest_Time += Time.deltaTime;
-
 
         switch (t_state)
         {
@@ -146,8 +123,6 @@ public class RabbitClass : AnimalClass
         this.transform.Translate(Vector3.forward * 1.5f * Time.deltaTime, Space.Self);
 
 
-
-
         if (Vector3.Distance(this.transform.position, Player.transform.position) >= find_area + 3.0f)
         {
 
@@ -160,8 +135,6 @@ public class RabbitClass : AnimalClass
 
     public void Animal_Damage()
     {
-
-
         if (animal_hp <= 0) t_state = AnimalState.Die;
         else
         {
@@ -169,8 +142,6 @@ public class RabbitClass : AnimalClass
             t_state = AnimalState.Watch;
 
         }
-
-
     }
 
 
