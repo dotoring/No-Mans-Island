@@ -328,9 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inter: {fileID: 0}
-  isGriped: 0
   pv: {fileID: 0}
-  Hp: 0
   power: 4
 --- !u!114 &230686647
 MonoBehaviour:
@@ -1121,6 +1119,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4405967985236826758, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
+      propertyPath: sceneViewId
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 8307322294062364507, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.6
@@ -1181,6 +1183,10 @@ PrefabInstance:
     - target: {fileID: 1884426153098938590, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405967985236826758, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
+      propertyPath: sceneViewId
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8307322294062364507, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1819,6 +1825,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4405967985236826758, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
+      propertyPath: sceneViewId
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8307322294062364507, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.6
@@ -1879,6 +1889,10 @@ PrefabInstance:
     - target: {fileID: 1884426153098938590, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405967985236826758, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
+      propertyPath: sceneViewId
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8307322294062364507, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2306,6 +2320,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3517124733891278900, guid: 53f0a793c80306040a628b79a48b0411, type: 3}
+      propertyPath: sceneViewId
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 9100041632726501768, guid: 53f0a793c80306040a628b79a48b0411, type: 3}
       propertyPath: m_Name
       value: TesPalmTree
@@ -2392,6 +2410,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1243001209018286716, guid: 4c5f3703774438842bb751741334472f, type: 3}
+      propertyPath: sceneViewId
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3609676455450325004, guid: 4c5f3703774438842bb751741334472f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.06
@@ -2453,6 +2475,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1243001209018286716, guid: 4c5f3703774438842bb751741334472f, type: 3}
+      propertyPath: sceneViewId
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3609676455450325004, guid: 4c5f3703774438842bb751741334472f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.45
@@ -3180,9 +3206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inter: {fileID: 0}
-  isGriped: 0
   pv: {fileID: 0}
-  Hp: 0
   power: 4
 --- !u!4 &122540193365713274
 Transform:
@@ -4507,6 +4531,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4405967985236826758, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
+      propertyPath: sceneViewId
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8307322294062364507, guid: cc19392712da00b44b4ca51d1c0f8460, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.6
@@ -4893,6 +4921,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1243001209018286716, guid: 4c5f3703774438842bb751741334472f, type: 3}
+      propertyPath: sceneViewId
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3609676455450325004, guid: 4c5f3703774438842bb751741334472f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.5016847
