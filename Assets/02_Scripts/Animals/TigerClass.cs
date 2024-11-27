@@ -17,8 +17,9 @@ public class TigerClass : AnimalClass
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
+    protected override void Start()
     {
+        base.Start();
 
         InitStat();
         animal_hp = 30;

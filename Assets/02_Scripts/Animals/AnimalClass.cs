@@ -21,7 +21,7 @@ public class AnimalClass : PhotonGrabObject
 
     public bool is_alive;               // 동물이 살아있는지 죽었는지 여부
 
-    public Rigidbody animal_rb;         // 동물의 물리를 받는 변수
+
     public Animator animal_anim;        // 동물의 애니메이션을 받는 변수
 
 

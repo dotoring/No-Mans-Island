@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class SpiderClass : AnimalClass
 {
-    XRGrabInteractable xrgrab;
+
 
 
     protected float rest_Time;
@@ -13,8 +13,10 @@ public class SpiderClass : AnimalClass
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected override void Start()
     {
+        base.Start();
+
 
         InitStat();
         animal_hp = 30;
@@ -27,8 +29,8 @@ public class SpiderClass : AnimalClass
         attack_time = 5f;
 
         rest_Time = 0f;
-        xrgrab = GetComponent<XRGrabInteractable>();
-        xrgrab.enabled = false;
+
+        inter.enabled = false;
 
 
 
@@ -78,7 +80,7 @@ public class SpiderClass : AnimalClass
                 break;
             case AnimalState.Die:
                 Animal_Die();
-                xrgrab.enabled = true;
+                inter.enabled = true;
                 break;
         }
     }
