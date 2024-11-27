@@ -126,7 +126,7 @@ public class TimeManager : MonoBehaviour
         while (true)
         {
             //플레이어 근처에 선공 동물 소환
-            //tempGameMgr.SpawnAnimals();
+            tempGameMgr.SpawnAnimals();
             yield return new WaitForSeconds(5f);
         }
     }
