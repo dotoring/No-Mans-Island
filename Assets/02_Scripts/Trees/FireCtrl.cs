@@ -1,13 +1,23 @@
+using System.Collections;
 using UnityEngine;
 
 public class FireCtrl : MonoBehaviour
 {
+    IEnumerator BurnDmg()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
     //플레이어가 가까이 오면 피해주기
     private void OnTriggerStay(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("앗 뜨거");
+            PlayerState ps = other.gameObject.GetComponentInChildren<PlayerState>();
+            //ps.TakeDamage(5);
         }
     }
 

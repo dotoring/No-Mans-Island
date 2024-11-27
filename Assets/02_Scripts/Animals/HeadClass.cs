@@ -1,17 +1,17 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class HeadClass : TigerClass
+public class HeadClass : MonoBehaviour
 {
 
-
+    [SerializeField] public TigerClass tiger;
 
 
 
 
     private void Update()
     {
-        if (t_state == AnimalState.Attack)
+        if (tiger.t_state == AnimalState.Attack)
         {
             this.GetComponent<SphereCollider>().enabled = true;
         }
@@ -25,8 +25,7 @@ public class HeadClass : TigerClass
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Hit(animal_atk);
-
+            tiger.Hit(other.gameObject.GetComponent<PlayerState>());
         }
     }
 

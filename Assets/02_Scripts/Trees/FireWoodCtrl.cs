@@ -1,12 +1,15 @@
 using System.Collections;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class FireWoodCtrl : MonoBehaviour
+public class FireWoodCtrl : PhotonGrabObject
 {
     [SerializeField] float burningTime;
     [SerializeField] GameObject fireEffect;
 
     //점화
+    [PunRPC]
     public void FlameOn()
     {
         //불 이펙트 켜기
@@ -20,6 +23,7 @@ public class FireWoodCtrl : MonoBehaviour
         if(other.gameObject.CompareTag("Fire"))
         {
             FlameOn();
+            pv.RPC(nameof(FlameOn), RpcTarget.AllViaServer);
         }
     }
 }

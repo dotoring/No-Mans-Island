@@ -1,26 +1,20 @@
-using NUnit.Framework.Internal;
-using Unity.VisualScripting;
-using UnityEditor.Timeline.Actions;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
-using UnityEngine.XR.OpenXR.Input;
 
 public class CuttedBambooCtrl : InteractableObject
 {
     bool isBuildReady;
-    int grabCount;
     public bool isFixed;
     bool isTrigger;
-    Rigidbody rb;
-    XRGrabInteractable interactable;
+    [SerializeField] int power;
     [SerializeField] private InputActionProperty leftTriggerAction;
     [SerializeField] private InputActionProperty rightTriggerAction;
 
     [SerializeField] GameObject contackPoints;
 
-    private void OnEnable()
+    public override void OnEnable()
     {
         //공격 이벤트 등록
         leftTriggerAction.action.performed += LeftTriggerEnter;
@@ -30,7 +24,7 @@ public class CuttedBambooCtrl : InteractableObject
         rightTriggerAction.action.canceled += RightTriggerExit;
     }
 
-    private void OnDisable()
+    public override void OnDisable()
     {
         leftTriggerAction.action.performed -= LeftTriggerEnter;
         rightTriggerAction.action.performed -= RightTriggerEnter;
@@ -39,45 +33,31 @@ public class CuttedBambooCtrl : InteractableObject
         rightTriggerAction.action.canceled -= RightTriggerExit;
     }
 
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-        interactable = GetComponent<XRGrabInteractable>();
-
-        //현재 플레이어가 잡고있는지 체크하는 코드
-        interactable.selectEntered.AddListener((var) =>
-        {
-            grabCount++;
-        });
-        interactable.selectExited.AddListener((var) =>
-        {
-            grabCount--;
-        });
-    }
-
-    public override void TakeDamage(int dmg) 
+    public override void TakeDamage(int dmg)
     {
         //건설 준비 완료시
-        if(isBuildReady)
+        if (isBuildReady)
         {
-            Fix();
+            //Fix();
+            pv.RPC(nameof(Fix), RpcTarget.AllViaServer);
         }
     }
 
     //고정 시키는 함수
+    [PunRPC]
     void Fix()
     {
         //물리 안받기
-        rb.isKinematic = true;
+        rig.isKinematic = true;
         isFixed = true;
         //그랩 상호작용 레이어 변경으로 잡을 수 없도록 변경
-        interactable.interactionLayers = 1 << InteractionLayerMask.NameToLayer("Fixed");
+        inter.interactionLayers = 1 << InteractionLayerMask.NameToLayer("Fixed");
     }
 
     //트리거 입력 체크 함수들
     void LeftTriggerEnter(InputAction.CallbackContext context)
     {
-        if(grabCount > 0)
+        if (grabCount > 0)
         {
             isTrigger = true;
         }
@@ -110,9 +90,18 @@ public class CuttedBambooCtrl : InteractableObject
         if (collision.gameObject.CompareTag("Land"))
         {
             //충돌시 속도가 일정 이상, 트리거를 누른 상태
-            if (rb.linearVelocity.magnitude > 0.7f && isTrigger)
+            if (rig.linearVelocity.magnitude > 0.7f && isTrigger)
             {
-                Fix();
+                //Fix();
+                pv.RPC(nameof(Fix), RpcTarget.AllViaServer);
+            }
+        }
+
+        if (rig.linearVelocity.magnitude > 0.7f && grabCount > 0)
+        {
+            if (collision.gameObject.GetComponent<AnimalClass>() != null)
+            {
+                collision.gameObject.GetComponent<AnimalClass>().GetDamage(power);
             }
         }
     }

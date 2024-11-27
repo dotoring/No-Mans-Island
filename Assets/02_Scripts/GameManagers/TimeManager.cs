@@ -22,16 +22,20 @@ public class TimeManager : MonoBehaviour
     ColorAdjustments colorAdjustments;
 
     [SerializeField] TimeSettings timeSettings;
+    [SerializeField] TempGameMgr tempGameMgr;
+    [SerializeField] EscapeMgr escapeMgr;
 
     TimeService service;
     IEnumerator coroutine;
+    public bool IsDay { get; private set; }
     private void Start()
     {
         service = new TimeService(timeSettings);
         //volume.profile.TryGet(out colorAdjustments);
         coroutine = SpawnAggressiveAnimal();
         service.OnHourChange += time => CheckTime(time);
-        service.UpdateListner();
+        service.OnSunrise += () => CheckDay(true);
+        service.OnSunset += () => CheckDay(false);
     }
 
     private void Update()
@@ -39,7 +43,7 @@ public class TimeManager : MonoBehaviour
         UpdateTimeOfDay();
         RotateSun();
         UpdateLightSettings();
-        //UpdateSkyBlend();
+        UpdateSkyBlend();
     }
 
     void UpdateSkyBlend()
@@ -68,14 +72,15 @@ public class TimeManager : MonoBehaviour
     void UpdateTimeOfDay()
     {
         service.UpdateTime(Time.deltaTime);
-        if (timeText != null)
-        {
-            timeText.text = service.CurTime.ToString("hh:mm");
-        }
+        //if (timeText != null)
+        //{
+        //    timeText.text = service.CurTime.ToString("hh:mm");
+        //}
     }
 
     void CheckTime(int i)
     {
+        Debug.Log(i);
         if (i == 21)
         {
             if (coroutine != null)
@@ -91,16 +96,37 @@ public class TimeManager : MonoBehaviour
                 StopCoroutine(coroutine);
             }
         }
+
+        if(i == 7)
+        {
+            escapeMgr.ComeShip();
+        }
+        if(i == 12)
+        {
+            escapeMgr.LeaveShip();
+        }
+    }
+
+    void CheckDay(bool isDay)
+    {
+        if (isDay)
+        {
+            tempGameMgr.OnDay();
+            IsDay = true;
+        }
+        else
+        {
+            tempGameMgr.OnNight();
+            IsDay = false;
+        }
     }
 
     IEnumerator SpawnAggressiveAnimal()
     {
-        //Debug.Log("짜란");
-        //yield return null;
         while (true)
         {
             //플레이어 근처에 선공 동물 소환
-            Debug.Log("선공 동물 소환");
+            tempGameMgr.SpawnAnimals();
             yield return new WaitForSeconds(5f);
         }
     }

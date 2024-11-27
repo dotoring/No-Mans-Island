@@ -1,21 +1,20 @@
 using Unity.VisualScripting;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class RabbitClass : StickClass
+public class RabbitClass : AnimalClass
 {
-    XRGrabInteractable xrgrab;
-
-
     protected float rest_Time;
-    protected float damage_Time;
 
-    protected float jump_Time;
-
+    [SerializeField] protected float moveSpeed = 1.0f;
+    [SerializeField] protected float runSpeed = 1.3f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected override void Start()
     {
+        base.Start();
+
 
         InitStat();
         animal_hp = 30;
@@ -23,15 +22,12 @@ public class RabbitClass : StickClass
         corpse_hp = 30;
         is_alive = true;
 
+        find_area = 3f;
 
-
-
+        inter.enabled = false;
 
         rest_Time = 0f;
-        jump_Time = 0f;
-        xrgrab = GetComponent<XRGrabInteractable>();
-        xrgrab.enabled = false;
-
+        t_state = AnimalState.Idle;
 
 
     }
@@ -42,7 +38,6 @@ public class RabbitClass : StickClass
         ShortDistance();
         RabbitCheck();
 
-
         if (corpse_hp <= 0)
         {
             ChangeToMeat();
@@ -52,7 +47,6 @@ public class RabbitClass : StickClass
     private void RabbitCheck()
     {
         rest_Time += Time.deltaTime;
-        damage_Time += Time.deltaTime;
 
         switch (t_state)
         {
@@ -73,7 +67,7 @@ public class RabbitClass : StickClass
                 break;
             case AnimalState.Die:
                 Animal_Die();
-                xrgrab.enabled = true;
+                inter.enabled = true;
                 break;
         }
     }
@@ -81,32 +75,36 @@ public class RabbitClass : StickClass
 
     public void Animal_Idle()               // 가만히 서기      // 울음소리 내기
     {
-        if (rest_Time >= 5f)
+        if (Player != null)
         {
-            rest_Time = 0;
+            if (rest_Time >= 5f)
+            {
+                rest_Time = 0;
 
-            t_state = AnimalState.Move;
-            animal_anim.SetTrigger("Move");
+                t_state = AnimalState.Move;
+                animal_anim.SetTrigger("Move");
+            }
+
+
+            else if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
+            {
+                rest_Time = 0;
+                animal_anim.SetTrigger("Move");
+                t_state = AnimalState.Watch;
+
+            }
         }
 
-
-        else if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
-        {
-            rest_Time = 0;
-
-            t_state = AnimalState.Watch;
-
-        }
     }
     public void Animal_Move()           // 움직이기
     {
-        this.transform.Translate(Vector3.forward * 0.4f * Time.deltaTime, Space.Self);
+        this.transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime, Space.Self);
 
 
         if (rest_Time >= 5f)
         {
             rest_Time = 0;
-            jump_Time = 0;
+
 
             t_state = AnimalState.Idle;
             animal_anim.SetTrigger("Idle");
@@ -127,39 +125,29 @@ public class RabbitClass : StickClass
         watch_v.y = 0;
         this.transform.forward = watch_v;
 
-        jump_Time += Time.deltaTime;
-        this.transform.Translate(Vector3.forward * 3.0f * Time.deltaTime, Space.Self);
-        animal_anim.SetTrigger("Move");
+
+        this.transform.Translate(Vector3.forward * runSpeed * Time.deltaTime, Space.Self);
 
 
-
-        if (Vector3.Distance(this.transform.position, Player.transform.position) > find_area + 3.0f)
+        if (Vector3.Distance(this.transform.position, Player.transform.position) >= find_area + 3.0f)
         {
-            jump_Time = 0f;
 
-            animal_anim.SetTrigger("Idle");
 
-            t_state = AnimalState.Idle;
+            animal_anim.SetTrigger("Move");
 
+            t_state = AnimalState.Watch;
         }
-
-
-
-
     }
 
     public void Animal_Damage()
     {
-
-
         if (animal_hp <= 0) t_state = AnimalState.Die;
         else
         {
+            animal_anim.SetTrigger("Move");
             t_state = AnimalState.Watch;
 
         }
-
-
     }
 
 
@@ -170,6 +158,7 @@ public class RabbitClass : StickClass
         {
             animal_anim.SetTrigger("Die");
             Die();
+
         }
 
 
@@ -191,9 +180,9 @@ public class RabbitClass : StickClass
 
 
 
-    public override void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        base.OnCollisionEnter(collision);
+
         if (collision.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
         {
             GetDamage(5);

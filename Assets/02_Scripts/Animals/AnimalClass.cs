@@ -1,6 +1,8 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public enum AnimalState
 {
@@ -13,7 +15,7 @@ public enum AnimalState
     Die
 }
 
-public class AnimalClass : MonoBehaviour
+public class AnimalClass : PhotonGrabObject
 {
     public int animal_hp;               // 동물의 체력
     public int animal_atk;              // 동물의 공격력
@@ -21,50 +23,31 @@ public class AnimalClass : MonoBehaviour
 
     public bool is_alive;               // 동물이 살아있는지 죽었는지 여부
 
-    public Rigidbody animal_rb;         // 동물의 물리를 받는 변수
+
     public Animator animal_anim;        // 동물의 애니메이션을 받는 변수
-
-
-    public GameObject meat;                    // 생고기 오브젝트      // 프리팹 받아오면 public 으로 바꿀 예정
 
     public GameObject Player;
 
     public float find_area;
     public float attack_area;
     public float attack_time;
-    public float short_distance = 50.0f;
+    public float short_distance = 400.0f;
 
 
     public AnimalState t_state = new AnimalState();
 
     public List<GameObject> PhotonPlayer = new List<GameObject>();
 
-
-    //PlayerClass pc;
+    public PlayerState player_s;
 
 
 
     public virtual void InitStat()              // 스탯 초기화
     {
-        animal_hp = 0;
-        animal_atk = 0;
-        corpse_hp = 0;
-
         is_alive = true;
-
-
-        find_area = 3f;
-        attack_area = 2f;
-        attack_time = 5f;
-
-        animal_rb = this.GetComponent<Rigidbody>();
         animal_anim = this.GetComponent<Animator>();
 
-        t_state = AnimalState.Idle;
-
-        FirstAddListPlayer();
-        ShortDistance();
-
+        StartCoroutine(AddPlayer());
 
 
     }
@@ -92,6 +75,14 @@ public class AnimalClass : MonoBehaviour
         }
     }
 
+    IEnumerator AddPlayer()
+    {
+        yield return new WaitForSeconds(3.0f);
+        FirstAddListPlayer();
+        ShortDistance();
+        yield return null;
+    }
+
 
 
 
@@ -108,48 +99,24 @@ public class AnimalClass : MonoBehaviour
         }
     }
 
-    public void Hit(int animal_atk_val)       // 데미지를 가한다.
+    public virtual void Hit(PlayerState player_sv)       // 데미지를 가한다.
     {
-        //pc.TakeDamage(animal_atk_val);
+        player_sv.TakeDamage(animal_atk);
         print($"{this.transform.root.gameObject.name} 이가 {Player.gameObject.name} 를 공격");
     }
 
     public void Die()                   // 시체가 된다.     // 시체의 체력이 동물의 체력을 대체한다.
     {
-
         is_alive = false;
-
-
-
     }
 
     public void ChangeToMeat()          // 생고기로 변한다.      // 동물 오브젝트가 소멸하고 생고기 오브젝트가 대체한다.
     {
         if (this.gameObject != null)    // 동물 오브젝트가 아직 존재할 경우
         {
-            Instantiate(meat, this.transform.position, this.transform.rotation);        // 동물 오브젝트 위치에 생고기를 생성하고
-            Destroy(this.gameObject);                                                   // 동물 오브젝트를 삭제한다.
+            PhotonNetwork.Instantiate("RawMeat", this.transform.position, this.transform.rotation);        // 동물 오브젝트 위치에 생고기를 생성하고
+            PhotonNetwork.Destroy(this.gameObject);                                                   // 동물 오브젝트를 삭제한다.
         }
     }
-
-    public void EatFood()
-    {
-        Collider[] colliders = Physics.OverlapSphere(this.transform.position, 1.5f);
-        foreach (Collider col in colliders)
-        {
-            if (col.name.Contains("Food"))
-            {
-
-            }
-        }
-
-    }
-
-
-
-
-
-
-
 
 }

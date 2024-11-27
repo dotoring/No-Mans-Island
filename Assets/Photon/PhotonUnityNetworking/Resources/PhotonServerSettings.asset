@@ -39,6 +39,14 @@ MonoBehaviour:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
+  - Griped
+  - Gripedd
+  - ChangeToWood
+  - CutCoconut
+  - Fix
+  - FlameOn
+  - UIClose
+  - UIOpen
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

@@ -20,10 +20,10 @@ TagManager:
   - 
   - Animal
   - 
-  - 
-  - 
-  - 
-  - 
+  - UIInteraction
+  - Player
+  - GrabObject
+  - PlayerMouth
   - 
   - 
   - 

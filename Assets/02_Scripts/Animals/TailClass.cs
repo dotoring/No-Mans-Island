@@ -1,10 +1,15 @@
 using UnityEngine;
 
-public class TailClass : ScolpionClass
+public class TailClass : MonoBehaviour
 {
-    private void Update()
+    [SerializeField] ScolpionClass scorpion;
+    [SerializeField] PlayerState player_s;
+
+
+
+    public void Update()
     {
-        if (t_state == AnimalState.Attack)
+        if (scorpion.t_state == AnimalState.Attack)
         {
             this.GetComponent<SphereCollider>().enabled = true;
         }
@@ -14,12 +19,12 @@ public class TailClass : ScolpionClass
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Hit(animal_atk);
-
+            scorpion.Hit(other.GetComponent<PlayerState>());
+            Debug.Log("전갈 공격");
         }
     }
 }

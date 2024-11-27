@@ -1,18 +1,26 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-public class ScolpionClass : StickClass
+public class ScolpionClass : AnimalClass
 {
-    //XRGrabInteractable xrgrab;
 
 
-    protected float rest_Time;
-    protected float damage_Time;
+
+    public float rest_Time;
+    public float damage_Time;
+
+    public float cool_Time_max = 3f;
+    public float cool_Time;
+
+    public bool is_poison;
+    public int duration_posion;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected override void Start()
     {
-
+        base.Start();
         InitStat();
         animal_hp = 30;
         animal_atk = 10;
@@ -20,11 +28,16 @@ public class ScolpionClass : StickClass
         is_alive = true;
         attack_area = 2.5f;
 
-
-
+        find_area = 3f;
+        attack_area = 0.8f;
+        attack_time = 5f;
         rest_Time = 0f;
-        //xrgrab = GetComponent<XRGrabInteractable>();
-        //xrgrab.enabled = false;
+
+        inter.enabled = false;
+
+        is_poison = false;
+        cool_Time = cool_Time_max;
+        t_state = AnimalState.Idle;
 
 
 
@@ -33,15 +46,18 @@ public class ScolpionClass : StickClass
 
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
+        ShortDistance();
         ScolpionCheck();
+        //poison(duration_posion);
+        //ThisStick();
 
 
 
     }
 
-    private void ScolpionCheck()
+    public void ScolpionCheck()
     {
         rest_Time += Time.deltaTime;
         damage_Time += Time.deltaTime;
@@ -68,7 +84,7 @@ public class ScolpionClass : StickClass
                 break;
             case AnimalState.Die:
                 Animal_Die();
-                //xrgrab.enabled = true;
+                inter.enabled = true;
                 break;
         }
     }
@@ -76,26 +92,31 @@ public class ScolpionClass : StickClass
 
     public void Animal_Idle()
     {
-        if (rest_Time >= 5f)
+        if (Player != null)
         {
-            rest_Time = 0;
+            if (rest_Time >= 10.0f)
+            {
+                rest_Time = 0;
 
-            t_state = AnimalState.Move;
-            animal_anim.SetTrigger("Move");
+                t_state = AnimalState.Move;
+                animal_anim.SetTrigger("Move");
+            }
+
+            else if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
+            {
+                rest_Time = 0;
+                animal_anim.SetTrigger("Move");
+                t_state = AnimalState.Watch;
+
+            }
+            if (Vector3.Distance(this.transform.position, Player.transform.position) < attack_area)
+            {
+                t_state = AnimalState.Attack;
+            }
         }
 
-        if (Vector3.Distance(this.transform.position, Player.transform.position) <= attack_area)
-        {
-            t_state = AnimalState.Attack;
 
-        }
-        else if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
-        {
-            rest_Time = 0;
 
-            t_state = AnimalState.Watch;
-
-        }
     }
     public void Animal_Move()
     {
@@ -111,10 +132,10 @@ public class ScolpionClass : StickClass
         if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
         {
             rest_Time = 0;
-
             t_state = AnimalState.Watch;
 
         }
+
     }
     public void Animal_Watch()
     {
@@ -123,52 +144,60 @@ public class ScolpionClass : StickClass
         watch_v.y = 0;
         this.transform.forward = watch_v;
 
-        if (Vector3.Distance(this.transform.position, Player.transform.position) <= attack_area)
+        if (Vector3.Distance(this.transform.position, Player.transform.position) < attack_area)
         {
+            rest_Time = 0;
+            animal_anim.SetTrigger("Attack");
             t_state = AnimalState.Attack;
-
         }
         else
         {
             this.transform.Translate(Vector3.forward * 1.0f * Time.deltaTime, Space.Self);
-            animal_anim.SetTrigger("Move");
+
+
         }
     }
     public void Animal_Attack()
     {
+        Vector3 watch_v = Player.transform.position - this.transform.position;
+        watch_v.Normalize();
+        watch_v.y = 0;
+        this.transform.forward = watch_v;
+
+
         if (rest_Time >= attack_time)
         {
             rest_Time = 0;
             animal_anim.SetTrigger("Attack");
-            print($"{this.gameObject.name} 이가 {Player.gameObject.name} 를 공격");
+
         }
 
 
 
 
-        if (Vector3.Distance(this.transform.position, Player.transform.position) > attack_area)
+        if (Vector3.Distance(this.transform.position, Player.transform.position) >= attack_area + 1.0f)
         {
             rest_Time = 0;
+
             t_state = AnimalState.Watch;
+            animal_anim.SetTrigger("Move");
         }
         else
         {
-            animal_anim.SetTrigger("Idle");
+
         }
+
     }
+
+
     public void Animal_Damage()
     {
-        if (damage_Time >= 5f)
-        {
-            damage_Time = 0;
-            animal_anim.SetTrigger("Damage");
-        }
+
 
         if (animal_hp <= 0) t_state = AnimalState.Die;
         else
         {
-            t_state = AnimalState.Idle;
-            animal_anim.SetTrigger("Idle");
+            t_state = AnimalState.Attack;
         }
 
 
@@ -180,22 +209,55 @@ public class ScolpionClass : StickClass
     {
         if (is_alive)
         {
+
             animal_anim.SetTrigger("Die");
             Die();
         }
-
     }
 
 
 
 
-    public override void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
-        base.OnCollisionEnter(collision);
+
         if (collision.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
         {
             GetDamage(5);
             t_state = AnimalState.Damage;
+        }
+    }
+
+    public override void Hit(PlayerState player_sv)
+    {
+        base.Hit(player_sv);
+        int ran = Random.Range(0, 2);
+        if (ran == 0 && !is_poison)
+        {
+            duration_posion = 3;
+        }
+    }
+
+    public void poison(int duration)
+    {
+        if (duration > 0)
+        {
+            is_poison = true;
+            if (cool_Time <= 0f)
+            {
+
+                print($"{Player.gameObject.name}가 독 데미지 2를 받습니다.");
+                cool_Time = cool_Time_max;
+                duration--;
+            }
+            else
+            {
+                cool_Time -= Time.deltaTime;
+            }
+        }
+        else
+        {
+            is_poison = false;
         }
     }
 }

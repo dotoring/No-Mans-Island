@@ -1,9 +1,11 @@
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class TreeCtrl : InteractableObject
 {
-    [SerializeField] GameObject pref;
     [SerializeField] Transform[] spawnPoints;
+    protected string dropLog;
 
     public override void TakeDamage(int dmg)
     {
@@ -16,15 +18,15 @@ public class TreeCtrl : InteractableObject
 
     public void ChangeToWood()
     {
-        Destroy(gameObject);
+        PhotonNetwork.Destroy(gameObject);
         SpawnWood();
     }
 
-    public void SpawnWood()
+    public virtual void SpawnWood()
     {
         for(int i = 0; i < spawnPoints.Length; i++)
         {
-            Instantiate(pref, spawnPoints[i].position, Quaternion.identity);
+            PhotonNetwork.Instantiate(dropLog, spawnPoints[i].position, Quaternion.identity);
         }
     }
 }

@@ -17,8 +17,9 @@ public class TigerClass : AnimalClass
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
+    protected override void Start()
     {
+        base.Start();
 
         InitStat();
         animal_hp = 30;
@@ -26,11 +27,16 @@ public class TigerClass : AnimalClass
         corpse_hp = 30;
         is_alive = true;
 
-
+        find_area = 3.0f;
+        attack_area = 1.3f;
+        attack_time = 5f;
 
         rest_Time = 0f;
+
+        t_state = AnimalState.Idle;
         //xrgrab = GetComponent<XRGrabInteractable>();
         //xrgrab.enabled = false;
+
 
 
 
@@ -42,6 +48,7 @@ public class TigerClass : AnimalClass
     void Update()
     {
         TigerCheck();
+        ShortDistance();
 
 
 
@@ -86,26 +93,27 @@ public class TigerClass : AnimalClass
 
     public void Animal_Idle()
     {
-
-        if (rest_Time >= 10.0f)
+        if (Player != null)
         {
-            rest_Time = 0;
+            if (rest_Time >= 10.0f)
+            {
+                rest_Time = 0;
 
-            t_state = AnimalState.Move;
-            animal_anim.SetTrigger("Move");
+                t_state = AnimalState.Move;
+                animal_anim.SetTrigger("Move");
+            }
+
+            else if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
+            {
+                rest_Time = 0;
+                animal_anim.SetTrigger("Move");
+                t_state = AnimalState.Watch;
+
+            }
         }
-        if (Vector3.Distance(this.transform.position, Player.transform.position) < attack_area)
-        {
-            t_state = AnimalState.Attack;
 
-        }
-        else if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
-        {
-            rest_Time = 0;
 
-            t_state = AnimalState.Watch;
 
-        }
     }
     public void Animal_Move()
     {
@@ -133,22 +141,27 @@ public class TigerClass : AnimalClass
         watch_v.y = 0;
         this.transform.forward = watch_v;
 
-        if (Vector3.Distance(this.transform.position, Player.transform.position) <= attack_area)
+        if (Vector3.Distance(this.transform.position, Player.transform.position) < attack_area)
         {
+            animal_anim.SetTrigger("Attack");
             t_state = AnimalState.Attack;
-
             rest_Time = 0f;
+
+
 
         }
         else
         {
             this.transform.Translate(Vector3.forward * 1.0f * Time.deltaTime, Space.Self);
-            animal_anim.SetTrigger("Move");
+
         }
     }
     public void Animal_Attack()
     {
-
+        Vector3 watch_v = Player.transform.position - this.transform.position;
+        watch_v.Normalize();
+        watch_v.y = 0;
+        this.transform.forward = watch_v;
 
 
         if (rest_Time >= attack_time)
@@ -161,14 +174,15 @@ public class TigerClass : AnimalClass
 
 
 
-        if (Vector3.Distance(this.transform.position, Player.transform.position) > attack_area)
+        if (Vector3.Distance(this.transform.position, Player.transform.position) >= attack_area + 1.0f)
         {
             rest_Time = 0;
+            animal_anim.SetTrigger("Move");
             t_state = AnimalState.Watch;
         }
         else
         {
-            animal_anim.SetTrigger("Idle");
+
         }
 
     }
@@ -181,8 +195,7 @@ public class TigerClass : AnimalClass
         if (animal_hp <= 0) t_state = AnimalState.Die;
         else
         {
-            t_state = AnimalState.Idle;
-            animal_anim.SetTrigger("Idle");
+            t_state = AnimalState.Attack;
         }
 
 

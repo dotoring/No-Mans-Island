@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.InputSystem;
 
 public class HandAnimation : MonoBehaviour
 {
+    [SerializeField] private PhotonView pv;
     public InputActionProperty leftPinch;
     public InputActionProperty leftGrip;
 
@@ -17,18 +19,20 @@ public class HandAnimation : MonoBehaviour
 
     void Update()
     {
-        
-            float leftTriggerValue = leftPinch.action.ReadValue<float>();
-            lanim.SetFloat("TriggerL", leftTriggerValue);
+        if (!pv.IsMine)
+            return;
 
-            float leftGripValue = leftGrip.action.ReadValue<float>();
-            lanim.SetFloat("GripL", leftGripValue);
+        float leftTriggerValue = leftPinch.action.ReadValue<float>();
+        lanim.SetFloat("TriggerL", leftTriggerValue);
+
+        float leftGripValue = leftGrip.action.ReadValue<float>();
+        lanim.SetFloat("GripL", leftGripValue);
        
-            float rightTriggerValue = rightPinch.action.ReadValue<float>();
-            ranim.SetFloat("TriggerR", rightTriggerValue);
+        float rightTriggerValue = rightPinch.action.ReadValue<float>();
+        ranim.SetFloat("TriggerR", rightTriggerValue);
 
-            float rightGripValue = rightGrip.action.ReadValue<float>();
-            ranim.SetFloat("GripR", rightGripValue);
+        float rightGripValue = rightGrip.action.ReadValue<float>();
+        ranim.SetFloat("GripR", rightGripValue);
         
     }
 }
