@@ -229,7 +229,7 @@ public class ScolpionClass : AnimalClass
     {
         base.Hit(animal_atk_val);
         int ran = Random.Range(0, 2);
-        if (ran == 0 && !player_s.isPoisoned)
+        if (ran == 0 && !is_poison)
         {
             duration_posion = 3;
         }
@@ -239,7 +239,7 @@ public class ScolpionClass : AnimalClass
     {
         if (duration > 0)
         {
-            player_s.isPoisoned = true;
+            is_poison = true;
             if (cool_Time <= 0f)
             {
                 Hit(2);
@@ -254,7 +254,7 @@ public class ScolpionClass : AnimalClass
         }
         else
         {
-            player_s.isPoisoned = false;
+            is_poison = false;
         }
     }
 }

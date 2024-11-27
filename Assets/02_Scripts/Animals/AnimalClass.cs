@@ -40,7 +40,7 @@ public class AnimalClass : PhotonGrabObject
 
     public List<GameObject> PhotonPlayer = new List<GameObject>();
 
-    public PlayerState player_s;
+
 
 
     //PlayerClass pc;
@@ -65,9 +65,7 @@ public class AnimalClass : PhotonGrabObject
         ShortDistance();
 
         print(Player.gameObject.name);
-        player_s = Player.GetComponent<PlayerState>();
 
-        print(player_s.name);
 
 
 
@@ -115,7 +113,7 @@ public class AnimalClass : PhotonGrabObject
 
     public virtual void Hit(int animal_atk_val)       // 데미지를 가한다.
     {
-        player_s.TakeDamage(animal_atk_val);
+        //player_s.TakeDamage(animal_atk_val);
         print($"{this.transform.root.gameObject.name} 이가 {Player.gameObject.name} 를 공격");
     }
 
