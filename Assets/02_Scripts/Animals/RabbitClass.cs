@@ -7,6 +7,9 @@ public class RabbitClass : AnimalClass
 {
     protected float rest_Time;
 
+    [SerializeField] protected float moveSpeed = 1.0f;
+    [SerializeField] protected float runSpeed = 1.3f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
     {
@@ -20,7 +23,6 @@ public class RabbitClass : AnimalClass
         is_alive = true;
 
         find_area = 3f;
-        attack_area = 2f;
 
         inter.enabled = false;
 
@@ -96,7 +98,7 @@ public class RabbitClass : AnimalClass
     }
     public void Animal_Move()           // 움직이기
     {
-        this.transform.Translate(Vector3.forward * 1.0f * Time.deltaTime, Space.Self);
+        this.transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime, Space.Self);
 
 
         if (rest_Time >= 5f)
@@ -124,7 +126,7 @@ public class RabbitClass : AnimalClass
         this.transform.forward = watch_v;
 
 
-        this.transform.Translate(Vector3.forward * 1.5f * Time.deltaTime, Space.Self);
+        this.transform.Translate(Vector3.forward * runSpeed * Time.deltaTime, Space.Self);
 
 
         if (Vector3.Distance(this.transform.position, Player.transform.position) >= find_area + 3.0f)

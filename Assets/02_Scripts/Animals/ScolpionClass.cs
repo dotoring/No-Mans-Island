@@ -29,7 +29,7 @@ public class ScolpionClass : AnimalClass
         attack_area = 2.5f;
 
         find_area = 3f;
-        attack_area = 2f;
+        attack_area = 0.8f;
         attack_time = 5f;
         rest_Time = 0f;
 
@@ -175,7 +175,7 @@ public class ScolpionClass : AnimalClass
 
 
 
-        if (Vector3.Distance(this.transform.position, Player.transform.position) >= attack_area)
+        if (Vector3.Distance(this.transform.position, Player.transform.position) >= attack_area + 1.0f)
         {
             rest_Time = 0;
 
