@@ -10,10 +10,17 @@ public class TempGameMgr : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(FindPlayers());
+    }
+
+    IEnumerator FindPlayers()
+    {
+        yield return new WaitForSeconds(2f);
         foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
         {
             players.Add(p);
         }
+        yield return null;
     }
 
     public void SpawnAnimals()
