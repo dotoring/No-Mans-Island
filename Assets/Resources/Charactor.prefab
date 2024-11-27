@@ -4869,6 +4869,8 @@ MonoBehaviour:
   - {fileID: 2327567884644654242}
   leftCont: {fileID: 5575485454061738919}
   rightCont: {fileID: 91269765532170532}
+  statusUI: {fileID: 3908346893394633576}
+  mouth: {fileID: 6581934015602066218}
 --- !u!114 &6396274300417139710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6826,7 +6828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab0b2f735905535469e3303152daefc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerState: {fileID: 0}
+  playerState: {fileID: 6396274300417139710}
 --- !u!1 &6602153863155155089
 GameObject:
   m_ObjectHideFlags: 0

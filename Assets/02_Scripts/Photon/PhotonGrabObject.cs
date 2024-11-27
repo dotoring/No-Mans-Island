@@ -6,12 +6,14 @@ using Photon.Realtime;
 using System.Collections;
 using Unity.VisualScripting;
 
+[RequireComponent(typeof(XRGrabInteractable))]
+
 public class PhotonGrabObject : MonoBehaviourPunCallbacks
 {
     protected Rigidbody rig;
     [SerializeField] protected XRGrabInteractable inter;
     public int grabCount;
-    [SerializeField] PhotonView pv;
+    [SerializeField] protected PhotonView pv;
 
 
     protected virtual void Start()
