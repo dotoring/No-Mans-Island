@@ -86,7 +86,6 @@ public class AnimalClass : PhotonGrabObject
         FirstAddListPlayer();
         ShortDistance();
         yield return null;
-
     }
 
 
