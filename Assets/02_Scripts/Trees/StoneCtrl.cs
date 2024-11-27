@@ -1,3 +1,4 @@
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
@@ -38,7 +39,7 @@ public class StoneCtrl : PhotonGrabObject
                     {
                         if (collider.CompareTag("FireWood"))
                         {
-                            collider.GetComponent<FireWoodCtrl>().FlameOn();
+                            collider.GetComponent<PhotonView>().RPC("FlameOn", RpcTarget.AllViaServer   );
                         }
                     }
                 }
