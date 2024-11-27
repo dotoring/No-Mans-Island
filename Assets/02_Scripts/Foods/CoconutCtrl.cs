@@ -1,4 +1,6 @@
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class CoconutCtrl : InteractableObject
 {
@@ -9,13 +11,17 @@ public class CoconutCtrl : InteractableObject
         base.TakeDamage(dmg);
         if (Hp <= 0)
         {
-            CutCoconut();
+            //CutCoconut();
+            pv.RPC(nameof(CutCoconut), RpcTarget.AllViaServer);
         }
     }
 
+    [PunRPC]
     void CutCoconut()
     {
-        Destroy(gameObject);
-        Instantiate(halfCoconut, transform.position, transform.rotation);
+        //Destroy(gameObject);
+        //Instantiate(halfCoconut, transform.position, transform.rotation);
+        PhotonNetwork.Destroy(gameObject);
+        PhotonNetwork.Instantiate("CuttedCoconuts", transform.position, transform.rotation);
     }
 }

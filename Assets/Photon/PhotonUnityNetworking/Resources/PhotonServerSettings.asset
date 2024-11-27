@@ -41,6 +41,8 @@ MonoBehaviour:
   - RespawnSpaceship
   - Griped
   - Gripedd
+  - ChangeToWood
+  - CutCoconut
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

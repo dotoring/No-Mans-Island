@@ -10,19 +10,18 @@ public class PhotonGrabObject : MonoBehaviourPunCallbacks
 {
     protected Rigidbody rig;
     [SerializeField] protected XRGrabInteractable inter;
-    public int grabCount;
-    [SerializeField] PhotonView pv;
+    protected int grabCount;
+    [SerializeField] protected PhotonView pv;
 
 
     protected virtual void Start()
     {
-        //isGriped = false;
         grabCount = 0;
 
         rig = GetComponent<Rigidbody>();
 
-        //if(inter != null)
-        //{
+        if (inter != null)
+        {
             inter.selectEntered.AddListener((args) =>
             {
                 //오브젝트의 PhotonView에서 Ownership Transfer를 Takeover로 설정하면 소유권(컨트롤러 포함)을 강제로 가져올 수 있도록 한다
@@ -38,7 +37,7 @@ public class PhotonGrabObject : MonoBehaviourPunCallbacks
                 pv.RPC(nameof(Griped), RpcTarget.AllViaServer, grabCount);
                 OnGrabChangeLayer(grabCount);
             });
-        //}
+        }
     }
 
     [PunRPC]

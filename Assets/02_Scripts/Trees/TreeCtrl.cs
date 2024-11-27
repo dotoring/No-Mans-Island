@@ -1,4 +1,6 @@
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class TreeCtrl : InteractableObject
 {
@@ -11,9 +13,11 @@ public class TreeCtrl : InteractableObject
         if (Hp <= 0)
         {
             ChangeToWood();
+            pv.RPC(nameof(ChangeToWood), RpcTarget.AllViaServer);
         }
     }
 
+    [PunRPC]
     public void ChangeToWood()
     {
         Destroy(gameObject);
