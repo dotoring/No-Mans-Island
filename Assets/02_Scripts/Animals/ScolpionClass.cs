@@ -3,7 +3,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class ScolpionClass : AnimalClass
 {
-    XRGrabInteractable xrgrab;
+
 
 
     public float rest_Time;
@@ -18,9 +18,9 @@ public class ScolpionClass : AnimalClass
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void Awake()
+    protected override void Start()
     {
-
+        base.Start();
         InitStat();
         animal_hp = 30;
         animal_atk = 10;
@@ -33,8 +33,8 @@ public class ScolpionClass : AnimalClass
         attack_area = 2f;
         attack_time = 5f;
         rest_Time = 0f;
-        xrgrab = GetComponent<XRGrabInteractable>();
-        xrgrab.enabled = false;
+
+        inter.enabled = false;
 
         is_poison = false;
         cool_Time = cool_Time_max;
@@ -84,7 +84,7 @@ public class ScolpionClass : AnimalClass
                 break;
             case AnimalState.Die:
                 Animal_Die();
-                xrgrab.enabled = true;
+                inter.enabled = true;
                 break;
         }
     }

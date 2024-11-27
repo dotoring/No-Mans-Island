@@ -4,7 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class FrogClass : AnimalClass
 {
-    XRGrabInteractable xrgrab;
+
 
 
     protected float rest_Time;
@@ -14,8 +14,10 @@ public class FrogClass : AnimalClass
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected override void Start()
     {
+        base.Start();
+
 
         InitStat();
         animal_hp = 30;
@@ -31,8 +33,8 @@ public class FrogClass : AnimalClass
 
         rest_Time = 0f;
         jump_Time = 0f;
-        xrgrab = GetComponent<XRGrabInteractable>();
-        xrgrab.enabled = false;
+
+        inter.enabled = false;
 
 
 
@@ -73,7 +75,7 @@ public class FrogClass : AnimalClass
                 break;
             case AnimalState.Die:
                 Animal_Die();
-                xrgrab.enabled = true;
+                inter.enabled = true;
                 break;
         }
     }

@@ -22,18 +22,20 @@ public class AnimalClass : PhotonGrabObject
 
     public bool is_alive;               // 동물이 살아있는지 죽었는지 여부
 
-    public float find_area;
-    public float attack_area;
-    public float attack_time;
-    public float short_distance = 400.0f;
 
-    public Rigidbody animal_rb;         // 동물의 물리를 받는 변수
     public Animator animal_anim;        // 동물의 애니메이션을 받는 변수
+
 
 
     public GameObject meat;                    // 생고기 오브젝트      // 프리팹 받아오면 public 으로 바꿀 예정
 
     public GameObject Player;
+
+    public float find_area;
+    public float attack_area;
+    public float attack_time;
+    public float short_distance = 400.0f;
+
 
     public AnimalState t_state = new AnimalState();
 

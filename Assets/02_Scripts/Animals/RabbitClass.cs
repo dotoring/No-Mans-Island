@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class RabbitClass : AnimalClass
 {
-    XRGrabInteractable xrgrab;
+
 
 
     protected float rest_Time;
@@ -17,8 +17,10 @@ public class RabbitClass : AnimalClass
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected override void Start()
     {
+        base.Start();
+
 
         InitStat();
         animal_hp = 30;
@@ -33,8 +35,8 @@ public class RabbitClass : AnimalClass
 
 
 
-        xrgrab = GetComponent<XRGrabInteractable>();
-        xrgrab.enabled = false;
+
+        inter.enabled = false;
 
 
 
@@ -86,7 +88,7 @@ public class RabbitClass : AnimalClass
                 break;
             case AnimalState.Die:
                 Animal_Die();
-                xrgrab.enabled = true;
+                inter.enabled = true;
                 break;
         }
     }
