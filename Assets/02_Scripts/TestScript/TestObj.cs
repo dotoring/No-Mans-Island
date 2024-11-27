@@ -12,14 +12,20 @@ public class TestObj : PhotonGrabObject
         base.Start();
         inter.selectEntered.AddListener((args) =>
         {
-            if(pv.Owner.IsMasterClient)
-                SceneManager.LoadScene("3_GameScene");
+            if (pv.Owner.IsMasterClient) { }
+                //SceneManager.LoadScene("3_GameScene");
         });
+    }
+
+    protected override void SelectFunc()
+    {
+        base.SelectFunc();
+        print("sel함수 호출 : "+PhotonNetwork.CurrentRoom.Players[pv.Owner.ActorNumber].IsMasterClient);
     }
 
     private void Update()
     {
-        print(pv.Owner.IsMasterClient);
+        print(PhotonNetwork.CurrentRoom.Players[pv.Owner.ActorNumber].IsMasterClient);
     }
 
 

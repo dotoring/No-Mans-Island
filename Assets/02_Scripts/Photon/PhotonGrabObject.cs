@@ -5,6 +5,7 @@ using Photon;
 using Photon.Realtime;
 using System.Collections;
 using Unity.VisualScripting;
+using System.Security;
 
 [RequireComponent(typeof(XRGrabInteractable))]
 
@@ -33,6 +34,7 @@ public class PhotonGrabObject : MonoBehaviourPunCallbacks
                 grabCount++;
                 pv.RPC(nameof(Griped), RpcTarget.AllViaServer, grabCount);
                 OnGrabChangeLayer(grabCount);
+                SelectFunc();
             });
             inter.selectExited.AddListener((args) =>
             {
@@ -43,16 +45,24 @@ public class PhotonGrabObject : MonoBehaviourPunCallbacks
         //}
     }
 
+    protected virtual void SelectFunc()
+    {
+
+    }
+    
+
     [PunRPC]
-    public void Griped(int count)
+    protected void Griped(int count)
     {
         if(count > 0)
         {
             rig.useGravity = false;
+            rig.isKinematic = true;
         }
         else
         {
             rig.useGravity = true;
+            rig.isKinematic= false;
         }
         //그립 상태면 중력 끄기
         //그립 상태가 아니면 중력 키키
