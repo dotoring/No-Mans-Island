@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             rightCont.transform.parent=tr.GetChild(0);
             statusUI.transform.parent = tr.GetChild(0);
             mouth.transform.parent = Camera.main.transform;
+            mouth.transform.localPosition = new Vector3(0, -0.06f, 0.05f);
 
 
             models[0].SetActive(false);
