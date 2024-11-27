@@ -43,6 +43,7 @@ MonoBehaviour:
   - Gripedd
   - ChangeToWood
   - CutCoconut
+  - Fix
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
