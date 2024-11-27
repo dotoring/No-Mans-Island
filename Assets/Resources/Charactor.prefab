@@ -4891,6 +4891,7 @@ MonoBehaviour:
   tThirst: {fileID: 700259104429888691}
   tTemp: {fileID: 7778696412274620061}
   isCold: 0
+  isPoisoned: 0
 --- !u!1 &4184606581114567787
 GameObject:
   m_ObjectHideFlags: 0

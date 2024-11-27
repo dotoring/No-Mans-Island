@@ -12,8 +12,9 @@ public class TreeCtrl : InteractableObject
         base.TakeDamage(dmg);
         if (Hp <= 0)
         {
-            ChangeToWood();
+            //ChangeToWood();
             pv.RPC(nameof(ChangeToWood), RpcTarget.AllViaServer);
+            SpawnWood();
         }
     }
 
@@ -21,14 +22,14 @@ public class TreeCtrl : InteractableObject
     public void ChangeToWood()
     {
         Destroy(gameObject);
-        SpawnWood();
+        //SpawnWood();
     }
 
     public void SpawnWood()
     {
         for(int i = 0; i < spawnPoints.Length; i++)
         {
-            Instantiate(pref, spawnPoints[i].position, Quaternion.identity);
+            PhotonNetwork.Instantiate("Log", spawnPoints[i].position, Quaternion.identity);
         }
     }
 }
