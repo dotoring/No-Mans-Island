@@ -128,10 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inter: {fileID: 381839952092208137}
-  grabCount: 0
   pv: {fileID: 3797194759235204302}
   Hp: 10
-  pref: {fileID: 8256803385102292854, guid: 255a42fed6150014fa0ba952b355b0b9, type: 3}
 --- !u!54 &6197501138105446489
 Rigidbody:
   m_ObjectHideFlags: 0
