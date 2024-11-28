@@ -34,6 +34,7 @@ public class PhotonGrabObject : MonoBehaviourPunCallbacks
                 pv.RPC(nameof(Griped), RpcTarget.AllViaServer, grabCount);
                 //pv.RPC(nameof(OnGrabChangeLayer), RpcTarget.AllViaServer, grabCount);
             });
+
             inter.selectExited.AddListener((args) =>
             {
                 if(gameObject.activeSelf == true)
