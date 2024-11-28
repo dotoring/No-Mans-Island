@@ -36,10 +36,10 @@ public class GameStartTable : MonoBehaviour
     {
         if ((pv.IsMine))
         {
-            //SceneManager.LoadScene("3_GameScene");
+            SceneManager.LoadScene("3_GameScene");
 
             //테스트용_CSY
-            SceneManager.LoadScene("3_GameScene_Test");
+            //SceneManager.LoadScene("3_GameScene_Test");
 
         }
     }

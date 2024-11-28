@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 87377c86d84f49a4e912d37d28353e7f
+timeCreated: 1485179854
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 193142
+  packageName: Sci-Fi Room
+  packageVersion: 1.1
+  assetPath: Assets/Sci Fi Bedroom 1/PostProcessing/Editor/Models/DitheringModelEditor.cs
+  uploadId: 617801
