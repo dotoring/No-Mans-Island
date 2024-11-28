@@ -1,6 +1,7 @@
 using UnityEngine;
 using Photon.Pun;
 using System;
+using UnityEngine.SceneManagement;
 
 public class EscapeZone : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class EscapeZone : MonoBehaviour
         //탈출지역 인원이 생존인원보다 많거나 같을 때
         if(count >= PhotonNetwork.CurrentRoom.PlayerCount - TempGameMgr.deadPlayerCount)
         {
-            go.SetActive(true);
+            SceneManager.LoadScene("SJHRoomTestScene");
         }
         else
         {
