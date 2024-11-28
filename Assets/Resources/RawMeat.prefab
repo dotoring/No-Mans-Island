@@ -275,11 +275,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inter: {fileID: 5883064865713296535}
-  grabCount: 0
   pv: {fileID: 6871478822197005294}
   Hp: 0
   foodSO: {fileID: 11400000, guid: 19b9ed762a65df2409e33e72e6934215, type: 2}
-  roast: {fileID: 1088307825180922503, guid: 7ad9942c9c5eff7409d126f3102f9b43, type: 3}
 --- !u!114 &8854271924925806914
 MonoBehaviour:
   m_ObjectHideFlags: 0
