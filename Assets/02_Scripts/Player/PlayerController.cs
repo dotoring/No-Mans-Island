@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             rightHand.transform.localPosition = Vector3.zero;
             leftHand.transform.localRotation = Quaternion.identity;
             rightHand.transform.localRotation = Quaternion.identity;
-
+            statusUISencer.transform.localPosition = Vector3.right * 0.2f;
 
 
 

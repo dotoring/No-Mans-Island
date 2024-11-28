@@ -1765,8 +1765,9 @@ GameObject:
   - component: {fileID: 507711585}
   - component: {fileID: 507711584}
   - component: {fileID: 507711583}
+  - component: {fileID: 507711588}
   m_Layer: 0
-  m_Name: 'XR Origin (VR) '
+  m_Name: XR Origin (VR)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1872,6 +1873,31 @@ Transform:
   - {fileID: 1753343305}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!143 &507711588
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507711582}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &546724788
 GameObject:
   m_ObjectHideFlags: 0
@@ -9713,9 +9739,9 @@ SceneRoots:
   - {fileID: 1979649766}
   - {fileID: 428266237}
   - {fileID: 975741399}
+  - {fileID: 507711587}
   - {fileID: 1718590460}
   - {fileID: 1767167633}
   - {fileID: 1423220090}
   - {fileID: 220867877}
   - {fileID: 617970723}
-  - {fileID: 507711587}
