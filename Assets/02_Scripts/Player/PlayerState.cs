@@ -2,6 +2,7 @@ using Photon.Pun;
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Inputs;
 
 public class PlayerState : MonoBehaviour
 {
@@ -19,12 +20,16 @@ public class PlayerState : MonoBehaviour
     [SerializeField] TMP_Text tTemp;
     [SerializeField] PhotonView pv;
 
+
+
     public event Action<bool> OnDie;
     readonly Observable<bool> isPlayerDie = new Observable<bool>(false);
 
     private void Start()
     {
         OnDie += (_) => TempGameMgr.deadPlayerCount++;
+        OnDie += (a) => pv.RPC(nameof(CharDie), RpcTarget.AllViaServer);
+        OnDie += (a) => DieEventMy();
         isPlayerDie.AddListener(OnDie);
     }
 
@@ -79,6 +84,27 @@ public class PlayerState : MonoBehaviour
             tHunger.text = "Hunger " + hunger.ToString();
             tThirst.text = "Thirst " + thirst.ToString();
             tTemp.text = "Temp " + temperature.ToString();
+        }
+    }
+
+    [PunRPC]
+    void CharDie()
+    {
+        this.gameObject.layer = 14;
+        for(int i=0;i>transform.childCount;i++)
+        {
+            this.transform.GetChild(i).gameObject.SetActive(false);
+        }
+    }
+
+    void DieEventMy()
+    {
+        if (pv.IsMine)
+        {
+            this.transform.root.GetChild(0).GetChild(1).gameObject.SetActive(false);
+            this.transform.root.GetChild(0).GetChild(2).gameObject.SetActive(false);
+            this.transform.root.GetChild(0).GetChild(3).gameObject.SetActive(false);
+            this.transform.root.GetComponent<XRInputModalityManager>().enabled = false;
         }
     }
 
