@@ -1,11 +1,13 @@
 using UnityEngine;
-
+using Photon.Pun;
+using Photon.Realtime;
 public class ShipCtrl : MonoBehaviour
 {
     [SerializeField] float speed;
     public Transform departPoint;
     public Transform arrivePoint;
     public bool isCome { get; set; }
+
     private void Update()
     {
         if(isCome)
@@ -24,5 +26,15 @@ public class ShipCtrl : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
+    }
+
+    void asdf()
+    {
+        int a = PhotonNetwork.CurrentRoom.PlayerCount;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
     }
 }
