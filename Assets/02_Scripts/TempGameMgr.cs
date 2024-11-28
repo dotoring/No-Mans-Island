@@ -11,7 +11,10 @@ public class TempGameMgr : MonoBehaviour
 
     Action<bool> gameOver;
 
-
+    private void Start()
+    {
+        deadPlayerCount = 0;
+    }
     public void SpawnAnimals()
     {
         foreach (var animal in nightAnimals)
