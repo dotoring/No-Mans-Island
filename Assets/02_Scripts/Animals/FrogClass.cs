@@ -214,17 +214,4 @@ public class FrogClass : AnimalClass
 
 
 
-    public void OnCollisionEnter(Collision collision)
-    {
-
-        if (collision.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
-        {
-            GetDamage(5);
-            t_state = AnimalState.Damage;
-        }
-    }
-
-
-
-
 }
