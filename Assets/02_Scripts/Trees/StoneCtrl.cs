@@ -16,9 +16,9 @@ public class StoneCtrl : PhotonGrabObject
                 collision.gameObject.GetComponent<InteractableObject>().TakeDamage(power);
             }
 
-            if (collision.gameObject.GetComponent<AnimalClass>() != null)
+            if (collision.gameObject.GetComponentInParent<AnimalClass>() != null)
             {
-                collision.gameObject.GetComponent<AnimalClass>().GetDamage(power);
+                collision.gameObject.GetComponentInParent<AnimalClass>().GetDamage(power);
             }
 
             //µ¹³¢¸® ºÎµúÈ÷¸é

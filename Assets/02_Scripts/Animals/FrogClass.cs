@@ -51,7 +51,7 @@ public class FrogClass : AnimalClass
 
         if (corpse_hp <= 0)
         {
-            ChangeToMeat();
+            ChangeToMeat(1);
         }
     }
 
@@ -208,19 +208,6 @@ public class FrogClass : AnimalClass
             animal_hp -= damage;
             print($"{damage} 만큼 피해를 입었습니다. 남은 체력은 {animal_hp} 입니다.");
 
-        }
-    }
-
-
-
-
-    public void OnCollisionEnter(Collision collision)
-    {
-
-        if (collision.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
-        {
-            GetDamage(5);
-            t_state = AnimalState.Damage;
         }
     }
 

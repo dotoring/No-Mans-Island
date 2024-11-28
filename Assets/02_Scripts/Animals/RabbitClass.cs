@@ -40,7 +40,7 @@ public class RabbitClass : AnimalClass
 
         if (corpse_hp <= 0)
         {
-            ChangeToMeat();
+            ChangeToMeat(2);
         }
     }
 
@@ -180,15 +180,7 @@ public class RabbitClass : AnimalClass
 
 
 
-    private void OnCollisionEnter(Collision collision)
-    {
 
-        if (collision.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
-        {
-            GetDamage(5);
-            t_state = AnimalState.Damage;
-        }
-    }
 
 
 
