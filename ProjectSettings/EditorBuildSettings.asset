@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01_Scenes/3_GameScene_Test.unity
     guid: 54685b6d2595a8d4f97f6a6c20ba97e0
+  - enabled: 1
+    path: Assets/01_Scenes/4_RoomScene.unity
+    guid: f2d62cd75f90dc04a9a0dc71003c8e5e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: af1a5c2bc714f5f4489360950a7b737e, type: 2}
