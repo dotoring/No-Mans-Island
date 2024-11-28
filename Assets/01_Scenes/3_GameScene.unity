@@ -924,7 +924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3675769655776192607, guid: 527a4aaa2d6dc16419b3540c8b1504ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.278101
+      value: 9.239
       objectReference: {fileID: 0}
     - target: {fileID: 3675769655776192607, guid: 527a4aaa2d6dc16419b3540c8b1504ca, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2510,6 +2510,10 @@ PrefabInstance:
     - target: {fileID: 7468026809630677034, guid: f1c84bb998078cb449e54435aff82608, type: 3}
       propertyPath: m_Name
       value: Tiger
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468026809630677034, guid: f1c84bb998078cb449e54435aff82608, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6678,6 +6682,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scorpion
       objectReference: {fileID: 0}
+    - target: {fileID: 5628001307581544608, guid: b2fb4cc359e00b444897970d278f6720, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8519236924596959599, guid: b2fb4cc359e00b444897970d278f6720, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.470291
@@ -8217,6 +8225,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frog
       objectReference: {fileID: 0}
+    - target: {fileID: 1626050389558724460, guid: 19a806faf07143042820a058861a57f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6561726165152624047, guid: 19a806faf07143042820a058861a57f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.633923
@@ -8490,6 +8502,10 @@ PrefabInstance:
     - target: {fileID: 4993081365553003552, guid: d368b4f2528345949ba0836587facbcf, type: 3}
       propertyPath: m_Name
       value: Rabbit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993081365553003552, guid: d368b4f2528345949ba0836587facbcf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

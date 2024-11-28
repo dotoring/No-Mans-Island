@@ -25,7 +25,7 @@ public class SpiderClass : AnimalClass
         is_alive = true;
 
         find_area = 3f;
-        attack_area = 2f;
+        attack_area = 0.5f;
         attack_time = 5f;
 
         rest_Time = 0f;
