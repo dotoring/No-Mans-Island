@@ -131,9 +131,7 @@ public class FrogClass : AnimalClass
         if (Vector3.Distance(this.transform.position, Player.transform.position) < find_area)
         {
             rest_Time = 0;
-
             t_state = AnimalState.Watch;
-
         }
     }
     public void Animal_Watch()          // 도망치기
@@ -201,15 +199,6 @@ public class FrogClass : AnimalClass
 
     }
 
-    public override void GetDamage(int damage)
-    {
-        if (is_alive)
-        {
-            animal_hp -= damage;
-            print($"{damage} 만큼 피해를 입었습니다. 남은 체력은 {animal_hp} 입니다.");
-
-        }
-    }
 
 
 

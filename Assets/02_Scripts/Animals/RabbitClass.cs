@@ -29,8 +29,6 @@ public class RabbitClass : AnimalClass
 
         rest_Time = 0f;
         t_state = AnimalState.Idle;
-
-
     }
 
     // Update is called once per frame
@@ -159,22 +157,13 @@ public class RabbitClass : AnimalClass
         {
             animal_anim.SetTrigger("Die");
             Die();
-
         }
 
 
 
     }
 
-    public override void GetDamage(int damage)
-    {
-        if (is_alive)
-        {
-            animal_hp -= damage;
-            print($"{damage} 만큼 피해를 입었습니다. 남은 체력은 {animal_hp} 입니다.");
 
-        }
-    }
 
 
 
