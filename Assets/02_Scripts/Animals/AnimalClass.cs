@@ -65,6 +65,11 @@ public class AnimalClass : PhotonGrabObject
             corpse_hp -= damage;
             print($"{damage} 만큼 피해를 입었습니다. 남은 체력은 {corpse_hp} 입니다.");
         }
+
+        if (animal_hp <= 0)
+        {
+            t_state = AnimalState.Die;
+        }
     }
 
     public void FirstAddListPlayer()                 // Player 들을 PhotonPlayer list 에 추가
