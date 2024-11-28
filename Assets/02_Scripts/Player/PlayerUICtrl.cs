@@ -7,7 +7,7 @@ public class PlayerUICtrl : MonoBehaviour
 
     private void Start()
     {
-        //controller=GameObject.Find("XR Origin (VR)").transform.GetChild(0).GetChild(1).gameObject;
+        controller=GameObject.Find("XR Origin (VR)").transform.GetChild(0).GetChild(1).gameObject;
     }
 
     void Update()

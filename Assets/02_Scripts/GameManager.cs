@@ -15,9 +15,6 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         CreatePlayer();
-       
-
-        
     }
 
     // Update is called once per frame
