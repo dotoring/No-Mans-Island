@@ -99,9 +99,9 @@ public class CuttedBambooCtrl : InteractableObject
 
         if (rig.linearVelocity.magnitude > 0.7f && grabCount > 0)
         {
-            if (collision.gameObject.GetComponent<AnimalClass>() != null)
+            if (collision.gameObject.GetComponentInParent<AnimalClass>() != null)
             {
-                collision.gameObject.GetComponent<AnimalClass>().GetDamage(power);
+                collision.gameObject.GetComponentInParent<AnimalClass>().GetDamage(power);
             }
         }
     }
