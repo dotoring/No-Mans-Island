@@ -1073,7 +1073,7 @@ MonoBehaviour:
   nightAnimals:
   - Scorpion
   - Spider
-  player: {fileID: 0}
+  player: {fileID: 507711582}
   deadPlayerCount: 0
 --- !u!4 &253247146
 Transform:

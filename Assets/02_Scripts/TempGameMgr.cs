@@ -5,7 +5,12 @@ public class TempGameMgr : MonoBehaviour
 {
     [SerializeField] string[] nightAnimals;
     [SerializeField] GameObject player;
-    public int deadPlayerCount;
+    public int deadPlayerCount = 0;
+
+    private void Start()
+    {
+        player.GetComponentInChildren<PlayerState>().OnDie += (_) => deadPlayerCount++;
+    }
 
     public void SpawnAnimals()
     {

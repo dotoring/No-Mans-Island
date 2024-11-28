@@ -19,7 +19,7 @@ public class PlayerState : MonoBehaviour
     [SerializeField] TMP_Text tTemp;
     [SerializeField] PhotonView pv;
 
-    public static event Action<bool> OnDie;
+    public event Action<bool> OnDie;
     readonly Observable<bool> isPlayerDie = new Observable<bool>(false);
 
     private void Start()
@@ -71,7 +71,7 @@ public class PlayerState : MonoBehaviour
 
             if(Hp <= 0)
             {
-                isPlayerDie.Value = true;
+                pv.RPC(nameof(DiePlayer), RpcTarget.AllViaServer);
             }
 
             tHp.text = "HP " + Hp.ToString();
@@ -139,7 +139,11 @@ public class PlayerState : MonoBehaviour
         temperature -= val;
     }
 
-
+    [PunRPC]
+    void DiePlayer()
+    {
+        isPlayerDie.Value = true;
+    }
 
 
 
