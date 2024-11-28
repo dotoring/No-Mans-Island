@@ -44,7 +44,7 @@ public class StoneCtrl : PhotonGrabObject
                     {
                         if (collider.CompareTag("FireWood"))
                         {
-                            collider.GetComponent<PhotonView>().RPC("FlameOn", RpcTarget.AllViaServer   );
+                            collider.GetComponent<PhotonView>().RPC("FlameOn", RpcTarget.AllViaServer);
                         }
                     }
                 }

@@ -4197,7 +4197,7 @@ MonoBehaviour:
   m_AimTargetObject: {fileID: 1098306907}
   m_RaycastMask:
     serializedVersion: 2
-    m_Bits: 33
+    m_Bits: 2081
   m_RaycastTriggerInteraction: 1
   m_RaycastSnapVolumeInteraction: 1
   m_TargetNumCurveSegments: 1
@@ -4225,7 +4225,7 @@ MonoBehaviour:
   m_AimTargetObject: {fileID: 0}
   m_PhysicsLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 2049
   m_PhysicsTriggerInteraction: 1
   m_CastRadius: 0.1
 --- !u!114 &1098306910
@@ -7971,7 +7971,7 @@ MonoBehaviour:
   m_AimTargetObject: {fileID: 2116163019}
   m_RaycastMask:
     serializedVersion: 2
-    m_Bits: 2147483681
+    m_Bits: 2081
   m_RaycastTriggerInteraction: 1
   m_RaycastSnapVolumeInteraction: 1
   m_TargetNumCurveSegments: 1
@@ -7999,7 +7999,7 @@ MonoBehaviour:
   m_AimTargetObject: {fileID: 0}
   m_PhysicsLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 2049
   m_PhysicsTriggerInteraction: 1
   m_CastRadius: 0.1
 --- !u!114 &2116163022

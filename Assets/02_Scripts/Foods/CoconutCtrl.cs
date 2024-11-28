@@ -17,7 +17,7 @@ public class CoconutCtrl : InteractableObject
 
     void CutCoconut()
     {
+        PhotonNetwork.Instantiate("CuttedCoconuts", transform.position, transform.rotation);
         PhotonNetwork.Destroy(gameObject);
-        PhotonNetwork.InstantiateRoomObject("CuttedCoconuts", transform.position, transform.rotation);
     }
 }
