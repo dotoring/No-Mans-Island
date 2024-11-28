@@ -1720,22 +1720,6 @@ Transform:
   - {fileID: 3945854764371162496}
   m_Father: {fileID: 5378372581884846828}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &819944242849158547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7762064335383230760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 0
 --- !u!23 &849653030034216432
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1933,29 +1917,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9069446333256915564}
   m_Mesh: {fileID: -8429650256770907399, guid: 147ae308eec018b40a7b312ae58f44c7, type: 3}
---- !u!114 &1546380981878453076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7762064335383230760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 819944242849158547}
-  sceneViewId: 3
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!4 &1587263327656311519
 Transform:
   m_ObjectHideFlags: 0
@@ -5019,8 +4980,6 @@ GameObject:
   - component: {fileID: 8023710677234669855}
   - component: {fileID: 3114560384126284420}
   - component: {fileID: 3831449495112351175}
-  - component: {fileID: 819944242849158547}
-  - component: {fileID: 1546380981878453076}
   m_Layer: 10
   m_Name: Left Controller
   m_TagString: Untagged
