@@ -22,7 +22,7 @@ public class SpiderLegsClass : MonoBehaviour
         {
             if (spider.t_state == AnimalState.Attack)
             {
-                spider.Hit(other.GetComponentInChildren<PlayerState>());
+                spider.Hit(other.GetComponent<PlayerState>());
             }
 
 

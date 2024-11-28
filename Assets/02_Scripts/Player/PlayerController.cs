@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             statusUI.transform.parent = tr.GetChild(0);
             mouth.transform.parent = Camera.main.transform;
             mouth.transform.localPosition = new Vector3(0, -0.06f, 0.05f);
-            cctr.enabled = false;
+            //cctr.enabled = false;
 
             leftHand.transform.localPosition = Vector3.zero;
             rightHand.transform.localPosition = Vector3.zero;

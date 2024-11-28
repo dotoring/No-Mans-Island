@@ -23,8 +23,8 @@ public class TailClass : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            scorpion.Hit(other.GetComponentInChildren<PlayerState>());
-
+            scorpion.Hit(other.GetComponent<PlayerState>());
+            Debug.Log("전갈 공격");
         }
     }
 }
