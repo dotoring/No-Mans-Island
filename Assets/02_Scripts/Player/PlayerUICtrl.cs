@@ -17,6 +17,7 @@ public class PlayerUICtrl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
         canvas.SetActive(true);
     }
 
