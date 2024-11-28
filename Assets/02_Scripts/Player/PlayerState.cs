@@ -28,8 +28,7 @@ public class PlayerState : MonoBehaviour
     private void Start()
     {
         OnDie += (_) => TempGameMgr.deadPlayerCount++;
-        OnDie += (a) => pv.RPC(nameof(CharDie), RpcTarget.AllViaServer);
-        OnDie += (a) => DieEventMy();
+        OnDie += (a) => CharDie();
         isPlayerDie.AddListener(OnDie);
     }
 
@@ -87,26 +86,24 @@ public class PlayerState : MonoBehaviour
         }
     }
 
-    [PunRPC]
     void CharDie()
     {
-        this.gameObject.layer = 14;
-        for(int i=0;i>transform.childCount;i++)
-        {
-            this.transform.GetChild(i).gameObject.SetActive(false);
-        }
-    }
-
-    void DieEventMy()
-    {
+        this.transform.root.gameObject.layer = 14;
         if (pv.IsMine)
         {
+
             this.transform.root.GetChild(0).GetChild(1).gameObject.SetActive(false);
             this.transform.root.GetChild(0).GetChild(2).gameObject.SetActive(false);
             this.transform.root.GetChild(0).GetChild(3).gameObject.SetActive(false);
             this.transform.root.GetComponent<XRInputModalityManager>().enabled = false;
         }
+        else
+        {
+            this.gameObject.SetActive(false);
+        }
     }
+
+
 
     public void TakeDamage(int dmg)
     {
