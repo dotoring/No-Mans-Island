@@ -106,11 +106,14 @@ public class AnimalClass : PhotonGrabObject
     {
         foreach (GameObject short_player in PhotonPlayer)
         {
-            float Distance_m = Vector3.Distance(this.transform.position, short_player.transform.position);
-            if (Distance_m < short_distance)
+            if(!short_player.GetComponent<PlayerState>().isDead)
             {
-                short_distance = Distance_m;
-                Player = short_player;
+                float Distance_m = Vector3.Distance(this.transform.position, short_player.transform.position);
+                if (Distance_m < short_distance)
+                {
+                    short_distance = Distance_m;
+                    Player = short_player;
+                }
             }
         }
     }

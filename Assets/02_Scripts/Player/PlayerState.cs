@@ -12,7 +12,8 @@ public class PlayerState : MonoBehaviour
     [SerializeField] int temperature = 100;
     float tik;
     [SerializeField] float tikTime = 3f;
-    public bool isCold;
+    public bool isCold = false;
+    public bool isDead = false;
 
     [SerializeField] TMP_Text tHp;
     [SerializeField] TMP_Text tHunger;
@@ -89,6 +90,7 @@ public class PlayerState : MonoBehaviour
 
     void CharDie()
     {
+        isDead = true;
         this.transform.root.gameObject.layer = 14;
         if (pv.IsMine)
         {
