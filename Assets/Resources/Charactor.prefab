@@ -2834,6 +2834,7 @@ MonoBehaviour:
   temperature: 100
   tikTime: 3
   isCold: 0
+  isDead: 0
   tHp: {fileID: 8866383238854477590}
   tHunger: {fileID: 4496715530831007474}
   tThirst: {fileID: 700259104429888691}

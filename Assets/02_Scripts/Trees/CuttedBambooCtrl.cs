@@ -88,22 +88,25 @@ public class CuttedBambooCtrl : InteractableObject
     {
         if(pv.IsMine)
         {
-            //바닥에 꽂을 수 있도록 해주는 코드
-            if (collision.gameObject.CompareTag("Land"))
+            if(rig != null)
             {
-                //충돌시 속도가 일정 이상, 트리거를 누른 상태
-                if (rig.linearVelocity.magnitude > 0.7f && isTrigger)
+                //바닥에 꽂을 수 있도록 해주는 코드
+                if (collision.gameObject.CompareTag("Land"))
                 {
-                    //Fix();
-                    pv.RPC(nameof(Fix), RpcTarget.AllViaServer);
+                    //충돌시 속도가 일정 이상, 트리거를 누른 상태
+                    if (rig.linearVelocity.magnitude > 0.7f && isTrigger)
+                    {
+                        //Fix();
+                        pv.RPC(nameof(Fix), RpcTarget.AllViaServer);
+                    }
                 }
-            }
 
-            if (rig.linearVelocity.magnitude > 0.7f && grabCount > 0)
-            {
-                if (collision.gameObject.GetComponentInParent<AnimalClass>() != null)
+                if (rig.linearVelocity.magnitude > 0.7f && grabCount > 0)
                 {
-                    collision.gameObject.GetComponentInParent<AnimalClass>().CallDamageRPC(power);
+                    if (collision.gameObject.GetComponentInParent<AnimalClass>() != null)
+                    {
+                        collision.gameObject.GetComponentInParent<AnimalClass>().CallDamageRPC(power);
+                    }
                 }
             }
         }
