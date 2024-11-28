@@ -459,14 +459,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392847897}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bc100f8aa2ae9249a8112af4b234edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nightAnimals:
-  - {fileID: 0}
-  - {fileID: 0}
+  - 
+  - 
   player: {fileID: 0}
 --- !u!4 &1392847899
 Transform:
@@ -859,7 +859,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7182031161546000292}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
@@ -1436,7 +1436,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7182031161546000292}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 017c5e3933235514c9520e1dace2a4b2, type: 3}
   m_Name: 
@@ -2350,7 +2350,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7182031161546000292}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82bc72d2ecc8add47b2fe00d40318500, type: 3}
   m_Name: 
@@ -4349,7 +4349,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7182031161546000292}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f01d6cb0bd867614d88e8f56a9725a6a, type: 3}
   m_Name: 
@@ -4359,11 +4359,12 @@ MonoBehaviour:
   thirst: 100
   temperature: 100
   tikTime: 3
+  isCold: 0
   tHp: {fileID: 4786348227590381994}
   tHunger: {fileID: 3345407229667336027}
   tThirst: {fileID: 2467938445630771920}
   tTemp: {fileID: 7035413222194138439}
-  isCold: 0
+  pv: {fileID: 0}
   isPoisoned: 0
 --- !u!33 &3213730106117155899
 MeshFilter:
@@ -7558,12 +7559,14 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   pv: {fileID: 106856839349737978}
+  cctr: {fileID: 0}
   models:
   - {fileID: 434106267364875807}
   - {fileID: 7433694574512398775}
-  leftCont: {fileID: 1027086443494047929}
-  rightCont: {fileID: 6345091210683770082}
+  leftHand: {fileID: 0}
+  rightHand: {fileID: 0}
   statusUI: {fileID: 0}
+  statusUISencer: {fileID: 0}
   mouth: {fileID: 0}
 --- !u!1 &5631283231137690645
 GameObject:
@@ -8168,7 +8171,7 @@ GameObject:
   - component: {fileID: 6448721731960174332}
   m_Layer: 0
   m_Name: Charactor
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9327,7 +9330,7 @@ GameObject:
   - component: {fileID: 3200570710175252780}
   m_Layer: 0
   m_Name: XR Origin (VR)
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9403,7 +9406,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7182031161546000292}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 

@@ -29,7 +29,7 @@ public class ScolpionClass : AnimalClass
         attack_area = 2.5f;
 
         find_area = 3f;
-        attack_area = 0.8f;
+        attack_area = 0.6f;
         attack_time = 5f;
         rest_Time = 0f;
 
