@@ -24,6 +24,7 @@ public class PlayerState : MonoBehaviour
 
     private void Start()
     {
+        OnDie += (_) => TempGameMgr.deadPlayerCount++;
         isPlayerDie.AddListener(OnDie);
     }
 
@@ -156,7 +157,6 @@ public class PlayerState : MonoBehaviour
     void DiePlayer()
     {
         isPlayerDie.Value = true;
-        TempGameMgr.deadPlayerCount++;
     }
 
 
