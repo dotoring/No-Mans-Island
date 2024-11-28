@@ -52,6 +52,12 @@ public class AnimalClass : PhotonGrabObject
 
     }
 
+    public void CallDamageRPC(int damage)
+    {
+        pv.RPC(nameof(GetDamage), RpcTarget.AllViaServer, damage);
+    }
+
+    [PunRPC]
     public virtual void GetDamage(int damage)   // 데미지를 받는다.
     {
         if (is_alive)
@@ -117,14 +123,17 @@ public class AnimalClass : PhotonGrabObject
 
     public void ChangeToMeat(int amount)          // 생고기로 변한다.      // 동물 오브젝트가 소멸하고 생고기 오브젝트가 대체한다.
     {
-        if (this.gameObject != null)    // 동물 오브젝트가 아직 존재할 경우
+        if(pv.IsMine)
         {
-            for (int i = 0; i < amount; i++)
+            if (this.gameObject != null)    // 동물 오브젝트가 아직 존재할 경우
             {
-                PhotonNetwork.Instantiate("RawMeat", this.transform.position, this.transform.rotation);        // 동물 오브젝트 위치에 생고기를 생성하고
+                for (int i = 0; i < amount; i++)
+                {
+                    PhotonNetwork.Instantiate("RawMeat", this.transform.position, this.transform.rotation);        // 동물 오브젝트 위치에 생고기를 생성하고
+                }
             }
+            PhotonNetwork.Destroy(this.gameObject);                                                   // 동물 오브젝트를 삭제한다.
         }
-        PhotonNetwork.Destroy(this.gameObject);                                                   // 동물 오브젝트를 삭제한다.
     }
 
 }

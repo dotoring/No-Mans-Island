@@ -101,7 +101,7 @@ public class CuttedBambooCtrl : InteractableObject
         {
             if (collision.gameObject.GetComponentInParent<AnimalClass>() != null)
             {
-                collision.gameObject.GetComponentInParent<AnimalClass>().GetDamage(power);
+                collision.gameObject.GetComponentInParent<AnimalClass>().CallDamageRPC(power);
             }
         }
     }
