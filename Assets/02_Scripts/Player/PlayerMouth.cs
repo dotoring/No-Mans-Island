@@ -4,6 +4,7 @@ using Photon.Pun;
 public class PlayerMouth : MonoBehaviour
 {
     [SerializeField] PlayerState playerState;
+    [SerializeField] PhotonView pv;
 
     void EatFood(FoodClass food)
     {
@@ -18,9 +19,12 @@ public class PlayerMouth : MonoBehaviour
     {
         if(other.CompareTag("Food"))
         {
-            //음식의 수치만큼 회복 함수들
-            EatFood(other.GetComponent<FoodClass>());
-            PhotonNetwork.Destroy(other.gameObject);
+            if(pv.IsMine)
+            {
+                //음식의 수치만큼 회복 함수들
+                EatFood(other.GetComponent<FoodClass>());
+                PhotonNetwork.Destroy(other.gameObject);
+            }
         }
     }
 }
