@@ -80,7 +80,6 @@ public class TimeManager : MonoBehaviour
 
     void CheckTime(int i)
     {
-        Debug.Log(i);
         if (i == 21)
         {
             if (coroutine != null)
