@@ -6,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-public class GameStartTable : MonoBehaviour
+public class ReturnLobbyTable : MonoBehaviourPunCallbacks
 {
 
     [SerializeField] private XRGrabInteractable inter;
@@ -16,28 +16,13 @@ public class GameStartTable : MonoBehaviour
     {
         inter.hoverEntered.AddListener((args) =>
         {
-
-            if (pv.IsMine)
-            {
-                pv.RPC(nameof(UIOpen), RpcTarget.AllViaServer);
-            }
+            UIOpen();
         });
         inter.hoverExited.AddListener((args) =>
         {
-            if (pv.IsMine)
-            {
-                pv.RPC(nameof(UIClose), RpcTarget.AllViaServer);
-            } 
+            UIClose();
         });
-        inter.selectEntered.AddListener((args) => GameStart());
-    }
-
-    private void GameStart()
-    {
-        if ((pv.IsMine))
-        {
-            SceneManager.LoadScene("3_GameScene");
-        }
+        inter.selectEntered.AddListener((args) => ReturnLobby());
     }
 
     private void OnDestroy()
@@ -46,13 +31,20 @@ public class GameStartTable : MonoBehaviour
         inter.hoverExited.RemoveAllListeners();
         inter.selectEntered.RemoveAllListeners();
     }
+    private void ReturnLobby()
+    {
+        PhotonNetwork.LeaveRoom();
+        
+    }
+    public override void OnLeftRoom()
+    {
+        SceneManager.LoadScene("SJHLobbyTestScene");
+    }
 
-    [PunRPC]
     private void UIOpen()
     {
         uiObj.SetActive(true);
     }
-    [PunRPC]
     private void UIClose()
     {
         uiObj.SetActive(false);

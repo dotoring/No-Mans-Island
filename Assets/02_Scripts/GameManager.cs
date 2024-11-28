@@ -24,4 +24,10 @@ public class GameManager : MonoBehaviour
         //Vector3 pos = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
         PhotonNetwork.Instantiate("Charactor", spawnPoint.position, Quaternion.identity);
     }
+
+    void ReturnRoom()
+    {
+        //특정 조건 맞추면 룸대기 화면으로 돌아가는 함수
+        SceneManager.LoadScene("SJHRoomTestScene");
+    }
 }
