@@ -255,7 +255,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.01
-  m_Center: {x: 0, y: 0.02, z: 0}
+  m_Center: {x: -0.04, y: 0.04, z: -0.04}
 --- !u!114 &6250844416244086101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,6 +788,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: -2173472739187559226}
+  - {fileID: -1236760609195238688}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -821,8 +822,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 9
+    SynchronizeType: 0
+    Name: Idle
+  - Type: 9
+    SynchronizeType: 0
+    Name: Move
+  - Type: 9
+    SynchronizeType: 0
+    Name: Attack
+  - Type: 9
+    SynchronizeType: 0
+    Name: Die
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &2329103874991490599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,8 +1033,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6085770386049146170}
-  - component: {fileID: 4124604147439953679}
-  - component: {fileID: 6521085207678846645}
   m_Layer: 0
   m_Name: SpiderRLegPlatform 1
   m_TagString: Untagged
@@ -1042,40 +1055,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3675769655776192607}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &4124604147439953679
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2554501010535306927}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.01
-  m_Center: {x: 0, y: 0.02, z: 0}
---- !u!114 &6521085207678846645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2554501010535306927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a29ddcab0dfb2d4f9739aca18d811c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spider: {fileID: 8360527985232044490}
 --- !u!1 &2641910017290248896
 GameObject:
   m_ObjectHideFlags: 0

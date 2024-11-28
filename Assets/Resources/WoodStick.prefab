@@ -158,7 +158,7 @@ MonoBehaviour:
   pv: {fileID: 7862471359451178534}
   Hp: 0
   isFixed: 0
-  power: 0
+  power: 8
   leftTriggerAction:
     m_UseReference: 1
     m_Action:
