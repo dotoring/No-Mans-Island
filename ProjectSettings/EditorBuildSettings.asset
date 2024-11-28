@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01_Scenes/Ex_TestRoom_CSY.unity
     guid: 5e75de745b6ee834a92342858d4ef5e7
+  - enabled: 1
+    path: Assets/01_Scenes/Ex_TestGameScene_CSY.unity
+    guid: 22c194d78b16e994aa2f4f13ef13e8cf
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: af1a5c2bc714f5f4489360950a7b737e, type: 2}
