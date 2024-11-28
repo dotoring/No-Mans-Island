@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    
 
+    
     private void CreatePlayer()
     {
         //Vector3 pos = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
