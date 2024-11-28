@@ -1074,6 +1074,7 @@ MonoBehaviour:
   - Scorpion
   - Spider
   player: {fileID: 0}
+  deadPlayerCount: 0
 --- !u!4 &253247146
 Transform:
   m_ObjectHideFlags: 0
@@ -8758,7 +8759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c49640c54a074940b3d5336c47de578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipPref: {fileID: 1977479199115346, guid: 516f9ac2b79d24b4b88fee1fe0cd5516, type: 3}
+  shipPref: {fileID: 894890341735026464, guid: 229765e9573edfa44b623a967a4516dc, type: 3}
   shipSpawnPoint: {fileID: 1021392283}
   shipArrivePoint: {fileID: 1357978540}
   escapeArea: {fileID: 0}

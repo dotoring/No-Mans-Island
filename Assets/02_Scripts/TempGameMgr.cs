@@ -5,11 +5,10 @@ public class TempGameMgr : MonoBehaviour
 {
     [SerializeField] string[] nightAnimals;
     [SerializeField] GameObject player;
+    public int deadPlayerCount;
 
     public void SpawnAnimals()
     {
-        Debug.Log("���� ���� ��ȯ");
-
         // foreach (var animal in nightAnimals)
         // {
         //     Vector3 randomPoint = Random.insideUnitCircle * 5;

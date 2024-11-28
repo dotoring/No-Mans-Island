@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4960920487354958}
   - component: {fileID: 33500231933482404}
   - component: {fileID: 23015191709191910}
-  - component: {fileID: -6072152732249413316}
   m_Layer: 0
   m_Name: Ship_PBR_prefab
   m_TagString: Untagged
@@ -87,16 +86,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-6072152732249413316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1977479199115346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1699002d24b1489438239a09b503967a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
