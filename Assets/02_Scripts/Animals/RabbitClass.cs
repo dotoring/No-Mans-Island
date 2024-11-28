@@ -7,7 +7,6 @@ public class RabbitClass : AnimalClass
 {
     protected float rest_Time;
 
-    [SerializeField] protected float moveSpeed = 1.0f;
     [SerializeField] protected float runSpeed = 1.3f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

@@ -28,6 +28,7 @@ public class TempGameMgr : MonoBehaviour
 
     public static void GameOver()
     {
+        print("Á×Àº»ç¶÷¼ö : "+deadPlayerCount);
         if (PhotonNetwork.CurrentRoom.PlayerCount <= deadPlayerCount)
             if (PhotonNetwork.CurrentRoom.MasterClientId == PhotonNetwork.LocalPlayer.ActorNumber)
                 SceneManager.LoadScene("4_RoomScene");
