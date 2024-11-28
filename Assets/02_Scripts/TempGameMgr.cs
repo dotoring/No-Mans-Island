@@ -11,7 +11,10 @@ public class TempGameMgr : MonoBehaviour
 
     Action<bool> gameOver;
 
-
+    private void Start()
+    {
+        deadPlayerCount = 0;
+    }
     public void SpawnAnimals()
     {
         foreach (var animal in nightAnimals)
@@ -28,6 +31,7 @@ public class TempGameMgr : MonoBehaviour
 
     public static void GameOver()
     {
+        print("Á×Àº»ç¶÷¼ö : "+deadPlayerCount);
         if (PhotonNetwork.CurrentRoom.PlayerCount <= deadPlayerCount)
             if (PhotonNetwork.CurrentRoom.MasterClientId == PhotonNetwork.LocalPlayer.ActorNumber)
                 SceneManager.LoadScene("4_RoomScene");
