@@ -47,6 +47,7 @@ MonoBehaviour:
   - FlameOn
   - UIClose
   - UIOpen
+  - DiePlayer
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
