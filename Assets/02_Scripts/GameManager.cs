@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Transform spawnPoint;
     Room ri = PhotonNetwork.CurrentRoom;
-    int id = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     IEnumerator Start()

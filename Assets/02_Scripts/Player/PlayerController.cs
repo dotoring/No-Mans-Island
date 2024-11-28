@@ -67,33 +67,11 @@ public class PlayerController : MonoBehaviourPunCallbacks
             models[1].SetActive(false);
         }
         //내 객체가 아닐 경우
-     
-
-      
-        NotMine(pv.IsMine);
+        else
+        {
+            statusUISencer.gameObject.SetActive(false);
+        }
     }
-
-
-    private void NotMine(bool isMine)
-    {
-        //내 카메라가 아니면 모두 끈다
-        //pv.transform.GetChild(0).GetChild(0).gameObject.SetActive(isMine);
-
-        //왼손과 오른손의 컨트롤 관련된 부분을 모두 끈다
-        //왼손
-        //leftCont.transform.GetComponent<ControllerInputActionManager>().enabled = isMine;
-        //leftCont.transform.GetComponent<TrackedPoseDriver>().enabled = isMine;
-        //leftCont.transform.GetChild(2).gameObject.SetActive(isMine);
-        ////오른손
-        //rightCont.transform.GetComponent<ControllerInputActionManager>().enabled = isMine;
-        //rightCont.transform.GetComponent<TrackedPoseDriver>().enabled = isMine;
-        //rightCont.transform.GetChild(2).gameObject.SetActive(isMine);
-
-        //컨트롤러의 움직임을 모든 객체가 받기 때문에 꺼준다
-        //Locomotion
-        //pv.transform.GetChild(1).gameObject.SetActive(isMine);
-    }
-
 
     private void Update()
     {
