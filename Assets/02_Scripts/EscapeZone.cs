@@ -9,7 +9,6 @@ public class EscapeZone : MonoBehaviour
     //int playerCount;
     public event Action<int> OnPlayerIn;
     readonly Observable<int> playerCount = new Observable<int>(0);
-    [SerializeField] GameObject go;
 
     private void Start()
     {
