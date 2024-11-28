@@ -3,17 +3,16 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class MushroomCtrl : FoodClass
 {
-    Rigidbody rb;
-    XRGrabInteractable interactable;
-
-    void Start()
+    protected override void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        interactable = GetComponent<XRGrabInteractable>();
+        base.Start();
 
-        interactable.selectExited.AddListener((var) =>
+        rig = GetComponent<Rigidbody>();
+        inter = GetComponent<XRGrabInteractable>();
+
+        inter.selectExited.AddListener((var) =>
         {
-            rb.isKinematic = false;
+            rig.isKinematic = false;
         });
     }
 }
