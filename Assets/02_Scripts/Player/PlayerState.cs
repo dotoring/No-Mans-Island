@@ -19,7 +19,7 @@ public class PlayerState : MonoBehaviour
     [SerializeField] TMP_Text tTemp;
     [SerializeField] PhotonView pv;
 
-    public static event Action<bool> OnDie;
+    public event Action<bool> OnDie;
     readonly Observable<bool> isPlayerDie = new Observable<bool>(false);
 
     private void Start()
@@ -29,7 +29,7 @@ public class PlayerState : MonoBehaviour
 
     private void Update()
     {
-        if(pv.IsMine)
+        if (pv.IsMine)
         {
             if (tik <= 0)
             {
@@ -69,9 +69,9 @@ public class PlayerState : MonoBehaviour
                 tik -= Time.deltaTime;
             }
 
-            if(Hp <= 0)
+            if (Hp <= 0)
             {
-                isPlayerDie.Value = true;
+                pv.RPC(nameof(DiePlayer), RpcTarget.AllViaServer);
             }
 
             tHp.text = "HP " + Hp.ToString();
@@ -108,6 +108,10 @@ public class PlayerState : MonoBehaviour
     public void DecreaseFullness(int val)
     {
         hunger -= val;
+        if (hunger < 0)
+        {
+            hunger = 0;
+        }
     }
 
     public void IncreaseThirst(int val)
@@ -123,6 +127,11 @@ public class PlayerState : MonoBehaviour
     public void DecreaseThirst(int val)
     {
         thirst -= val;
+        if (thirst < 0)
+        {
+
+            thirst = 0;
+        }
     }
 
     public void IncreaseTemp(int val)
@@ -137,9 +146,18 @@ public class PlayerState : MonoBehaviour
     public void DecreaseTemp(int val)
     {
         temperature -= val;
+        if (temperature < 0)
+        {
+            temperature = 0;
+        }
     }
 
-
+    [PunRPC]
+    void DiePlayer()
+    {
+        isPlayerDie.Value = true;
+        TempGameMgr.deadPlayerCount++;
+    }
 
 
 

@@ -4,7 +4,7 @@ public class PlayerDieTest : MonoBehaviour
 {
     private void Start()
     {
-        PlayerState.OnDie += (_) => Test();
+        GetComponent<PlayerState>().OnDie += (_) => Test();
     }
 
     void Test()
