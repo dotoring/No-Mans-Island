@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
@@ -61,6 +62,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
             rightHand.transform.localRotation = Quaternion.identity;
             statusUISencer.transform.localPosition = Vector3.right * 0.2f;
 
+            //룸 씬이면 스테이터스 관련을 모두 끔
+            if(SceneManager.GetActiveScene().name== "SJHRoomTestScene")
+            {
+                GetComponent<PlayerState>().enabled = false;
+                statusUISencer.gameObject.SetActive(false);
+                statusUI.gameObject.SetActive(false);
+            }    
+
 
 
             models[0].SetActive(false);
@@ -70,6 +79,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         else
         {
             statusUISencer.gameObject.SetActive(false);
+            statusUI.gameObject.SetActive(false);
         }
     }
 
