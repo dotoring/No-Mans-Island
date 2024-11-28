@@ -24,7 +24,7 @@ public class EscapeZone : MonoBehaviour
         if(count >= PhotonNetwork.CurrentRoom.PlayerCount - TempGameMgr.deadPlayerCount)
         {
             if(PhotonNetwork.CurrentRoom.MasterClientId == PhotonNetwork.LocalPlayer.ActorNumber)
-                SceneManager.LoadScene("SJHRoomTestScene");
+                SceneManager.LoadScene("4_RoomScene");
         }
         else
         {
