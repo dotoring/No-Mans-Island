@@ -27,7 +27,6 @@ public class SpiderClass : AnimalClass
         find_area = 3f;
         attack_area = 0.5f;
         attack_time = 5f;
-
         rest_Time = 0f;
 
         inter.enabled = false;
