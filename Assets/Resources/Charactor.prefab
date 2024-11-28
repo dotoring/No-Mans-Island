@@ -2828,9 +2828,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f01d6cb0bd867614d88e8f56a9725a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 50
-  hunger: 75
-  thirst: 75
+  Hp: 100
+  hunger: 100
+  thirst: 100
   temperature: 100
   tikTime: 3
   isCold: 0
