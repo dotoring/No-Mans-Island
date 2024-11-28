@@ -40,7 +40,7 @@ public class RabbitClass : AnimalClass
 
         if (corpse_hp <= 0)
         {
-            ChangeToMeat();
+            ChangeToMeat(2);
         }
     }
 

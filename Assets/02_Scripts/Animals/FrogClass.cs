@@ -51,7 +51,7 @@ public class FrogClass : AnimalClass
 
         if (corpse_hp <= 0)
         {
-            ChangeToMeat();
+            ChangeToMeat(1);
         }
     }
 

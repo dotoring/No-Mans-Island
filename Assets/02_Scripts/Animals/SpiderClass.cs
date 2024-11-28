@@ -49,7 +49,7 @@ public class SpiderClass : AnimalClass
 
         if (corpse_hp <= 0)
         {
-            ChangeToMeat();
+            ChangeToMeat(1);
         }
     }
 
