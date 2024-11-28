@@ -28,10 +28,15 @@ public class AnimalClass : PhotonGrabObject
 
     public GameObject Player;
 
+    [SerializeField] protected float moveSpeed;
+    [SerializeField] protected float watchSpeed;
+
     public float find_area;
     public float attack_area;
     public float attack_time;
     public float short_distance = 400.0f;
+
+
 
 
     public AnimalState t_state = new AnimalState();
@@ -123,7 +128,7 @@ public class AnimalClass : PhotonGrabObject
 
     public void ChangeToMeat(int amount)          // 생고기로 변한다.      // 동물 오브젝트가 소멸하고 생고기 오브젝트가 대체한다.
     {
-        if(pv.IsMine)
+        if (pv.IsMine)
         {
             if (this.gameObject != null)    // 동물 오브젝트가 아직 존재할 경우
             {

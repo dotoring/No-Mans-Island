@@ -31,6 +31,9 @@ public class TigerClass : AnimalClass
         attack_area = 1.55f;
         attack_time = 5f;
 
+        moveSpeed = 1.5f;
+        watchSpeed = 2.0f;
+
         rest_Time = 0f;
 
         t_state = AnimalState.Idle;
@@ -117,7 +120,7 @@ public class TigerClass : AnimalClass
     }
     public void Animal_Move()
     {
-        this.transform.Translate(Vector3.forward * 1.0f * Time.deltaTime, Space.Self);
+        this.transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime, Space.Self);
         if (rest_Time >= 5f)
         {
             rest_Time = 0;
@@ -152,7 +155,7 @@ public class TigerClass : AnimalClass
         }
         else
         {
-            this.transform.Translate(Vector3.forward * 1.0f * Time.deltaTime, Space.Self);
+            this.transform.Translate(Vector3.forward * watchSpeed * Time.deltaTime, Space.Self);
 
         }
     }
