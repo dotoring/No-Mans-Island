@@ -6,10 +6,6 @@ public class TempGameMgr : MonoBehaviour
     [SerializeField] string[] nightAnimals;
     [SerializeField] GameObject player;
     public static int deadPlayerCount = 0;
-    private void Update()
-    {
-        Debug.Log(deadPlayerCount);
-    }
     public void SpawnAnimals()
     {
         // foreach (var animal in nightAnimals)
