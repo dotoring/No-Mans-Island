@@ -16,18 +16,14 @@ public class GameStartTable : MonoBehaviour
     {
         inter.hoverEntered.AddListener((args) =>
         {
-
             if (pv.IsMine)
             {
-                pv.RPC(nameof(UIOpen), RpcTarget.AllViaServer);
+                UIOpen();
             }
         });
         inter.hoverExited.AddListener((args) =>
         {
-            if (pv.IsMine)
-            {
-                pv.RPC(nameof(UIClose), RpcTarget.AllViaServer);
-            }
+            UIClose();
         });
         inter.selectEntered.AddListener((args) => GameStart());
     }
@@ -51,12 +47,11 @@ public class GameStartTable : MonoBehaviour
         inter.selectEntered.RemoveAllListeners();
     }
 
-    [PunRPC]
     private void UIOpen()
     {
         uiObj.SetActive(true);
     }
-    [PunRPC]
+
     private void UIClose()
     {
         uiObj.SetActive(false);
