@@ -20,7 +20,7 @@ public class FrogClass : AnimalClass
 
 
         InitStat();
-        animal_hp = 30;
+        animal_hp = 25;
         animal_atk = 10;
         corpse_hp = 30;
         is_alive = true;
@@ -111,7 +111,7 @@ public class FrogClass : AnimalClass
         jump_Time += Time.deltaTime;
         if (jump_Time <= 1.2f)
         {
-            this.transform.Translate(Vector3.forward * 0.4f * Time.deltaTime, Space.Self);
+            this.transform.Translate(Vector3.forward * 0.5f * Time.deltaTime, Space.Self);
         }
         else if (jump_Time > 1.5f)
         {
@@ -144,7 +144,7 @@ public class FrogClass : AnimalClass
         jump_Time += Time.deltaTime;
         if (jump_Time <= 1.2f)
         {
-            this.transform.Translate(Vector3.forward * 0.4f * Time.deltaTime, Space.Self);
+            this.transform.Translate(Vector3.forward * 0.8f * Time.deltaTime, Space.Self);
 
         }
         else if (jump_Time > 1.5f)

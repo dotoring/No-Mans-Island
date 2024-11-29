@@ -22,8 +22,8 @@ public class TigerClass : AnimalClass
         base.Start();
 
         InitStat();
-        animal_hp = 30;
-        animal_atk = 10;
+        animal_hp = 200;
+        animal_atk = 20;
         corpse_hp = 30;
         is_alive = true;
 

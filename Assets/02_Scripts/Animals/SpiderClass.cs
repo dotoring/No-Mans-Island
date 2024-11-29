@@ -19,7 +19,7 @@ public class SpiderClass : AnimalClass
 
 
         InitStat();
-        animal_hp = 30;
+        animal_hp = 25;
         animal_atk = 10;
         corpse_hp = 30;
         is_alive = true;
