@@ -24,7 +24,7 @@ public class GameStartTable : MonoBehaviour
         });
         inter.hoverExited.AddListener((args) =>
         {
-            if (pv.IsMine)
+            if (pv.IsMine && this.gameObject.activeSelf == true)
             {
                 pv.RPC(nameof(UIClose), RpcTarget.AllViaServer);
             }
@@ -56,6 +56,7 @@ public class GameStartTable : MonoBehaviour
     {
         uiObj.SetActive(true);
     }
+
     [PunRPC]
     private void UIClose()
     {
