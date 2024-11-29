@@ -24,7 +24,7 @@ public class EscapeZone : MonoBehaviour
         {
             if (PhotonNetwork.CurrentRoom.MasterClientId == PhotonNetwork.LocalPlayer.ActorNumber)
             {
-                SceneManager.LoadScene("4_RoomScene");
+                SceneManager.LoadScene("3_RoomScene");
                 PhotonNetwork.CurrentRoom.IsVisible = true;
                 PhotonNetwork.CurrentRoom.IsOpen = true;
             }

@@ -8,7 +8,7 @@ public class TitleManager : MonoBehaviour
     [SerializeField] private Button exitBtn;
     private void Start()
     {
-        startBtn.onClick.AddListener(() =>SceneManager.LoadScene("SJHLobbyTestScene"));
+        startBtn.onClick.AddListener(() =>SceneManager.LoadScene("2_LobbyScene"));
         exitBtn.onClick.AddListener(() => Application.Quit());
     }
 }
