@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullness: 20
   thirst: 0
-  Reduce_Hp: 20
+  Reduce_Hp: 15
   cookTime: 8
