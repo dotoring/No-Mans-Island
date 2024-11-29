@@ -36,6 +36,8 @@ public class GameStartTable : MonoBehaviour
 
             //테스트용_CSY
             SceneManager.LoadScene("3_GameScene_Test");
+            PhotonNetwork.CurrentRoom.IsVisible = false;
+            PhotonNetwork.CurrentRoom.IsOpen    = false;
 
         }
     }

@@ -34,7 +34,11 @@ public class TempGameMgr : MonoBehaviour
         print("Á×Àº»ç¶÷¼ö : "+deadPlayerCount);
         if (PhotonNetwork.CurrentRoom.PlayerCount <= deadPlayerCount)
             if (PhotonNetwork.CurrentRoom.MasterClientId == PhotonNetwork.LocalPlayer.ActorNumber)
+            { 
                 SceneManager.LoadScene("4_RoomScene");
+                PhotonNetwork.CurrentRoom.IsVisible = true;
+                PhotonNetwork.CurrentRoom.IsOpen = true;
+            }
     }
 
 
