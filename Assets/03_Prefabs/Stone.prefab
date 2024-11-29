@@ -276,9 +276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inter: {fileID: 1531183829708496095}
-  grabCount: 0
   pv: {fileID: 6960567223805532853}
-  power: 4
+  power: 5
 --- !u!114 &6960567223805532853
 MonoBehaviour:
   m_ObjectHideFlags: 0

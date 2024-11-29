@@ -330,7 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inter: {fileID: 0}
   pv: {fileID: 1243001209018286716}
-  Hp: 10
+  Hp: 15
   spawnPoints:
   - {fileID: 59151730913720742}
 --- !u!1 &8533924586144664287
