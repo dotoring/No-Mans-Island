@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/01_Scenes/SJHLobbyTestScene.unity
+    path: Assets/01_Scenes/SJHTitleTestScene.unity
     guid: e9878710ecc7ff846a1b774df0e62d18
+  - enabled: 1
+    path: Assets/01_Scenes/SJHLobbyTestScene.unity
+    guid: 00b3c07b897d36c468fe0174ab76509e
   - enabled: 1
     path: Assets/01_Scenes/SJHRoomTestScene.unity
     guid: 9745c6b6c3e6f3143b52257924ead807
