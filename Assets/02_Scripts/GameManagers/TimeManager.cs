@@ -80,7 +80,7 @@ public class TimeManager : MonoBehaviour
 
     void CheckTime(int i)
     {
-        if (i == 21)
+        if (i == 20)
         {
             if (coroutine != null)
             {
@@ -88,7 +88,7 @@ public class TimeManager : MonoBehaviour
             }
         }
 
-        if (i == 4)
+        if (i == 5)
         {
             if (coroutine != null)
             {

@@ -68,13 +68,11 @@ public class AnimalClass : PhotonGrabObject
         if (is_alive)
         {
             animal_hp -= damage;
-            print($"{damage} 만큼 피해를 입었습니다. 남은 체력은 {animal_hp} 입니다.");
 
         }
         else
         {
             corpse_hp -= damage;
-            print($"{damage} 만큼 피해를 입었습니다. 남은 체력은 {corpse_hp} 입니다.");
         }
 
         if (animal_hp <= 0)
@@ -121,7 +119,6 @@ public class AnimalClass : PhotonGrabObject
     public virtual void Hit(PlayerState player_sv)       // 데미지를 가한다.
     {
         player_sv.TakeDamage(animal_atk);
-        print($"{this.transform.root.gameObject.name} 이가 {Player.gameObject.name} 를 공격");
     }
 
     public void Die()                   // 시체가 된다.     // 시체의 체력이 동물의 체력을 대체한다.

@@ -11,8 +11,6 @@ public class PlayerMouth : MonoBehaviour
         playerState.IncreaseFullness(food.foodSO.fullness);
         playerState.IncreaseThirst(food.foodSO.thirst);
         playerState.TakeDamage(food.foodSO.Reduce_Hp);
-        Debug.Log("포만도 증가 " + food.foodSO.fullness);
-        Debug.Log("수분 섭취 " + food.foodSO.thirst);
     }
 
     private void OnTriggerEnter(Collider other)

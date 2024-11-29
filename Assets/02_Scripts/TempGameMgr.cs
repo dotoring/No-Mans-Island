@@ -23,8 +23,7 @@ public class TempGameMgr : MonoBehaviour
             randomPoint += player.transform.position;
             randomPoint.y = 100f;
             RaycastHit hit;
-            Physics.Raycast(randomPoint, Vector3.down, out hit, 150f, LayerMask.NameToLayer("Land"));
-
+            Physics.Raycast(randomPoint, Vector3.down, out hit, 150f, 1<<LayerMask.NameToLayer("Land"));
             PhotonNetwork.Instantiate(animal, hit.point, Quaternion.identity);
         }
     }

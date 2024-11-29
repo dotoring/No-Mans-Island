@@ -52,7 +52,7 @@ public class PlayerState : MonoBehaviour
 
                 if (thirst > 0)
                 {
-                    DecreaseThirst(3);
+                    DecreaseThirst(2);
                 }
 
                 if (hunger >= 75 && thirst >= 75)
@@ -124,7 +124,6 @@ public class PlayerState : MonoBehaviour
 
     public void IncreaseFullness(int val)
     {
-        Debug.Log("������ ���� " + val);
         hunger += val;
         if (hunger > 100)
         {
@@ -143,7 +142,6 @@ public class PlayerState : MonoBehaviour
 
     public void IncreaseThirst(int val)
     {
-        Debug.Log("���� ���� " + val);
         thirst += val;
         if (thirst > 100)
         {

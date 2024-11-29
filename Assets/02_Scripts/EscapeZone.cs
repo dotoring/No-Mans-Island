@@ -29,10 +29,6 @@ public class EscapeZone : MonoBehaviour
                 PhotonNetwork.CurrentRoom.IsOpen = true;
             }
         }
-        else
-        {
-            Debug.Log("인원부족");
-        }
     }
 
     
