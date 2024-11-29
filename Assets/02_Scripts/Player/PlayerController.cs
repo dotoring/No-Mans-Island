@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             statusUISencer.transform.localPosition = Vector3.right * 0.2f;
 
             //룸 씬이면 스테이터스 관련을 모두 끔
-            if(SceneManager.GetActiveScene().name== "4_RoomScene")
+            if(SceneManager.GetActiveScene().name== "3_RoomScene")
             {
                 GetComponent<PlayerState>().enabled = false;
                 statusUISencer.gameObject.SetActive(false);
