@@ -2,6 +2,7 @@ using Photon.Pun;
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Inputs;
 
 public class PlayerState : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class PlayerState : MonoBehaviour
     [SerializeField] int temperature = 100;
     float tik;
     [SerializeField] float tikTime = 3f;
-    public bool isCold;
+    public bool isCold = false;
+    public bool isDead = false;
 
     [SerializeField] TMP_Text tHp;
     [SerializeField] TMP_Text tHunger;
@@ -19,17 +21,22 @@ public class PlayerState : MonoBehaviour
     [SerializeField] TMP_Text tTemp;
     [SerializeField] PhotonView pv;
 
-    public static event Action<bool> OnDie;
+
+
+    public event Action<bool> OnDie;
     readonly Observable<bool> isPlayerDie = new Observable<bool>(false);
 
     private void Start()
     {
+        OnDie += (_) => TempGameMgr.deadPlayerCount++;
+        OnDie += (a) => CharDie();
+        OnDie += (d) => TempGameMgr.GameOver();
         isPlayerDie.AddListener(OnDie);
     }
 
     private void Update()
     {
-        if(pv.IsMine)
+        if (pv.IsMine)
         {
             if (tik <= 0)
             {
@@ -69,9 +76,9 @@ public class PlayerState : MonoBehaviour
                 tik -= Time.deltaTime;
             }
 
-            if(Hp <= 0)
+            if (Hp <= 0)
             {
-                isPlayerDie.Value = true;
+                pv.RPC(nameof(DiePlayer), RpcTarget.AllViaServer);
             }
 
             tHp.text = "HP " + Hp.ToString();
@@ -80,6 +87,26 @@ public class PlayerState : MonoBehaviour
             tTemp.text = "Temp " + temperature.ToString();
         }
     }
+
+    void CharDie()
+    {
+        isDead = true;
+        this.transform.root.gameObject.layer = 14;
+        if (pv.IsMine)
+        {
+
+            this.transform.root.GetChild(0).GetChild(1).gameObject.SetActive(false);
+            this.transform.root.GetChild(0).GetChild(2).gameObject.SetActive(false);
+            this.transform.root.GetChild(0).GetChild(3).gameObject.SetActive(false);
+            this.transform.root.GetComponent<XRInputModalityManager>().enabled = false;
+        }
+        else
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
+
+
 
     public void TakeDamage(int dmg)
     {
@@ -108,6 +135,10 @@ public class PlayerState : MonoBehaviour
     public void DecreaseFullness(int val)
     {
         hunger -= val;
+        if (hunger < 0)
+        {
+            hunger = 0;
+        }
     }
 
     public void IncreaseThirst(int val)
@@ -123,6 +154,11 @@ public class PlayerState : MonoBehaviour
     public void DecreaseThirst(int val)
     {
         thirst -= val;
+        if (thirst < 0)
+        {
+
+            thirst = 0;
+        }
     }
 
     public void IncreaseTemp(int val)
@@ -137,9 +173,17 @@ public class PlayerState : MonoBehaviour
     public void DecreaseTemp(int val)
     {
         temperature -= val;
+        if (temperature < 0)
+        {
+            temperature = 0;
+        }
     }
 
-
+    [PunRPC]
+    void DiePlayer()
+    {
+        isPlayerDie.Value = true;
+    }
 
 
 

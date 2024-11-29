@@ -1351,7 +1351,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.07
-  m_Center: {x: -0.2, y: 0, z: 0}
+  m_Center: {x: -0.2, y: -0.1, z: 0}
 --- !u!114 &881287051264449737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2181,6 +2181,8 @@ MonoBehaviour:
   is_alive: 0
   animal_anim: {fileID: 0}
   Player: {fileID: 0}
+  moveSpeed: 0
+  watchSpeed: 0
   find_area: 0
   attack_area: 0
   attack_time: 0
@@ -2214,6 +2216,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 2876661374523662916}
+  - {fileID: -2585924522468479748}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -2247,8 +2250,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 9
+    SynchronizeType: 0
+    Name: Idle
+  - Type: 9
+    SynchronizeType: 0
+    Name: Move
+  - Type: 9
+    SynchronizeType: 0
+    Name: Attack
+  - Type: 9
+    SynchronizeType: 0
+    Name: Die
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &6178739067942532991
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,14 +22,14 @@ public class ScolpionClass : AnimalClass
     {
         base.Start();
         InitStat();
-        animal_hp = 30;
+        animal_hp = 25;
         animal_atk = 10;
         corpse_hp = 30;
         is_alive = true;
         attack_area = 2.5f;
 
         find_area = 3f;
-        attack_area = 0.8f;
+        attack_area = 0.6f;
         attack_time = 5f;
         rest_Time = 0f;
 
@@ -218,46 +218,5 @@ public class ScolpionClass : AnimalClass
 
 
 
-    public void OnCollisionEnter(Collision collision)
-    {
 
-        if (collision.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
-        {
-            GetDamage(5);
-            t_state = AnimalState.Damage;
-        }
-    }
-
-    public override void Hit(PlayerState player_sv)
-    {
-        base.Hit(player_sv);
-        int ran = Random.Range(0, 2);
-        if (ran == 0 && !is_poison)
-        {
-            duration_posion = 3;
-        }
-    }
-
-    public void poison(int duration)
-    {
-        if (duration > 0)
-        {
-            is_poison = true;
-            if (cool_Time <= 0f)
-            {
-
-                print($"{Player.gameObject.name}가 독 데미지 2를 받습니다.");
-                cool_Time = cool_Time_max;
-                duration--;
-            }
-            else
-            {
-                cool_Time -= Time.deltaTime;
-            }
-        }
-        else
-        {
-            is_poison = false;
-        }
-    }
 }

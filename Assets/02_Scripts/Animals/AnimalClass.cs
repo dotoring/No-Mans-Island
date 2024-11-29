@@ -28,10 +28,15 @@ public class AnimalClass : PhotonGrabObject
 
     public GameObject Player;
 
+    [SerializeField] protected float moveSpeed;
+    [SerializeField] protected float watchSpeed;
+
     public float find_area;
     public float attack_area;
     public float attack_time;
     public float short_distance = 400.0f;
+
+
 
 
     public AnimalState t_state = new AnimalState();
@@ -52,6 +57,12 @@ public class AnimalClass : PhotonGrabObject
 
     }
 
+    public void CallDamageRPC(int damage)
+    {
+        pv.RPC(nameof(GetDamage), RpcTarget.AllViaServer, damage);
+    }
+
+    [PunRPC]
     public virtual void GetDamage(int damage)   // 데미지를 받는다.
     {
         if (is_alive)
@@ -64,6 +75,11 @@ public class AnimalClass : PhotonGrabObject
         {
             corpse_hp -= damage;
             print($"{damage} 만큼 피해를 입었습니다. 남은 체력은 {corpse_hp} 입니다.");
+        }
+
+        if (animal_hp <= 0)
+        {
+            t_state = AnimalState.Die;
         }
     }
 
@@ -90,11 +106,14 @@ public class AnimalClass : PhotonGrabObject
     {
         foreach (GameObject short_player in PhotonPlayer)
         {
-            float Distance_m = Vector3.Distance(this.transform.position, short_player.transform.position);
-            if (Distance_m < short_distance)
+            if (!short_player.GetComponent<PlayerState>().isDead)
             {
-                short_distance = Distance_m;
-                Player = short_player;
+                float Distance_m = Vector3.Distance(this.transform.position, short_player.transform.position);
+                if (Distance_m < short_distance)
+                {
+                    short_distance = Distance_m;
+                    Player = short_player;
+                }
             }
         }
     }
@@ -110,11 +129,17 @@ public class AnimalClass : PhotonGrabObject
         is_alive = false;
     }
 
-    public void ChangeToMeat()          // 생고기로 변한다.      // 동물 오브젝트가 소멸하고 생고기 오브젝트가 대체한다.
+    public void ChangeToMeat(int amount)          // 생고기로 변한다.      // 동물 오브젝트가 소멸하고 생고기 오브젝트가 대체한다.
     {
-        if (this.gameObject != null)    // 동물 오브젝트가 아직 존재할 경우
+        if (pv.IsMine)
         {
-            PhotonNetwork.Instantiate("RawMeat", this.transform.position, this.transform.rotation);        // 동물 오브젝트 위치에 생고기를 생성하고
+            if (this.gameObject != null)    // 동물 오브젝트가 아직 존재할 경우
+            {
+                for (int i = 0; i < amount; i++)
+                {
+                    PhotonNetwork.Instantiate("RawMeat", this.transform.position, this.transform.rotation);        // 동물 오브젝트 위치에 생고기를 생성하고
+                }
+            }
             PhotonNetwork.Destroy(this.gameObject);                                                   // 동물 오브젝트를 삭제한다.
         }
     }

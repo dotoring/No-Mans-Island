@@ -16,18 +16,14 @@ public class GameStartTable : MonoBehaviour
     {
         inter.hoverEntered.AddListener((args) =>
         {
-
             if (pv.IsMine)
             {
-                pv.RPC(nameof(UIOpen), RpcTarget.AllViaServer);
+                UIOpen();
             }
         });
         inter.hoverExited.AddListener((args) =>
         {
-            if (pv.IsMine)
-            {
-                pv.RPC(nameof(UIClose), RpcTarget.AllViaServer);
-            } 
+            UIClose();
         });
         inter.selectEntered.AddListener((args) => GameStart());
     }
@@ -36,16 +32,26 @@ public class GameStartTable : MonoBehaviour
     {
         if ((pv.IsMine))
         {
-            SceneManager.LoadScene("3_GameScene");
+            //SceneManager.LoadScene("3_GameScene");
+
+            //테스트용_CSY
+            SceneManager.LoadScene("3_GameScene_Test");
+
         }
     }
 
-    [PunRPC]
+    private void OnDestroy()
+    {
+        inter.hoverEntered.RemoveAllListeners();
+        inter.hoverExited.RemoveAllListeners();
+        inter.selectEntered.RemoveAllListeners();
+    }
+
     private void UIOpen()
     {
         uiObj.SetActive(true);
     }
-    [PunRPC]
+
     private void UIClose()
     {
         uiObj.SetActive(false);

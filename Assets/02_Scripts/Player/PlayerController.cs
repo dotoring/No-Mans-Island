@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
@@ -18,14 +19,15 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private Vector2 inputVec;
     private Quaternion rotQ;
     private Vector3 rotV;
-    [SerializeField]private PhotonView pv;
+    [SerializeField] private PhotonView pv;
     [SerializeField] private CharacterController cctr;
     private Rigidbody rb;
     [SerializeField] private GameObject[] models;
 
-    [SerializeField] private GameObject leftCont;
-    [SerializeField] private GameObject rightCont;
+    [SerializeField] private GameObject leftHand;
+    [SerializeField] private GameObject rightHand;
     [SerializeField] private GameObject statusUI;
+    [SerializeField] private GameObject statusUISencer;
     [SerializeField] private GameObject mouth;
 
 
@@ -46,44 +48,40 @@ public class PlayerController : MonoBehaviourPunCallbacks
             transform.position = Vector3.zero;
             tr.position=temp;
             //손을 XR Origin에 카메라 오프셋 하위로 옮김
-            leftCont.transform.parent=tr.GetChild(0);
-            rightCont.transform.parent=tr.GetChild(0);
+            leftHand.transform.parent=tr.GetChild(0).GetChild(1);
+            statusUISencer.transform.parent=tr.GetChild(0).GetChild(1);
+            rightHand.transform.parent=tr.GetChild(0).GetChild(2);
             statusUI.transform.parent = tr.GetChild(0);
             mouth.transform.parent = Camera.main.transform;
             mouth.transform.localPosition = new Vector3(0, -0.06f, 0.05f);
             //cctr.enabled = false;
 
+            leftHand.transform.localPosition = Vector3.zero;
+            rightHand.transform.localPosition = Vector3.zero;
+            leftHand.transform.localRotation = Quaternion.identity;
+            rightHand.transform.localRotation = Quaternion.identity;
+            statusUISencer.transform.localPosition = Vector3.right * 0.2f;
+
+            //룸 씬이면 스테이터스 관련을 모두 끔
+            if(SceneManager.GetActiveScene().name== "4_RoomScene")
+            {
+                GetComponent<PlayerState>().enabled = false;
+                statusUISencer.gameObject.SetActive(false);
+                statusUI.gameObject.SetActive(false);
+            }    
+
+
+
             models[0].SetActive(false);
             models[1].SetActive(false);
         }
         //내 객체가 아닐 경우
-     
-
-      
-        NotMine(pv.IsMine);
+        else
+        {
+            statusUISencer.gameObject.SetActive(false);
+            statusUI.gameObject.SetActive(false);
+        }
     }
-
-
-    private void NotMine(bool isMine)
-    {
-        //내 카메라가 아니면 모두 끈다
-        //pv.transform.GetChild(0).GetChild(0).gameObject.SetActive(isMine);
-
-        //왼손과 오른손의 컨트롤 관련된 부분을 모두 끈다
-        //왼손
-        leftCont.transform.GetComponent<ControllerInputActionManager>().enabled = isMine;
-        leftCont.transform.GetComponent<TrackedPoseDriver>().enabled = isMine;
-        leftCont.transform.GetChild(2).gameObject.SetActive(isMine);
-        //오른손
-        rightCont.transform.GetComponent<ControllerInputActionManager>().enabled = isMine;
-        rightCont.transform.GetComponent<TrackedPoseDriver>().enabled = isMine;
-        rightCont.transform.GetChild(2).gameObject.SetActive(isMine);
-
-        //컨트롤러의 움직임을 모든 객체가 받기 때문에 꺼준다
-        //Locomotion
-        //pv.transform.GetChild(1).gameObject.SetActive(isMine);
-    }
-
 
     private void Update()
     {

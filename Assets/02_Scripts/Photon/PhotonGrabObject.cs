@@ -12,11 +12,14 @@ public class PhotonGrabObject : MonoBehaviourPunCallbacks
     [SerializeField] protected XRGrabInteractable inter;
     protected int grabCount;
     [SerializeField] protected PhotonView pv;
-
+    int grabLayer;
+    int normalLayer;
 
     protected virtual void Start()
     {
         grabCount = 0;
+        grabLayer = LayerMask.NameToLayer("GrabObject");
+        normalLayer = LayerMask.NameToLayer("Default");
 
         rig = GetComponent<Rigidbody>();
 
@@ -29,13 +32,17 @@ public class PhotonGrabObject : MonoBehaviourPunCallbacks
                 pv.TransferOwnership(PhotonNetwork.LocalPlayer);
                 grabCount++;
                 pv.RPC(nameof(Griped), RpcTarget.AllViaServer, grabCount);
-                OnGrabChangeLayer(grabCount);
+                //pv.RPC(nameof(OnGrabChangeLayer), RpcTarget.AllViaServer, grabCount);
             });
+
             inter.selectExited.AddListener((args) =>
             {
-                grabCount--;
-                pv.RPC(nameof(Griped), RpcTarget.AllViaServer, grabCount);
-                OnGrabChangeLayer(grabCount);
+                if(gameObject.activeSelf == true)
+                {
+                    grabCount--;
+                    pv.RPC(nameof(Griped), RpcTarget.AllViaServer, grabCount);
+                    //pv.RPC(nameof(OnGrabChangeLayer), RpcTarget.AllViaServer, grabCount);
+                }
             });
         }
     }
@@ -59,12 +66,7 @@ public class PhotonGrabObject : MonoBehaviourPunCallbacks
         //그립 상태면 중력 끄기
         //그립 상태가 아니면 중력 키키
         //rig.useGravity = !isGriped;
-    }
-   
-    void OnGrabChangeLayer(int count)
-    {
-        int grabLayer = LayerMask.NameToLayer("GrabObject");
-        int normalLayer = LayerMask.NameToLayer("Default");
+
         if (count > 0)
         {
             gameObject.layer = grabLayer;
@@ -74,4 +76,19 @@ public class PhotonGrabObject : MonoBehaviourPunCallbacks
             gameObject.layer = normalLayer;
         }
     }
+
+    //[PunRPC]
+    //void OnGrabChangeLayer(int count)
+    //{
+    //    int grabLayer = LayerMask.NameToLayer("GrabObject");
+    //    int normalLayer = LayerMask.NameToLayer("Default");
+    //    if (count > 0)
+    //    {
+    //        gameObject.layer = grabLayer;
+    //    }
+    //    else
+    //    {
+    //        gameObject.layer = normalLayer;
+    //    }
+    //}
 }

@@ -22,14 +22,17 @@ public class TigerClass : AnimalClass
         base.Start();
 
         InitStat();
-        animal_hp = 30;
-        animal_atk = 10;
+        animal_hp = 200;
+        animal_atk = 20;
         corpse_hp = 30;
         is_alive = true;
 
         find_area = 3.0f;
-        attack_area = 1.3f;
+        attack_area = 1.55f;
         attack_time = 5f;
+
+        moveSpeed = 1.5f;
+        watchSpeed = 2.0f;
 
         rest_Time = 0f;
 
@@ -54,7 +57,7 @@ public class TigerClass : AnimalClass
 
         if (corpse_hp <= 0)
         {
-            ChangeToMeat();
+            ChangeToMeat(6);
         }
     }
 
@@ -117,7 +120,7 @@ public class TigerClass : AnimalClass
     }
     public void Animal_Move()
     {
-        this.transform.Translate(Vector3.forward * 1.0f * Time.deltaTime, Space.Self);
+        this.transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime, Space.Self);
         if (rest_Time >= 5f)
         {
             rest_Time = 0;
@@ -152,7 +155,7 @@ public class TigerClass : AnimalClass
         }
         else
         {
-            this.transform.Translate(Vector3.forward * 1.0f * Time.deltaTime, Space.Self);
+            this.transform.Translate(Vector3.forward * watchSpeed * Time.deltaTime, Space.Self);
 
         }
     }
@@ -216,12 +219,5 @@ public class TigerClass : AnimalClass
 
 
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
-        {
-            GetDamage(5);
-            t_state = AnimalState.Damage;
-        }
-    }
+
 }

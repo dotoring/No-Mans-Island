@@ -19,15 +19,14 @@ public class SpiderClass : AnimalClass
 
 
         InitStat();
-        animal_hp = 30;
+        animal_hp = 25;
         animal_atk = 10;
         corpse_hp = 30;
         is_alive = true;
 
         find_area = 3f;
-        attack_area = 2f;
+        attack_area = 0.5f;
         attack_time = 5f;
-
         rest_Time = 0f;
 
         inter.enabled = false;
@@ -50,7 +49,7 @@ public class SpiderClass : AnimalClass
 
         if (corpse_hp <= 0)
         {
-            ChangeToMeat();
+            ChangeToMeat(1);
         }
     }
 
@@ -210,13 +209,5 @@ public class SpiderClass : AnimalClass
 
 
 
-    public void OnCollisionEnter(Collision collision)
-    {
 
-        if (collision.gameObject.CompareTag("Stone"))   // Stone의 공격력을 5로 설정
-        {
-            GetDamage(5);
-            t_state = AnimalState.Damage;
-        }
-    }
 }

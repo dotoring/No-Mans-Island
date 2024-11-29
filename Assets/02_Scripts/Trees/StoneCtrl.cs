@@ -16,9 +16,9 @@ public class StoneCtrl : PhotonGrabObject
                 collision.gameObject.GetComponent<InteractableObject>().TakeDamage(power);
             }
 
-            if (collision.gameObject.GetComponent<AnimalClass>() != null)
+            if (collision.gameObject.GetComponentInParent<AnimalClass>() != null)
             {
-                collision.gameObject.GetComponent<AnimalClass>().GetDamage(power);
+                collision.gameObject.GetComponentInParent<AnimalClass>().CallDamageRPC(power);
             }
 
             //µ¹³¢¸® ºÎµúÈ÷¸é
@@ -44,7 +44,7 @@ public class StoneCtrl : PhotonGrabObject
                     {
                         if (collider.CompareTag("FireWood"))
                         {
-                            collider.GetComponent<PhotonView>().RPC("FlameOn", RpcTarget.AllViaServer   );
+                            collider.GetComponent<PhotonView>().RPC("FlameOn", RpcTarget.AllViaServer);
                         }
                     }
                 }

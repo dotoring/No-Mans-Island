@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b7f2e14341dc04c90d59320b64d03f, type: 3}
   m_Name: Mushroom
   m_EditorClassIdentifier: 
-  fullness: 20
+  fullness: 25
   thirst: 0
   Reduce_Hp: 0
   cookTime: 0

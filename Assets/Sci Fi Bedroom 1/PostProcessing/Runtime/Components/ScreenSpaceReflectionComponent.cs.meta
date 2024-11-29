@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: dd75f795d6a798f44a7801082f6a703f
+timeCreated: 1467626205
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 193142
+  packageName: Sci-Fi Room
+  packageVersion: 1.1
+  assetPath: Assets/Sci Fi Bedroom 1/PostProcessing/Runtime/Components/ScreenSpaceReflectionComponent.cs
+  uploadId: 617801

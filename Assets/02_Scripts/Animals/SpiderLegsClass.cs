@@ -23,6 +23,7 @@ public class SpiderLegsClass : MonoBehaviour
             if (spider.t_state == AnimalState.Attack)
             {
                 spider.Hit(other.GetComponent<PlayerState>());
+                Debug.Log("거미 공격");
             }
 
 
