@@ -168,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inter: {fileID: 0}
   pv: {fileID: 3517124733891278900}
-  Hp: 10
+  Hp: 20
   spawnPoints:
   - {fileID: 8815824119468155592}
   - {fileID: 8777638106773748874}

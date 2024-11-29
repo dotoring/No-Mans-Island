@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inter: {fileID: 381839952092208137}
   pv: {fileID: 3797194759235204302}
-  Hp: 10
+  Hp: 20
 --- !u!54 &6197501138105446489
 Rigidbody:
   m_ObjectHideFlags: 0
