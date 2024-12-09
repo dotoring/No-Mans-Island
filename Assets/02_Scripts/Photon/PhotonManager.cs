@@ -99,7 +99,6 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         //�κ� ������������ ȣ��Ǵ� �Լ�
         foreach (var room in roomList)
         {
-            //print($"{room.Name} : {room.PlayerCount} / {room.MaxPlayers}");
 
             if (room.RemovedFromList == true)//������ ���� �ǹ� ( �÷��̾� ��Ȳ�� 0/0 �ΰ��)
             {
@@ -141,7 +140,6 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         randomRoomBtn.interactable = true;
         makeRoomBtn.interactable = true;
         exitBtn.interactable = true;
-        print("�������� �Ϸ�");
         //Lobby ���� ��û
         PhotonNetwork.JoinLobby();
     }
@@ -150,7 +148,6 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         nickname = $"User_{UnityEngine.Random.Range(0, 1001):0000}";
-        print("�κ� ���� �Ϸ�");
     }
 
 
@@ -159,7 +156,6 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     //���� ������ �������� �� ȣ��Ǵ� �ݹ�
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
-        print($"������ ���� : {returnCode} : {message}");
 
         //�� �ɼ� ����
         MakeRoom();
@@ -168,19 +164,17 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     //�� ���� �Ϸ� �ݹ�
     public override void OnCreatedRoom()
     {
-        print("�� ���� �Ϸ�");
+        //print("�� ���� �Ϸ�");
     }
 
     //�� ���� �Ϸ� �ݹ�
     public override void OnJoinedRoom()
     {
-        print($"�� ���� �Ϸ� : {PhotonNetwork.CurrentRoom.Name}");
-
         //PhotonNetwork.Instantiate("Tank", new Vector3(0, 5.0f, 0), Quaternion.identity, 0);//gropid �̰� �ٸ��� ���� �� ����
 
         if (PhotonNetwork.IsMasterClient)//PhotonNetwork.AutomaticallySyncScene = true;�� �������� ������ ������ ���� �ٲٸ� ��ΰ� �ٲ�
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("4_RoomScene");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("3_RoomScene");
 
 
         }

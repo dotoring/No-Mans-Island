@@ -38,7 +38,7 @@ public class ReturnLobbyTable : MonoBehaviourPunCallbacks
     }
     public override void OnLeftRoom()
     {
-        SceneManager.LoadScene("SJHLobbyTestScene");
+        SceneManager.LoadScene("2_LobbyScene");
     }
 
     private void UIOpen()

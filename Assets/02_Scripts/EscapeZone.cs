@@ -22,12 +22,12 @@ public class EscapeZone : MonoBehaviour
         //탈출지역 인원이 생존인원보다 많거나 같을 때
         if(count >= PhotonNetwork.CurrentRoom.PlayerCount - TempGameMgr.deadPlayerCount)
         {
-            if(PhotonNetwork.CurrentRoom.MasterClientId == PhotonNetwork.LocalPlayer.ActorNumber)
-                SceneManager.LoadScene("4_RoomScene");
-        }
-        else
-        {
-            Debug.Log("인원부족");
+            if (PhotonNetwork.CurrentRoom.MasterClientId == PhotonNetwork.LocalPlayer.ActorNumber)
+            {
+                SceneManager.LoadScene("3_RoomScene");
+                PhotonNetwork.CurrentRoom.IsVisible = true;
+                PhotonNetwork.CurrentRoom.IsOpen = true;
+            }
         }
     }
 

@@ -80,7 +80,7 @@ public class TimeManager : MonoBehaviour
 
     void CheckTime(int i)
     {
-        if (i == 21)
+        if (i == 20)
         {
             if (coroutine != null)
             {
@@ -88,7 +88,7 @@ public class TimeManager : MonoBehaviour
             }
         }
 
-        if (i == 4)
+        if (i == 5)
         {
             if (coroutine != null)
             {
@@ -126,7 +126,7 @@ public class TimeManager : MonoBehaviour
         {
             //플레이어 근처에 선공 동물 소환
             tempGameMgr.SpawnAnimals();
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(25f);
         }
     }
 }
